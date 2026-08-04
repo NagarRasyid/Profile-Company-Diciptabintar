@@ -19,13 +19,18 @@
 
 /* ---- HERO PROFIL ---- */
 .about-hero {
-    background: #f8faff;
-    padding: 56px 80px 52px;
+    background: #f1f1f4;
+    padding: 64px 80px 60px;
+    border-bottom: 1px solid #e5eaf2;
+}
+
+.about-hero-inner {
+    max-width: 1400px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 52px;
+    gap: 64px;
     align-items: center;
-    border-bottom: 1px solid #e5eaf2;
 }
 
 .about-hero-eyebrow {
@@ -48,11 +53,11 @@
 }
 
 .about-hero-desc {
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     color: #52565e;
     line-height: 1.75;
     margin: 0;
-    max-width: 460px;
+    max-width: 600px;
 }
 
 .about-hero-img {
@@ -60,6 +65,10 @@
     overflow: hidden;
     box-shadow: 0 20px 50px rgba(0, 61, 106, 0.15);
     aspect-ratio: 16/10;
+    width: 600px;
+    height: auto;
+    border: 5px solid #ffffff; 
+    box-sizing: border-box;
 }
 
 .about-hero-img img {
@@ -67,22 +76,30 @@
     height: 100%;
     object-fit: cover;
     display: block;
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-/* ---- STATS BAR (UPDATED) ---- */
+.about-hero-img:hover img {
+    transform: scale(1.05);
+}
+
+/* ---- STATS BAR ---- */
 .about-stats {
     background: #ffffff;
     padding: 40px 80px;
 }
 
+/* Inner container membatasi lebar agar sejajar dengan hero di 1920px */
 .about-stats-inner {
+    max-width: 1400px;
+    margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 24px;
 }
 
 .about-stat-item {
-    background: #f4f6f9;
+    background: #f1f1f4;
     padding: 32px 20px;
     display: flex;
     flex-direction: column;
@@ -92,8 +109,8 @@
     border-top: 4px solid transparent;
 }
 
-.about-stat-item.stat-green { border-top-color: #16a34a; }
-.about-stat-item.stat-blue { border-top-color: #003d6a; }
+.about-stat-item.stat-green  { border-top-color: #16a34a; }
+.about-stat-item.stat-blue   { border-top-color: #003d6a; }
 .about-stat-item.stat-orange { border-top-color: #f97316; }
 .about-stat-item.stat-yellow { border-top-color: #fbbf24; }
 
@@ -111,13 +128,13 @@
     height: 100%;
 }
 
-.stat-green .about-stat-icon { color: #16a34a; }
-.stat-blue .about-stat-icon { color: #003d6a; }
+.stat-green  .about-stat-icon { color: #16a34a; }
+.stat-blue   .about-stat-icon { color: #003d6a; }
 .stat-orange .about-stat-icon { color: #f97316; }
 .stat-yellow .about-stat-icon { color: #fbbf24; }
 
 .about-stat-number {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 800;
     color: #003d6a;
     line-height: 1;
@@ -135,8 +152,16 @@
     padding: 72px 80px;
 }
 
-.about-section-alt {
-    background: #f8faff;
+.about-section-tentang {
+    background: #f8f8f9;
+}
+
+.about-section-vismis {
+    background: #f9f9fd;
+}
+
+.about-section-tugas-fungsi {
+    background: #f1f1f4;
 }
 
 .about-tentang {
@@ -151,9 +176,29 @@
     overflow: hidden;
     box-shadow: 0 12px 36px rgba(0, 0, 0, 0.10);
     aspect-ratio: 4/3;
+    width: 600px;
+    height: auto;
 }
 
 .about-office-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.about-office-img:hover img {
+    transform: scale(1.05);
+}
+
+.about-struktur-img {
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.10);
+}
+
+.about-struktur-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -185,7 +230,7 @@
 }
 
 .about-section-text {
-    font-size: 0.92rem;
+    font-size: 1.1rem;
     color: #52565e;
     line-height: 1.8;
     margin: 0 0 14px;
@@ -206,7 +251,7 @@
 }
 
 .about-vismis-header p {
-    font-size: 0.92rem;
+    font-size: 1rem;
     color: #64748b;
     max-width: 500px;
     margin: 0 auto;
@@ -308,7 +353,7 @@
 .misi-4 .about-misi-num { background: #e0f2fe; color: #003d6a; }
 
 .about-misi-item p {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #334155;
     line-height: 1.6;
     margin: 0;
@@ -357,7 +402,7 @@
 }
 
 .about-tugas-card p {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #475569;
     line-height: 1.8;
     margin: 0;
@@ -376,7 +421,7 @@
     display: flex;
     align-items: flex-start;
     gap: 12px;
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #475569;
     line-height: 1.6;
 }
@@ -405,9 +450,9 @@
 }
 
 .about-struktur-header p {
-    font-size: 0.92rem;
+    font-size: 1.2rem;
     color: #64748b;
-    max-width: 460px;
+    max-width: 700px;
     margin: 0 auto;
 }
 
@@ -437,19 +482,24 @@
 }
 
 /* ---- RESPONSIVE ---- */
+@media (max-width: 1280px) {
+    .about-hero { padding: 56px 60px 52px; }
+    .about-stats { padding: 40px 60px; }
+}
+
 @media (max-width: 1024px) {
-    .about-hero,
+    .about-hero-inner,
     .about-tentang,
     .about-vismis-grid,
     .about-tugfung-grid { grid-template-columns: 1fr; }
-    .about-hero,
+    .about-hero { padding: 48px 40px; }
     .about-section { padding: 48px 40px; }
     .about-stats { padding: 40px; }
     .about-stats-inner { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 640px) {
-    .about-hero,
+    .about-hero { padding: 36px 20px; }
     .about-section { padding: 36px 20px; }
     .about-stats { padding: 32px 20px; }
     .about-stats-inner { grid-template-columns: 1fr; }
@@ -464,67 +514,75 @@
 
     {{-- ===== HERO PROFIL ===== --}}
     <section class="about-hero">
-        <div>
-            <h1 class="about-hero-title">Profil Diciptabintar</h1>
-            <p class="about-hero-desc">
-                Dinas Cipta Karya, Bina Konstruksi dan Tata Ruang Kota Bandung adalah unsur pelaksana urusan pemerintahan bidang pekerjaan umum dan penataan ruang yang menjadi kewenangan Daerah Kota Bandung.
-            </p>
-        </div>
-        <div class="about-hero-img">
-            <img src="{{ asset('images/about-hero.png') }}" alt="Gedung Diciptabintar">
+        <div class="about-hero-inner">
+            <div>
+                <h1 class="about-hero-title">Profil Diciptabintar</h1>
+                <p class="about-hero-desc">
+                    Dinas Cipta Karya, Bina Konstruksi dan Tata Ruang Kota Bandung adalah unsur pelaksana urusan pemerintahan bidang pekerjaan umum dan penataan ruang yang menjadi kewenangan Daerah Kota Bandung.
+                </p>
+            </div>
+            <div class="about-hero-img">
+                <img src="{{ asset('images/about-hero.png') }}" alt="Gedung Diciptabintar">
+            </div>
         </div>
     </section>
 
     {{-- ===== STATS BAR ===== --}}
     <div class="about-stats">
         <div class="about-stats-inner">
+
+            {{-- Layanan Publik --}}
             <div class="about-stat-item stat-green">
                 <div class="about-stat-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM18 20H6V4h5v6h7v10z"/><path d="M8 12h8v2H8zm0 4h8v2H8z"/></svg>
                 </div>
                 <div>
-                    <div class="about-stat-number">5</div>
+                    <div class="about-stat-number">{{ $stats['layanan'] }}</div>
                     <div class="about-stat-label">Layanan Publik</div>
                 </div>
             </div>
-            
+
+            {{-- Bidang Teknis --}}
             <div class="about-stat-item stat-blue">
                 <div class="about-stat-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M19 2H9c-1.103 0-2 .897-2 2v5.586l-4.707 4.707A1 1 0 0 0 2 15v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V4c0-1.103-.897-2-2-2zM4 19v-3.586l3-3L10.586 16H4v3zm16 0h-4v-4c0-1.103-.897-2-2-2h-3V4h9v15z"/><path d="M11 6h2v2h-2zm4 0h2v2h-2zm-4 4h2v2h-2zm4 0h2v2h-2zm0 4h2v2h-2z"/></svg>
                 </div>
                 <div>
-                    <div class="about-stat-number">5</div>
+                    <div class="about-stat-number">{{ $stats['bidang'] }}</div>
                     <div class="about-stat-label">Bidang Teknis</div>
                 </div>
             </div>
 
+            {{-- Regulasi (dari API SIPETRUK, di-cache 1 jam) --}}
             <div class="about-stat-item stat-orange">
                 <div class="about-stat-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M21.2 5.8a2.83 2.83 0 0 0-4-4l-8 8a2.83 2.83 0 0 0 0 4l-1.5 1.5a1 1 0 0 0-.3.7v3h-3a1 1 0 0 0-.7.3L1.5 21.5a1 1 0 0 0 1.4 1.4l2.2-2.2v-3a1 1 0 0 0-1-1h-2L9.2 9.6l1.5-1.5a2.83 2.83 0 0 0 4 0l6.5-2.3zM10.4 11.2a.82.82 0 0 1-1.2 0l-1.2-1.2a.82.82 0 0 1 0-1.2l6-6a.82.82 0 0 1 1.2 0l1.2 1.2a.82.82 0 0 1 0 1.2z"/></svg>
                 </div>
                 <div>
-                    <div class="about-stat-number">111</div>
+                    <div class="about-stat-number">{{ $stats['regulasi'] }}</div>
                     <div class="about-stat-label">Regulasi</div>
                 </div>
             </div>
 
+            {{-- Berita Dipublikasikan --}}
             <div class="about-stat-item stat-yellow">
                 <div class="about-stat-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M20 3H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM4 19V5h16v14z"/><path d="M6 7h12v2H6zm0 4h12v2H6zm0 4h8v2H6z"/></svg>
                 </div>
                 <div>
-                    <div class="about-stat-number">500+</div>
+                    <div class="about-stat-number">{{ $stats['berita'] }}</div>
                     <div class="about-stat-label">Berita Dipublikasikan</div>
                 </div>
             </div>
+
         </div>
     </div>
 
     {{-- ===== TENTANG DINAS ===== --}}
-    <section class="about-section">
+    <section class="about-section about-section-tentang">
         <div class="about-tentang">
             <div class="about-office-img">
-                <img src="{{ asset('images/about-office.png') }}" alt="Kantor Diciptabintar">
+                <img src="{{ asset('images/about-office.jpg') }}" alt="Kantor Diciptabintar">
             </div>
             <div>
                 <div class="about-section-eyebrow">
@@ -545,7 +603,7 @@
     </section>
 
     {{-- ===== VISI & MISI ===== --}}
-    <section class="about-section about-section-alt">
+    <section class="about-section about-section-vismis">
         <div class="about-vismis-header">
             <h2>Visi &amp; Misi</h2>
             <p>Arah kebijakan dan tujuan strategis pembangunan infrastruktur dan penataan ruang Kota Bandung.</p>
@@ -583,7 +641,7 @@
     </section>
 
     {{-- ===== TUGAS DAN FUNGSI ===== --}}
-    <section class="about-section">
+    <section class="about-section about-section-tugas-fungsi">
         <div class="about-vismis-header">
             <h2>Tugas dan Fungsi</h2>
         </div>
@@ -626,14 +684,9 @@
             <p>Bagan struktur organisasi Dinas Cipta Karya, Bina Konstruksi dan Tata Ruang Kota Bandung.</p>
         </div>
 
-        <div class="about-org-placeholder">
-            <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" fill="#94a3b8" viewBox="0 0 16 16">
-                <path d="M11 13.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-4 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-4 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"/>
-                <path d="M11 8.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5zm-8 5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-1a.5.5 0 0 1-.5-.5z"/>
-                <path fill-rule="evenodd" d="M7.5 1a.5.5 0 0 1 .5.5v1h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5V3a.5.5 0 0 1 .5-.5h1V1.5a.5.5 0 0 1 .5-.5zM5 3.5h6v1H5v-1zM7.5 5.5v2h1v-2h-1zM4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 .5.5v.5H4V8zm-.5 1h9v.5H3.5V9zm.5 1.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5V11H4v-.5zm4 0a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5V11H8v-.5z"/>
-            </svg>
-            <p>[Placeholder Bagan Struktur Organisasi]<br><small>Gambar atau Diagram struktur akan ditampilkan di sini.</small></p>
-        </div>
+        <div class="about-struktur-img">
+                <img src="{{ asset('images/Struktur-org.png') }}" alt="Struktur Organisasi Diciptabintar">
+            </div>
     </section>
 
 </div>

@@ -112,12 +112,13 @@
     text-decoration: none;
     font-weight: 600;
     font-size: 0.92rem;
-    transition: background 0.18s ease, transform 0.15s ease;
+    transition: background 0.16s ease, transform 0.15s ease;
     box-shadow: 0 6px 18px rgba(0, 61, 106, 0.25);
 }
 
 .hero-btn-primary:hover {
-    background: #002a4d;
+    background: #ffffff;
+    color: #09436e;
     transform: translateY(-1px);
 }
 
@@ -153,13 +154,11 @@
     height: 100%;
     object-fit: cover;
     display: block;
-    filter: grayscale(70%);
     transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .hero-image-wrap:hover img {
     transform: scale(1.05);
-    filter: grayscale(0%);
 }
 
 /* ---- QUICK ACCESS CARDS ---- */
@@ -226,7 +225,7 @@
 
 /* ---- LAYANAN UTAMA SECTION ---- */
 .section-layanan {
-    max-width: 1280px;
+    max-width: 1440px;
     margin: 0 auto;
     padding: 72px 50px 60px;
 }
@@ -254,7 +253,7 @@
 
 .layanan-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 20px;
 }
 
@@ -415,10 +414,7 @@
 
             <div class="hero-actions">
                 <a href="{{ route('layanan.index') }}" class="hero-btn-primary">
-                    Lihat Layanan &rarr;
-                </a>
-                <a href="{{ route('about') }}" class="hero-btn-secondary">
-                    Profil Dinas
+                    Profil Dinas &rarr;
                 </a>
             </div>
         </div>
@@ -470,33 +466,41 @@
             {{-- SIMBG --}}
             <div class="layanan-card">
                 <div class="layanan-icon qa-icon-blue">🏛️</div>
-                <h3>SIMBG</h3>
-                <p>Sistem Informasi Manajemen Bangunan Gedung terintegrasi.</p>
-                <a href="#" class="layanan-link layanan-link-blue">Akses Layanan &rarr;</a>
+                <h3>KRK New</h3>
+                <p>Sistem Informasi Manajemen Bangunan Gedung Terintegrasi.</p>
+                <a href="https://diciptabintar.bandung.go.id/auth/login?redirect=https://diciptabintar.bandung.go.id/layanan/irk/pendaftaran_irk/syarat" target="_blank" class="layanan-link layanan-link-blue">Akses Layanan &rarr;</a>
             </div>
 
-            {{-- SISTARU --}}
+            {{-- SIMPLEMAN --}}
             <div class="layanan-card">
                 <div class="layanan-icon qa-icon-green">🗺️</div>
-                <h3>SISTARU</h3>
+                <h3>SIMPLEMAN</h3>
                 <p>Sistem Informasi Tata Ruang Kota Bandung.</p>
-                <a href="#" class="layanan-link layanan-link-green">Akses Layanan &rarr;</a>
+                <a href="https://diciptabintar.bandung.go.id/simpelman/" target="_blank" class="layanan-link layanan-link-green">Akses Layanan &rarr;</a>
             </div>
 
-            {{-- Bina Konstruksi --}}
+            {{-- SIBANTEK --}}
             <div class="layanan-card">
                 <div class="layanan-icon qa-icon-pink">👷</div>
-                <h3>Bina Konstruksi</h3>
-                <p>Layanan sertifikasi dan pelatihan tenaga kerja konstruksi.</p>
-                <a href="#" class="layanan-link layanan-link-pink">Akses Layanan &rarr;</a>
+                <h3>SIBANTEK</h3>
+                <p>Sistem Informasi Bantuan Teknis Bangunan Gedung Negara.</p>
+                <a href="https://sibantek.diciptabintar.id/" target="_blank" class="layanan-link layanan-link-pink">Akses Layanan &rarr;</a>
             </div>
 
-            {{-- Pengaduan --}}
+            {{-- SIBIJAK --}}
             <div class="layanan-card">
                 <div class="layanan-icon" style="background:#e8f7ff;">🎧</div>
-                <h3>Pengaduan</h3>
-                <p>Kanal resmi pelaporan pelanggaran tata ruang dan bangunan.</p>
-                <a href="{{ route('contact') }}" class="layanan-link layanan-link-teal">Akses Layanan &rarr;</a>
+                <h3>SIBIJAK</h3>
+                <p>Sistem Informasi Pembinaan Jasa Konstruksi.</p>
+                <a href="http://sibijak.diciptabintar.id/" target="_blank" class="layanan-link layanan-link-teal">Akses Layanan &rarr;</a>
+            </div>
+
+            {{-- PBG --}}
+            <div class="layanan-card">
+                <div class="layanan-icon" style="background:#e8f7ff;">🏠</div>
+                <h3>PBG</h3>
+                <p>Persetujuan Bangunan Gedung.</p>
+                <a href="https://diciptabintar.bandung.go.id/layanan/cekpbg/" target="_blank" class="layanan-link layanan-link-teal">Akses Layanan &rarr;</a>
             </div>
         </div>
     </div>
