@@ -62,7 +62,7 @@
     aspect-ratio: 16/10;
     width: 600px;
     height: auto;
-    border: 5px solid #ffffff; 
+    border: 4px solid #ffffff; 
     box-sizing: border-box;
 }
 
@@ -137,7 +137,7 @@
 }
 
 .about-stat-label {
-    font-size: 0.85rem;
+    font-size: 0.9rem;
     color: #475569;
     font-weight: 600;
 }
@@ -173,6 +173,8 @@
     aspect-ratio: 4/3;
     width: 600px;
     height: auto;
+    border: 4px solid #ffffff; 
+    box-sizing: border-box;
 }
 
 .about-office-img img {

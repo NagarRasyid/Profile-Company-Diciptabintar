@@ -29,7 +29,7 @@
 }
 
 .news-page-header p {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #64748b;
     line-height: 1.65;
     margin: 0;

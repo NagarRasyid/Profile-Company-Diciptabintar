@@ -14,7 +14,7 @@
 
 /* ---- PAGE HEADER ---- */
 .layanan-header {
-    background: #ffffff;
+    background: #f1f1f4;
     padding: 52px 80px 44px;
     text-align: center;
     border-bottom: 1px solid #e5eaf2;
@@ -28,7 +28,7 @@
 }
 
 .layanan-header p {
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: #64748b;
     line-height: 1.7;
     max-width: 480px;
@@ -37,7 +37,7 @@
 
 /* ---- SEARCH & FILTER ---- */
 .layanan-controls {
-    background: #ffffff;
+    background: #f9f9fd;
     padding: 28px 80px 36px;
     border-bottom: 1px solid #e5eaf2;
 }
@@ -75,7 +75,7 @@
 .layanan-search-input:focus {
     border-color: #003d6a;
     box-shadow: 0 0 0 3px rgba(0, 61, 106, 0.08);
-    background: #ffffff;
+    background: #f9f9fd;
 }
 
 .layanan-search-input::placeholder { color: #94a3b8; }
@@ -92,9 +92,9 @@
     padding: 7px 18px;
     border-radius: 999px;
     border: 1.5px solid #d1dbe8;
-    background: #ffffff;
+    background: #f9f9fd;
     color: #52565e;
-    font-size: 0.84rem;
+    font-size: 0.94rem;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.18s ease;
@@ -109,7 +109,7 @@
 .filter-tab.active {
     background: #003d6a;
     border-color: #003d6a;
-    color: #ffffff;
+    color: #f9f9fd;
     font-weight: 600;
 }
 
@@ -126,7 +126,7 @@
 }
 
 .service-card {
-    background: #ffffff;
+    background: #f9f9fd;
     border: 1px solid #e5eaf2;
     border-left: 4px solid transparent;
     border-radius: 12px;
@@ -186,7 +186,7 @@
 }
 
 .service-card-title {
-    font-size: 1rem;
+    font-size: 1.15rem;
     font-weight: 700;
     margin: 0 0 10px;
     line-height: 1.3;
@@ -200,7 +200,7 @@
 .title-gray  { color: #334155; }
 
 .service-card-desc {
-    font-size: 0.84rem;
+    font-size: 0.94rem;
     color: #52565e;
     line-height: 1.65;
     margin: 0 0 18px;
@@ -230,7 +230,7 @@
 }
 
 .service-card-link {
-    font-size: 0.82rem;
+    font-size: 0.92rem;
     font-weight: 600;
     color: #003d6a;
     text-decoration: none;
@@ -262,7 +262,7 @@
 }
 
 .alur-layanan-header p {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #64748b;
     margin: 0;
 }
@@ -305,7 +305,7 @@
     place-items: center;
     font-size: 1.1rem;
     font-weight: 800;
-    color: #ffffff;
+    color: #f9f9fd;
     margin-bottom: 14px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 }
@@ -315,18 +315,18 @@
 .step-circle-green { background: #16a34a; }
 
 .alur-step-item h3 {
-    font-size: 0.88rem;
+    font-size: 1rem;
     font-weight: 700;
     color: #0a1628;
     margin: 0 0 6px;
 }
 
 .alur-step-item p {
-    font-size: 0.78rem;
+    font-size: 0.85rem;
     color: #64748b;
     line-height: 1.5;
     margin: 0;
-    max-width: 120px;
+    max-width: 150px;
 }
 
 /* ---- RESPONSIVE ---- */

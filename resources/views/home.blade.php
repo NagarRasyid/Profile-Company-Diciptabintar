@@ -4,20 +4,13 @@
 
 @push('styles')
 <style>
-/* =============================================
-   HOME PAGE STYLES
-============================================= */
-
-/* Hapus padding site-main di halaman beranda agar hero full-width */
 .home-page-wrapper {
     margin: 0 -32px;
 }
 
-
-/* ---- HERO SECTION ---- */
 .hero {
     background: #eef0f2;
-    padding: 56px 80px 100px;
+    padding: 66px 80px 160px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 48px;
@@ -81,11 +74,11 @@
 }
 
 .hero-desc {
-    font-size: 1rem;
+    font-size: 1.12rem;
     color: #52565e;
     line-height: 1.7;
     margin: 0 0 32px;
-    max-width: 420px;
+    max-width: 550px;
 }
 
 .hero-actions {
@@ -101,17 +94,17 @@
     gap: 8px;
     padding: 12px 24px;
     background: #003d6a;
-    color: #ffffff;
+    color: #f9f9fd;
     border-radius: 999px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.92rem;
+    font-size: 1rem;
     transition: background 0.16s ease, transform 0.15s ease;
     box-shadow: 0 6px 18px rgba(0, 61, 106, 0.25);
 }
 
 .hero-btn-primary:hover {
-    background: #ffffff;
+    background: #f9f9fd;
     color: #09436e;
     transform: translateY(-1px);
 }
@@ -127,13 +120,13 @@
     border-radius: 999px;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.92rem;
+    font-size: 1rem;
     transition: all 0.18s ease;
 }
 
 .hero-btn-secondary:hover {
     background: #003d6a;
-    color: #ffffff;
+    color: #f9f9fd;
 }
 
 .hero-image-wrap {
@@ -155,7 +148,6 @@
     transform: scale(1.05);
 }
 
-/* ---- QUICK ACCESS CARDS ---- */
 .quick-access {
     max-width: 1280px;
     margin: -36px auto 0;
@@ -171,7 +163,7 @@
 }
 
 .qa-card {
-    background: #ffffff;
+    background: #f9f9fd;
     border: 1px solid #e5eaf2;
     border-radius: 14px;
     padding: 22px 20px;
@@ -204,20 +196,19 @@
 .qa-icon-pink   { background: #fff0f3; }
 
 .qa-card h3 {
-    font-size: 0.95rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: #0a1628;
     margin: 0 0 6px;
 }
 
 .qa-card p {
-    font-size: 0.82rem;
+    font-size: 0.92rem;
     color: #64748b;
     line-height: 1.5;
     margin: 0;
 }
 
-/* ---- LAYANAN UTAMA SECTION ---- */
 .section-layanan {
     max-width: 1440px;
     margin: 0 auto;
@@ -237,7 +228,7 @@
 }
 
 .section-header p {
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: #64748b;
     line-height: 1.6;
     max-width: 520px;
@@ -259,6 +250,30 @@
     transition: transform 0.2s ease, box-shadow 0.2s ease;
     display: flex;
     flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.layanan-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--bg-icon);
+    background-repeat: no-repeat;
+    background-position: right 15px bottom 15px;
+    background-size: 90px;
+    opacity: 0.35;
+    z-index: -1;
+    transition: all 0.3s ease;
+}
+
+.layanan-card:hover::before {
+    opacity: 0.70;
+    transform: scale(1.1);
 }
 
 .layanan-card:hover {
@@ -266,26 +281,15 @@
     box-shadow: 0 10px 32px rgba(0, 0, 0, 0.10);
 }
 
-.layanan-icon {
-    width: 48px;
-    height: 48px;
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 16px;
-    font-size: 1.4rem;
-}
-
 .layanan-card h3 {
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 700;
     color: #0a1628;
     margin: 0 0 8px;
 }
 
 .layanan-card p {
-    font-size: 0.84rem;
+    font-size: 0.94rem;
     color: #64748b;
     line-height: 1.6;
     margin: 0 0 20px;
@@ -293,7 +297,7 @@
 }
 
 .layanan-link {
-    font-size: 0.84rem;
+    font-size: 0.94rem;
     font-weight: 600;
     text-decoration: none;
     display: inline-flex;
@@ -302,16 +306,18 @@
     transition: gap 0.18s ease;
 }
 
-.layanan-link:hover { gap: 8px; }
+.layanan-link:hover { 
+    gap: 8px; 
+}
 
-.layanan-link-blue   { color: #2563eb; }
-.layanan-link-green  { color: #16a34a; }
-.layanan-link-pink   { color: #e11d48; }
-.layanan-link-teal   { color: #0891b2; }
+.layanan-link-blue:hover   { color: #2563eb; }
+.layanan-link-green:hover  { color: #16a34a; }
+.layanan-link-red:hover   { color: #e11d48; }
+.layanan-link-teal:hover   { color: #0891b2; }
+.layanan-link-yellow:hover   { color: #f97316; }
 
-/* ---- NEWS CARD WITH IMAGE ---- */
 .news-card {
-    background: #ffffff;
+    background: #f9f9fd;
     border: 1px solid #e5eaf2;
     border-radius: 16px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
@@ -364,7 +370,6 @@
     flex: 1;
 }
 
-/* ---- RESPONSIVE ---- */
 @media (max-width: 1024px) {
     .hero { padding: 40px 32px 72px; gap: 32px; }
     .quick-access { padding: 0 32px; }
@@ -387,7 +392,6 @@
 @section('content')
 <div class="home-page-wrapper">
 
-    {{-- ===== HERO SECTION ===== --}}
     <section class="hero">
         <div class="hero-left">
             <div class="hero-badge">
@@ -420,7 +424,6 @@
         </div>
     </section>
 
-    {{-- ===== QUICK ACCESS CARDS ===== --}}
     <div class="quick-access">
         <div class="quick-access-grid">
             <a href="{{ route('layanan.index') }}" class="qa-card">
@@ -448,7 +451,6 @@
         </div>
     </div>
 
-    {{-- ===== LAYANAN UTAMA ===== --}}
     <div class="section-layanan">
         <div class="section-header">
             <h2>Layanan Utama</h2>
@@ -456,49 +458,38 @@
         </div>
 
         <div class="layanan-grid">
-            {{-- SIMBG --}}
-            <div class="layanan-card">
-                <div class="layanan-icon qa-icon-blue">🏛️</div>
+            <div class="layanan-card" style="--bg-icon: url('{{ asset('images/krk.png') }}');">
                 <h3>KRK New</h3>
                 <p>Sistem Informasi Manajemen Bangunan Gedung Terintegrasi.</p>
                 <a href="https://diciptabintar.bandung.go.id/auth/login?redirect=https://diciptabintar.bandung.go.id/layanan/irk/pendaftaran_irk/syarat" target="_blank" class="layanan-link layanan-link-blue">Akses Layanan &rarr;</a>
             </div>
 
-            {{-- SIMPLEMAN --}}
-            <div class="layanan-card">
-                <div class="layanan-icon qa-icon-green">🗺️</div>
-                <h3>SIMPLEMAN</h3>
+            <div class="layanan-card" style="--bg-icon: url('{{ asset('images/pemakaman.png') }}');">
+                <h3>SIMPELMAN</h3>
                 <p>Sistem Informasi Tata Ruang Kota Bandung.</p>
                 <a href="https://diciptabintar.bandung.go.id/simpelman/" target="_blank" class="layanan-link layanan-link-green">Akses Layanan &rarr;</a>
             </div>
 
-            {{-- SIBANTEK --}}
-            <div class="layanan-card">
-                <div class="layanan-icon qa-icon-pink">👷</div>
+            <div class="layanan-card" style="--bg-icon: url('{{ asset('images/rtbg.png') }}');">
                 <h3>SIBANTEK</h3>
                 <p>Sistem Informasi Bantuan Teknis Bangunan Gedung Negara.</p>
-                <a href="https://sibantek.diciptabintar.id/" target="_blank" class="layanan-link layanan-link-pink">Akses Layanan &rarr;</a>
+                <a href="https://sibantek.diciptabintar.id/" target="_blank" class="layanan-link layanan-link-teal">Akses Layanan &rarr;</a>
             </div>
 
-            {{-- SIBIJAK --}}
-            <div class="layanan-card">
-                <div class="layanan-icon" style="background:#e8f7ff;">🎧</div>
+            <div class="layanan-card" style="--bg-icon: url('{{ asset('images/registrasi.png') }}');">
                 <h3>SIBIJAK</h3>
                 <p>Sistem Informasi Pembinaan Jasa Konstruksi.</p>
-                <a href="http://sibijak.diciptabintar.id/" target="_blank" class="layanan-link layanan-link-teal">Akses Layanan &rarr;</a>
+                <a href="http://sibijak.diciptabintar.id/" target="_blank" class="layanan-link layanan-link-yellow">Akses Layanan &rarr;</a>
             </div>
 
-            {{-- PBG --}}
-            <div class="layanan-card">
-                <div class="layanan-icon" style="background:#e8f7ff;">🏠</div>
+            <div class="layanan-card" style="--bg-icon: url('{{ asset('images/splitzing.png') }}');">
                 <h3>PBG</h3>
                 <p>Persetujuan Bangunan Gedung.</p>
-                <a href="https://diciptabintar.bandung.go.id/layanan/cekpbg/" target="_blank" class="layanan-link layanan-link-teal">Akses Layanan &rarr;</a>
+                <a href="https://diciptabintar.bandung.go.id/layanan/cekpbg/" target="_blank" class="layanan-link layanan-link-red">Akses Layanan &rarr;</a>
             </div>
         </div>
     </div>
 
-    {{-- ===== BERITA TERBARU ===== --}}
     @if($news->count())
     <div class="section-layanan" style="padding-top: 0;">
         <div class="section-header">

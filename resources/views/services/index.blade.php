@@ -14,7 +14,7 @@
 
 /* ---- PAGE HEADER ---- */
 .bidang-header {
-    background: #f8faff;
+    background: #f1f1f4;
     padding: 56px 80px 52px;
     text-align: center; 
     border-bottom: 1px solid #e5eaf2;
@@ -28,7 +28,7 @@
 }
 
 .bidang-header p {
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: #52565e;
     line-height: 1.75;
     max-width: 520px;
@@ -38,7 +38,7 @@
 /* ---- BIDANG SECTION ---- */
 .bidang-section {
     padding: 56px 80px;
-    background: #ffffff;
+    background: #f9f9fd;
 }
 
 .bidang-grid-top {
@@ -56,7 +56,7 @@
 
 /* ---- BIDANG CARD ---- */
 .bidang-card {
-    background: #ffffff;
+    background: #f9f9fd;
     border: 1px solid #e5eaf2;
     border-radius: 12px;
     padding: 28px 24px;
@@ -101,14 +101,14 @@
 .bidang-card-icon-orange { background: #fff4e5; color: #f97316; }
 
 .bidang-card-head h3 {
-    font-size: 0.98rem;
+    font-size: 1.15rem;
     font-weight: 700;
     color: #0a1628;
     margin: 0;
 }
 
 .bidang-card-desc {
-    font-size: 0.86rem;
+    font-size: 0.95rem;
     color: #52565e;
     line-height: 1.7;
     margin: 0 0 16px;
@@ -128,7 +128,7 @@
     display: flex;
     align-items: center;
     gap: 7px;
-    font-size: 0.83rem;
+    font-size: 0.93rem;
     color: #334155;
 }
 
@@ -149,7 +149,7 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    font-size: 0.84rem;
+    font-size: 0.94rem;
     font-weight: 600;
     color: #003d6a;
     border: 1.5px solid #003d6a;
@@ -163,12 +163,12 @@
 
 .bidang-detail-btn:hover {
     background: #003d6a;
-    color: #ffffff;
+    color: #f9f9fd;
 }
 
 /* ---- UPT CARD (dark navy) ---- */
 .upt-card {
-    background: #ffffff;
+    background: #f9f9fd;
     border: 1px solid #e5eaf2;
     border-radius: 12px;
     padding: 28px 24px;
@@ -187,14 +187,14 @@
 }
 
 .upt-card-head h3 {
-    font-size: 0.98rem;
+    font-size: 1.16rem;
     font-weight: 700;
     color: #0a1628;
     margin: 0 0 8px;
 }
 
 .upt-card-head p {
-    font-size: 0.83rem;
+    font-size: 0.95rem;
     color: #64748b;
     line-height: 1.6;
     margin: 0;
@@ -209,14 +209,14 @@
 }
 
 .upt-sub-item {
-    background: #f8faff;
+    background: #f9f9fd;
     border: 1px solid #e5eaf2;
     border-radius: 9px;
     padding: 14px 16px;
     display: flex;
     align-items: center;
     gap: 10px;
-    font-size: 0.84rem;
+    font-size: 1rem;
     color: #334155;
     font-weight: 500;
 }
@@ -230,9 +230,9 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    font-size: 0.84rem;
+    font-size: 0.94rem;
     font-weight: 600;
-    color: #ffffff;
+    color: #f9f9fd;
     background: #003d6a;
     border-radius: 999px;
     padding: 9px 20px;
@@ -246,93 +246,123 @@
 }
 
 /* ---- ALUR KOORDINASI ---- */
-.alur-section {
-    background: #f1f4f9;
-    padding: 64px 80px;
+.alur-section-wrapper {
+    background: #f4f5f8;
+    padding: 64px 40px; /* Padding sisi diperkecil agar ruang lebih lebar */
     border-top: 1px solid #e5eaf2;
 }
 
 .alur-header {
     text-align: center;
-    margin-bottom: 48px;
+    margin-bottom: 40px;
 }
 
 .alur-header h2 {
     font-size: clamp(1.5rem, 2.8vw, 2rem);
-    font-weight: 600;
+    font-weight: 700;
     color: #003d6a;
     margin: 0 0 10px;
 }
 
 .alur-header p {
-    font-size: 0.92rem;
+    font-size: 1rem;
     color: #64748b;
     margin: 0;
 }
 
-.alur-steps {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 0;
+.alur-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 56px 40px;
+    max-width: 1400px; /* Lebar hampir memenuhi layar */
+    width: 100%;
+    margin: 0 auto;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.02);
 }
 
-.alur-step {
+.alur-timeline {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start; /* Agar elemen sejajar di atas */
+    max-width: 1200px; /* Lebar area timeline menyebar proporsional */
+    width: 100%;
+    margin: 0 auto;
+}
+
+.alur-timeline-step {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     flex: 1;
-    max-width: 220px;
+    padding: 0 16px;
 }
 
-.alur-step-icon {
-    width: 80px;
-    height: 80px;
+/* Ikon dengan Emoji */
+.alur-timeline-icon {
+    width: 64px;
+    height: 64px;
     border-radius: 50%;
-    border: 3px solid transparent;
     background: #ffffff;
-    display: grid;
-    place-items: center;
-    font-size: 1.8rem;
-    box-shadow: 0 4px 18px rgba(0,0,0,0.08);
-    margin-bottom: 18px;
-    position: relative;
-    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    border: 2px solid transparent;
 }
 
-.alur-step-blue   .alur-step-icon { border-color: #003d6a; }
-.alur-step-green  .alur-step-icon { border-color: #16a34a; }
-.alur-step-orange .alur-step-icon { border-color: #f97316; }
+/* Warna border */
+.alur-step-1 .alur-timeline-icon { border-color: #003d6a; }
+.alur-step-2 .alur-timeline-icon { border-color: #16a34a; }
+.alur-step-3 .alur-timeline-icon { border-color: #f97316; }
 
-.alur-step h3 {
-    font-size: 0.92rem;
+.alur-timeline-step h3 {
+    font-size: 1.05rem;
     font-weight: 700;
     color: #0a1628;
-    margin: 0 0 6px;
-    line-height: 1.3;
+    margin: 0 0 8px;
+    line-height: 1.4;
 }
 
-.alur-step p {
-    font-size: 0.81rem;
+.alur-timeline-step p {
+    font-size: 0.88rem;
     color: #64748b;
     line-height: 1.5;
     margin: 0;
 }
 
+/* Panah Penghubung */
 .alur-arrow {
     display: flex;
     align-items: center;
-    padding-bottom: 60px;
-    color: #94a3b8;
+    justify-content: center;
+    height: 164px;
+    color: #cbd5e1;
     flex-shrink: 0;
-    padding-left: 4px;
-    padding-right: 4px;
 }
 
 .alur-arrow svg {
-    width: 28px;
-    height: 28px;
+    width: 48px;
+    height: 24px;
+}
+
+/* Penyesuaian Responsif */
+@media (max-width: 768px) {
+    .alur-section-wrapper { padding: 48px 20px; }
+    .alur-card { padding: 40px 24px; }
+    .alur-timeline {
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+    }
+    .alur-arrow {
+        height: auto;
+        padding: 16px 0;
+        transform: rotate(90deg); /* Putar panah ke bawah untuk tampilan mobile */
+    }
+    .alur-arrow svg { width: 32px; }
 }
 
 /* ---- DB SERVICES SECTION ---- */
@@ -365,7 +395,7 @@
 }
 
 .db-service-card {
-    background: #ffffff;
+    background: #f9f9fd;
     border: 1px solid #e5eaf2;
     border-radius: 12px;
     padding: 22px;
@@ -534,44 +564,55 @@
 
 
 
-    {{-- ===== ALUR KOORDINASI ===== --}}
-    <div class="alur-section">
+{{-- ===== ALUR KOORDINASI ===== --}}
+    <div class="alur-section-wrapper">
+        
         <div class="alur-header">
             <h2>Alur Koordinasi Bidang</h2>
             <p>Sistem kerja kolaboratif antar unit untuk pembangunan yang terintegrasi.</p>
         </div>
 
-        <div class="alur-steps">
-            <div class="alur-step alur-step-blue">
-                <div class="alur-step-icon">🗺️</div>
-                <h3>Perencanaan<br>(Tata Ruang)</h3>
-                <p>Penetapan zona dan regulasi pemanfaatan ruang.</p>
-            </div>
+        <div class="alur-card">
+            <div class="alur-timeline">
+                
+                {{-- Step 1 --}}
+                <div class="alur-timeline-step alur-step-1">
+                    <div class="alur-timeline-icon">🗺️</div>
+                    <h3>Perencanaan (Tata Ruang)</h3>
+                    <p>Penetapan zona dan regulasi pemanfaatan ruang.</p>
+                </div>
 
-            <div class="alur-arrow">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
-                </svg>
-            </div>
+                {{-- Panah 1 --}}
+                <div class="alur-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                    </svg>
+                </div>
 
-            <div class="alur-step alur-step-green">
-                <div class="alur-step-icon">🏗️</div>
-                <h3>Desain &amp; Bangun<br>(Cipta Karya)</h3>
-                <p>Perancangan arsitektur dan pelaksanaan pembangunan fisik.</p>
-            </div>
+                {{-- Step 2 --}}
+                <div class="alur-timeline-step alur-step-2">
+                    <div class="alur-timeline-icon">🏗️</div>
+                    <h3>Desain &amp; Bangun (Cipta Karya)</h3>
+                    <p>Perancangan arsitektur dan pelaksanaan pembangunan fisik.</p>
+                </div>
 
-            <div class="alur-arrow">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
-                </svg>
-            </div>
+                {{-- Panah 2 --}}
+                <div class="alur-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
+                    </svg>
+                </div>
 
-            <div class="alur-step alur-step-orange">
-                <div class="alur-step-icon">👷</div>
-                <h3>Pengawasan<br>(Bina Konstruksi)</h3>
-                <p>Kontrol kualitas material dan standar keselamatan kerja.</p>
+                {{-- Step 3 --}}
+                <div class="alur-timeline-step alur-step-3">
+                    <div class="alur-timeline-icon">👷</div>
+                    <h3>Pengawasan (Bina Konstruksi)</h3>
+                    <p>Kontrol kualitas material dan standar keselamatan kerja.</p>
+                </div>
+
             </div>
         </div>
+
     </div>
 
 </div>

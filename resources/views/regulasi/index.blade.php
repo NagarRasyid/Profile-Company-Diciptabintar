@@ -50,11 +50,11 @@
 }
 
 .reg-header p {
-    font-size: 0.9rem;
+    font-size: 1rem;
     color: #52565e;
     line-height: 1.7;
     margin: 0;
-    max-width: 520px;
+    max-width: 620px;
 }
 
 /* ---- SEARCH & FILTER CARD (NEW DESIGN) ---- */
@@ -109,7 +109,7 @@
     align-items: center;
     gap: 10px;
     flex-wrap: wrap;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     color: #475569;
 }
 
@@ -126,7 +126,7 @@
     border: 1px solid #cbd5e1;
     background: #ffffff;
     color: #475569;
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.18s ease;
@@ -154,7 +154,7 @@
 }
 
 .reg-list-header h2 {
-    font-size: 1rem;
+    font-size: 1.3rem;
     font-weight: 700;
     color: #003d6a;
     margin: 0;
@@ -402,6 +402,7 @@
         <h2>Daftar Dokumen</h2>
         <span class="reg-list-count" id="reg-count">Menampilkan {{ count($regulasi ?? []) }} regulasi</span>
     </div>
+    <hr style="padding-bottom: 1rem; opacity: 0.2;">
 
     {{-- DOCUMENT LIST --}}
     <div class="reg-list" id="reg-list">
