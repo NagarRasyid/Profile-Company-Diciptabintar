@@ -26,7 +26,6 @@
     font-weight: 700;
     color: #003d6a;
     margin: 0 0 8px;
-    letter-spacing: -0.02em;
 }
 
 .news-page-header p {
@@ -80,7 +79,6 @@
     color: #ffffff;
     font-size: 0.72rem;
     font-weight: 700;
-    letter-spacing: 0.06em;
     text-transform: uppercase;
     padding: 3px 10px;
     border-radius: 4px;
@@ -296,7 +294,6 @@
 .news-card-cat {
     font-size: 0.67rem;
     font-weight: 700;
-    letter-spacing: 0.08em;
     text-transform: uppercase;
     color: #003d6a;
 }

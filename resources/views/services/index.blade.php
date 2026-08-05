@@ -25,7 +25,6 @@
     font-weight: 700;
     color: #003d6a;
     margin: 0 0 14px;
-    letter-spacing: -0.02em;
 }
 
 .bidang-header p {
@@ -263,7 +262,6 @@
     font-weight: 600;
     color: #003d6a;
     margin: 0 0 10px;
-    letter-spacing: -0.02em;
 }
 
 .alur-header p {

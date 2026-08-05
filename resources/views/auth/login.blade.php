@@ -93,7 +93,6 @@
         .logo-area h2 {
             font-size: 1.5rem;
             font-weight: 700;
-            letter-spacing: -0.025em;
             margin-bottom: 6px;
             background: linear-gradient(to right, #ffffff, #e2e8f0);
             -webkit-background-clip: text;

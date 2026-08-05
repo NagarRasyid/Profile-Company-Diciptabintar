@@ -25,7 +25,6 @@
     font-weight: 700;
     color: #003d6a;
     margin: 0 0 12px;
-    letter-spacing: -0.02em;
 }
 
 .layanan-header p {
@@ -260,7 +259,6 @@
     font-weight: 600;
     color: #003d6a;
     margin: 0 0 10px;
-    letter-spacing: -0.01em;
 }
 
 .alur-layanan-header p {

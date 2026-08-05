@@ -82,7 +82,6 @@
     .admin-nav-group-label {
         font-size: 0.62rem;
         font-weight: 700;
-        letter-spacing: 0.1em;
         text-transform: uppercase;
         color: rgba(255,255,255,0.3);
         padding: 8px 10px 4px;
@@ -293,7 +292,6 @@
         font-size: 0.73rem;
         font-weight: 600;
         text-transform: uppercase;
-        letter-spacing: 0.06em;
         color: #94a3b8;
         margin: 0 0 6px;
     }
@@ -331,7 +329,6 @@
         font-size: 0.72rem;
         font-weight: 700;
         text-transform: uppercase;
-        letter-spacing: 0.05em;
         padding: 11px 14px;
         border-bottom: 1.5px solid #e5eaf2;
         text-align: left;
@@ -412,7 +409,6 @@
         font-weight: 800;
         color: #0a1628;
         margin: 0 0 4px;
-        letter-spacing: -0.02em;
     }
 
     .admin-page-subtitle {

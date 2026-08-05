@@ -13,10 +13,6 @@
     margin: 0 -32px;
 }
 
-/*font family*/
-*{
-    font-family: 'Plus Jakarta Sans', sans-serif;
-}
 
 /* ---- HERO SECTION ---- */
 .hero {
@@ -77,12 +73,10 @@
 }
 
 .hero-title {
-    font-family: 'Plus Jakarta Sans', sans-serif;
     font-size: clamp(2rem, 4vw, 2.8rem);
     font-weight: 700;
     color: #0a1628;
     line-height: 1.2;
-    letter-spacing: -0.02em;
     margin: 0 0 18px;
 }
 
@@ -240,7 +234,6 @@
     font-weight: 600;
     color: #0a1628;
     margin: 0 0 12px;
-    letter-spacing: -0.02em;
 }
 
 .section-header p {

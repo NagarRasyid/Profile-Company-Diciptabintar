@@ -47,7 +47,6 @@
     font-weight: 700;
     color: #003d6a;
     margin: 0 0 10px;
-    letter-spacing: -0.02em;
 }
 
 .reg-header p {
@@ -220,7 +219,6 @@
 .reg-item-badge {
     font-size: 0.68rem;
     font-weight: 700;
-    letter-spacing: 0.06em;
     text-transform: uppercase;
     color: #003d6a;
     background: #eef3ff;

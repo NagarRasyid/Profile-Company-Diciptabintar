@@ -12,10 +12,7 @@
     margin: 0 -32px;
 }
 
-/*font family*/
-* {
-    font-family: 'Plus Jakarta Sans', sans-serif;
-}
+
 
 /* ---- HERO PROFIL ---- */
 .about-hero {
@@ -37,7 +34,6 @@
     display: inline-block;
     font-size: 0.75rem;
     font-weight: 700;
-    letter-spacing: 0.12em;
     text-transform: uppercase;
     color: #003d6a;
     margin-bottom: 12px;
@@ -48,7 +44,6 @@
     font-weight: 700;
     color: #002745;
     line-height: 1.2;
-    letter-spacing: -0.02em;
     margin: 0 0 16px;
 }
 
@@ -209,9 +204,8 @@
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     font-weight: 700;
-    letter-spacing: 0.01em;
     color: #003d6a;
     margin-bottom: 14px;
 }
@@ -225,7 +219,6 @@
     font-weight: 800;
     color: #0a1628;
     margin: 0 0 18px;
-    letter-spacing: -0.02em;
     line-height: 1.25;
 }
 
@@ -247,7 +240,6 @@
     font-weight: 500;
     color: #003d6a;
     margin: 0 0 10px;
-    letter-spacing: -0.02em;
 }
 
 .about-vismis-header p {
@@ -446,7 +438,6 @@
     font-weight: 500;
     color: #003d6a;
     margin: 0 0 10px;
-    letter-spacing: -0.02em;
 }
 
 .about-struktur-header p {
