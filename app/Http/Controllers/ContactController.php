@@ -17,35 +17,43 @@ class ContactController extends Controller
     }
 
     /**
-     * Menyimpan pesan kontak.
+     * Menyimpan pesan/pengaduan kontak, termasuk upload lampiran.
      */
     public function store(Request $request): RedirectResponse
     {
         $validated = $request->validate(
-        [
-            'name'    => ['required', 'string', 'max:100'],
-            'email'   => ['required', 'email', 'max:150'],
-            'phone'   => ['nullable', 'string', 'max:20'],
-            'subject' => ['required', 'string', 'max:200'],
-            'message' => ['required', 'string', 'min:10', 'max:2000'],
-        ],
-        [
-            'name.required' => 'Nama wajib diisi',
-            'email.required' => 'Email wajib diisi',
-            'subject.required' => 'Subjek wajib diisi',
-            'message.required' => 'Pesan wajib diisi',
-            'name.max' => 'Nama maksimal 100 karakter',
-            'subject.max' => 'Subjek maksimal 200 karakter',
-            'message.max' => 'Pesan maksimal 2000 karakter',
-            'message.min' => 'Pesan minimal 10 karakter',
-            'email.email' => 'Email tidak valid'
-        ]
+            [
+                'name'       => ['required', 'string', 'max:100'],
+                'email'      => ['required', 'email', 'max:150'],
+                'phone'      => ['required', 'string', 'max:20'],
+                'subject'    => ['required', 'string', 'max:200'],
+                'message'    => ['required', 'string', 'min:10', 'max:2000'],
+                'attachment' => ['nullable', 'file', 'mimes:png,jpg,jpeg,pdf', 'max:5120'],
+            ],
+            [
+                'name.required'    => 'Nama wajib diisi',
+                'email.required'   => 'Email wajib diisi',
+                'email.email'      => 'Format email tidak valid',
+                'phone.required'   => 'Nomor telepon wajib diisi',
+                'subject.required' => 'Subjek wajib dipilih',
+                'message.required' => 'Isi pesan wajib diisi',
+                'message.min'      => 'Isi pesan minimal 10 karakter',
+                'message.max'      => 'Isi pesan maksimal 2000 karakter',
+                'attachment.mimes' => 'Lampiran hanya boleh berformat PNG, JPG, atau PDF',
+                'attachment.max'   => 'Ukuran lampiran maksimal 5 MB',
+            ]
         );
+
+        // Simpan file lampiran jika ada
+        if ($request->hasFile('attachment')) {
+            $validated['attachment'] = $request->file('attachment')
+                ->store('contact-attachments', 'public');
+        }
 
         ContactMessage::create($validated);
 
         return redirect()
             ->route('contact')
-            ->with('success', 'Pesan Anda telah berhasil dikirim. Kami akan segera menghubungi Anda.');
+            ->with('success', 'Pengaduan Anda telah berhasil dikirim. Kami akan segera menindaklanjutinya.');
     }
 }

@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Model;
     'phone',
     'subject',
     'message',
+    'attachment',
     'is_read',
     'read_at',
 ])]
