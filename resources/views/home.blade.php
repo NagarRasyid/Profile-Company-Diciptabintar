@@ -490,46 +490,5 @@
         </div>
     </div>
 
-    @if($news->count())
-    <div class="section-layanan" style="padding-top: 0;">
-        <div class="section-header">
-            <h2>Berita Terbaru</h2>
-            <p>Informasi dan pengumuman terkini dari Dinas Cipta Karya Kota Bandung.</p>
-        </div>
-        @php
-            $newsDummies = [
-                asset('images/news-dummy-1.png'),
-                asset('images/news-dummy-2.png'),
-                asset('images/news-dummy-3.png'),
-            ];
-        @endphp
-        <div class="layanan-grid">
-            @foreach($news as $i => $article)
-            <div class="news-card">
-                <img
-                    src="{{ $article->thumbnail ? Storage::url($article->thumbnail) : $newsDummies[$i % 3] }}"
-                    alt="{{ $article->title }}"
-                    class="news-card-img">
-                <div class="news-card-body">
-                    <div class="news-card-date">
-                        {{ $article->published_at?->format('d M Y') ?? '-' }}
-                    </div>
-                    <h3 class="news-card-title">{{ $article->title }}</h3>
-                    <p class="news-card-excerpt">{{ Str::limit($article->excerpt, 100) }}</p>
-                    <a href="{{ route('news.show', $article->slug) }}" class="layanan-link layanan-link-blue">
-                        Baca Selengkapnya &rarr;
-                    </a>
-                </div>
-            </div>
-            @endforeach
-        </div>
-        <div style="text-align:center; margin-top:28px;">
-            <a href="{{ route('news.index') }}" class="hero-btn-secondary" style="display:inline-flex;">
-                Lihat Semua Berita
-            </a>
-        </div>
-    </div>
-    @endif
-
 </div>
 @endsection

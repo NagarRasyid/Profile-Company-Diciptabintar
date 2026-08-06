@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Str;
 
 class RegulasiController extends Controller
 {
@@ -127,7 +128,15 @@ class RegulasiController extends Controller
                     $kategori = 'Peraturan Pusat';
                     $badge    = 'PERATURAN PUSAT';
                     $slug     = 'pusat';
-                } else {
+                } elseif (stripos($isi, 'lkip') !== false || stripos($isi, 'laporan kinerja') !== false || stripos($isi, 'lakip') !== false) {
+                    $kategori = 'LAKIP';
+                    $badge    = 'LAKIP';
+                    $slug     = 'lakip';
+                } elseif (stripos($isi, 'peraturan lembaga') !== false || stripos($isi, 'rencana strategis') !== false) {
+                    $kategori = 'Peraturan Lembaga';
+                    $badge    = 'PERATURAN LEMBAGA';
+                    $slug     = 'perlem';
+                }else {
                     $kategori = 'Dokumen';
                     $badge    = 'DOKUMEN';
                     $slug     = 'dokumen';
@@ -164,5 +173,15 @@ class RegulasiController extends Controller
         } else {
             abort(500, 'Gagal mengambil data regulasi dari server pusat.');
         }
+    }
+
+    public function download(Request $request)
+    {
+        $url = $request->query('file');
+        $judul = Str::slug($request->query('judul', 'dokumen')) . '.pdf';
+
+        return response()->streamDownload(function () use ($url) {
+            echo file_get_contents($url);
+        }, $judul, ['Content-Type' => 'application/pdf']);
     }
 }

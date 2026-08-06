@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\NewsArticle;
+use App\Models\InstagramPost;
 use App\Models\Service;
 use App\Models\TeamMember;
 use Illuminate\Support\Facades\Cache;
@@ -19,7 +19,7 @@ class AboutController extends Controller
 
         // Stats: ambil dari DB dan API
         $totalLayanan = Service::active()->count();
-        $totalBerita  = NewsArticle::published()->count();
+        $totalBerita  = InstagramPost::where('is_active', true)->count();
 
         // Total regulasi — cache 1 jam agar tidak hit API setiap request
         $totalRegulasi = Cache::remember('regulasi_total', 3600, function () {

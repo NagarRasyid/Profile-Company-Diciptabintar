@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\NewsArticleController;
+use App\Http\Controllers\InstagramPostController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\RegulasiController;
@@ -18,8 +18,7 @@ Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
-Route::get('/news', [NewsArticleController::class, 'index'])->name('news.index');
-Route::get('/news/{slug}', [NewsArticleController::class, 'show'])->name('news.show');
+Route::get('/news', [InstagramPostController::class, 'index'])->name('news.index');
 
 Route::get('/services', [ServiceController::class, 'index'])->name('services.index');
 Route::get('/services/{slug}', [ServiceController::class, 'show'])->name('services.show');
@@ -30,6 +29,7 @@ Route::get('/portfolio/{slug}', [PortfolioController::class, 'show'])->name('por
 Route::get('/layanan-publik', [\App\Http\Controllers\LayananPublikController::class, 'index'])->name('layanan.index');
 
 Route::get('/regulasi', [\App\Http\Controllers\RegulasiController::class, 'index'])->name('regulasi.index');
+Route::get('/regulasi/download', [\App\Http\Controllers\RegulasiController::class, 'download'])->name('regulasi.download');
 
 // ADMIN
 Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () {
@@ -48,12 +48,9 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
     Route::post('/contact/{contactMessage}/read', [Admin\ContactMessageController::class, 'markAsRead'])->name('contact.markAsRead');
     Route::delete('/contact/{contactMessage}', [Admin\ContactMessageController::class, 'destroy'])->name('contact.destroy');
 
-    // Manajemen Berita / Artikel (News Articles)
-    Route::post('/news/{id}/restore', [Admin\NewsArticleController::class, 'restore'])->name('news.restore');
-    Route::post('/news/{newsArticle}/publish', [Admin\NewsArticleController::class, 'publish'])->name('news.publish');
-    Route::resource('/news', Admin\NewsArticleController::class)
-        ->parameters(['news' => 'newsArticle'])
-        ->except(['show']);
+    // Manajemen Postingan Instagram
+    Route::post('/instagram/{instagram}/toggle', [Admin\InstagramPostController::class, 'toggleActive'])->name('instagram.toggle');
+    Route::resource('/instagram', Admin\InstagramPostController::class)->except(['show']);
 
     // Manajemen Layanan (Services)
     Route::post('/services/{id}/restore', [Admin\ServiceController::class, 'restore'])->name('services.restore');

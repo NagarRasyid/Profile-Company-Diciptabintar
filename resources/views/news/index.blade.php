@@ -1,31 +1,30 @@
 @extends('layouts.app')
 
-@section('title', 'Berita & Artikel')
+@section('title', 'Berita & Update')
 
 @push('styles')
 <style>
 /* =============================================
-   NEWS INDEX PAGE STYLES
+   BERITA & UPDATE — INSTAGRAM FEED STYLE
 ============================================= */
 
 .news-wrapper {
-    max-width: 1100px;
     margin: 0 auto;
-    padding: 36px 24px 64px;
+    padding: 40px 24px 72px;
 }
 
 /* ---- PAGE HEADER ---- */
 .news-page-header {
-    margin-bottom: 28px;
+    margin-bottom: 32px;
     border-left: 4px solid #003d6a;
     padding-left: 16px;
 }
 
 .news-page-header h1 {
-    font-size: clamp(1.6rem, 3vw, 2.4rem);
-    font-weight: 700;
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-weight: 800;
     color: #003d6a;
-    margin: 0 0 8px;
+    margin: 0 0 10px;
 }
 
 .news-page-header p {
@@ -33,440 +32,229 @@
     color: #64748b;
     line-height: 1.65;
     margin: 0;
-    max-width: 520px;
+    max-width: 700px;
 }
 
-/* ---- FEATURED HERO ---- */
-.news-hero {
-    border-radius: 16px;
-    overflow: hidden;
-    position: relative;
-    min-height: 340px;
-    margin-bottom: 32px;
-    background: #0a1628;
+/* ---- INSTAGRAM PROFILE ROW ---- */
+.ig-profile-row {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding: 16px 20px;
+    border-radius: 12px;
 }
 
-.news-hero-img {
-    position: absolute;
-    inset: 0;
+.ig-profile-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.ig-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 2px solid #e5eaf2;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #f1f1f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ig-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ig-handle {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #0a1628;
+}
+
+.ig-name {
+    font-size: 0.82rem;
+    color: #64748b;
+    margin-top: 2px;
+}
+
+.ig-follow-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 25px;
+    background: #003d6a;
+    color: #ffffff;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 0.88rem;
+    font-weight: 600;
+    transition: background 0.18s ease, transform 0.15s ease;
+    white-space: nowrap;
+}
+
+.ig-follow-btn:hover {
+    background: #003d6a;
+    transform: translateY(-1px);
+}
+
+.ig-follow-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+/* ---- INSTAGRAM GRID ---- */
+.ig-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 32px;
+}
+
+.ig-post {
+    position: relative;
+    aspect-ratio: 11 / 14;
+    overflow: hidden;
+    border-radius: 6px;
+    background: #f1f1f4;
+    cursor: pointer;
+}
+
+.ig-post img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
-    opacity: 0.65;
+    transition: transform 0.35s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.news-hero-overlay {
-    position: relative;
-    z-index: 1;
-    padding: 32px 36px;
-    background: linear-gradient(to top, rgba(5,20,50,0.92) 0%, rgba(5,20,50,0.4) 60%, transparent 100%);
-    width: 100%;
+.ig-post:hover img {
+    transform: scale(1.06);
 }
 
-.news-hero-meta {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 12px;
-}
-
-.news-hero-cat {
-    display: inline-block;
-    background: #16a34a;
-    color: #ffffff;
-    font-size: 0.72rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    padding: 3px 10px;
-    border-radius: 4px;
-}
-
-.news-hero-date {
-    font-size: 0.8rem;
-    color: rgba(255,255,255,0.75);
-}
-
-.news-hero-title {
-    font-size: clamp(1.3rem, 3vw, 1.9rem);
-    font-weight: 800;
-    color: #ffffff;
-    line-height: 1.25;
-    margin: 0 0 10px;
-    max-width: 620px;
-}
-
-.news-hero-excerpt {
-    font-size: 0.88rem;
-    color: rgba(255,255,255,0.78);
-    line-height: 1.6;
-    margin: 0 0 20px;
-    max-width: 560px;
-}
-
-.news-hero-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    background: #ffffff;
-    color: #003d6a;
-    font-size: 0.85rem;
-    font-weight: 700;
-    padding: 10px 22px;
-    border-radius: 999px;
-    text-decoration: none;
-    transition: background 0.18s ease, transform 0.18s ease;
-}
-
-.news-hero-btn:hover {
-    background: #eef3ff;
-    transform: translateX(3px);
-}
-
-/* ---- SEARCH & FILTER ROW ---- */
-.news-controls {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 28px;
-    flex-wrap: wrap;
-}
-
-/* ---- SEARCH & FILTER CARD (SCROLLABLE ROW) ---- */
-.news-controls-card {
-    background: #f8fafc;
-    border: 1px solid #e2e8f0;
-    border-radius: 12px;
-    padding: 16px;
-    margin-bottom: 32px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-}
-
-/* -- Input Wrap -- */
-.news-search-wrap {
-    position: relative;
-    flex-shrink: 0;
-    width: 280px; 
-}
-
-.news-search-wrap svg {
+.ig-post-overlay {
     position: absolute;
-    left: 14px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #94a3b8;
-    width: 18px;
-    height: 18px;
-    pointer-events: none;
-}
-
-.news-search-input {
-    width: 100%;
-    padding: 10px 16px 10px 40px;
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    color: #334155;
-    background: #ffffff;
-    outline: none;
-    box-sizing: border-box;
-    transition: border-color 0.18s ease;
-}
-
-.news-search-input:focus { 
-    border-color: #003d6a; 
-}
-
-.news-search-input::placeholder { 
-    color: #94a3b8; 
-}
-
-/* -- Filter Kategori (Scroll Horizontal) -- */
-.news-filters {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding-bottom: 2px;
-    
-    scrollbar-width: none;
-    -ms-overflow-style: none;
-}
-
-.news-filters::-webkit-scrollbar {
-    display: none;
-}
-
-.news-tab {
-    padding: 9px 20px;
-    border-radius: 999px;
-    border: 1px solid #cbd5e1;
-    background: #ffffff;
-    color: #475569;
-    font-size: 0.88rem;
-    font-weight: 600;
-    cursor: pointer;
-    white-space: nowrap;
-    flex-shrink: 0;
-    transition: all 0.18s ease;
-}
-
-.news-tab:hover { 
-    border-color: #003d6a; 
-    color: #003d6a; 
-}
-
-.news-tab.active {
-    background: #003d6a;
-    border-color: #003d6a;
-    color: #ffffff;
-}
-
-/* ---- MAIN 2-COLUMN LAYOUT ---- */
-.news-body {
-    display: grid;
-    grid-template-columns: 1fr 280px;
-    gap: 28px;
-    align-items: start;
-}
-
-/* ---- NEWS CARDS GRID ---- */
-.news-cards-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
-
-.news-card {
-    background: #ffffff;
-    border: 1px solid #e5eaf2;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    inset: 0;
+    background: rgba(0, 0, 0, 0);
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: background 0.25s ease;
+    color: #ffffff;
+    opacity: 0;
 }
 
-.news-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 28px rgba(0,0,0,0.09);
+.ig-post:hover .ig-post-overlay {
+    background: rgba(10, 22, 40, 0.55);
+    opacity: 1;
 }
 
-.news-card-img {
+.ig-post-overlay-title {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 0 12px;
+    line-height: 1.4;
+    max-width: 90%;
+}
+
+.ig-post-overlay-date {
+    font-size: 0.7rem;
+    color: rgba(255,255,255,0.8);
+}
+
+/* Placeholder jika tidak ada gambar */
+.ig-post-placeholder {
     width: 100%;
-    aspect-ratio: 16/9;
-    object-fit: cover;
-    display: block;
-    background: #eef3ff;
-}
-
-.news-card-img-placeholder {
-    width: 100%;
-    aspect-ratio: 16/9;
-    background: linear-gradient(135deg, #eef3ff 0%, #d5e3f7 100%);
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: linear-gradient(135deg, #f1f1f4 0%, #e2e8f0 100%);
+    color: #94a3b8;
     font-size: 2rem;
-    color: #94a3b8;
 }
 
-.news-card-body {
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    flex: 1;
+/* ---- CTA FOOTER ---- */
+.ig-cta-footer {
+    background: #f8f9fb;
+    border: 1px solid #e5eaf2;
+    border-radius: 14px;
+    padding: 40px 32px;
+    text-align: center;
 }
 
-.news-card-meta {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 10px;
-}
-
-.news-card-cat {
-    font-size: 0.67rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    color: #003d6a;
-}
-
-.news-card-cat-green  { color: #15803d; }
-.news-card-cat-orange { color: #c2410c; }
-.news-card-cat-teal   { color: #0e7490; }
-
-.news-card-date {
-    font-size: 0.73rem;
-    color: #94a3b8;
-    margin-left: auto;
-}
-
-.news-card-title {
-    font-size: 0.92rem;
+.ig-cta-footer h3 {
+    font-size: 1.05rem;
     font-weight: 700;
     color: #0a1628;
-    line-height: 1.4;
-    margin: 0 0 8px;
+    margin: 0 0 10px;
 }
 
-.news-card-excerpt {
-    font-size: 0.82rem;
-    color: #52565e;
-    line-height: 1.6;
-    margin: 0 0 14px;
-    flex: 1;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
+.ig-cta-footer p {
+    font-size: 0.9rem;
+    color: #64748b;
+    line-height: 1.65;
+    max-width: 480px;
+    margin: 0 auto 24px;
 }
 
-.news-card-link {
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: #003d6a;
-    text-decoration: none;
+.ig-cta-btn {
     display: inline-flex;
     align-items: center;
-    gap: 3px;
-    transition: gap 0.15s ease;
-}
-
-.news-card-link:hover { gap: 7px; }
-
-/* ---- SIDEBAR ---- */
-.news-sidebar {
-    position: sticky;
-    top: 100px;
-}
-
-.news-sidebar-card {
-    background: #f8faff;
-    border: 1px solid #e5eaf2;
-    border-radius: 12px;
-    padding: 20px;
-}
-
-/* .news-sidebar::before {
-    content: 'news';
-    position: absolute;
-    bottom: -440px;
-    left: -440px;
-    width: 680px;
-    height: 680px;
-    border-radius: 50%;
-    background: #e4e8e9;
-    pointer-events: none;
-    z-index: 0;
-}
-
-.hero::after {
-    content: '';
-    position: absolute;
-    top: -140px;
-    right: -140px;
-    width: 660px;
-    height: 660px;
-    border-radius: 50%;
-    background: #e4e8e9;
-    pointer-events: none;
-    z-index: 0;
-} */
-
-.news-sidebar-header {
-    display: flex;
-    align-items: center;
     gap: 8px;
-    font-size: 0.95rem;
+    padding: 12px 28px;
+    background: #16a34a;
+    color: #ffffff;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 0.92rem;
     font-weight: 700;
-    color: #003d6a;
-    margin-bottom: 18px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid #e5eaf2;
+    transition: background 0.18s ease, transform 0.15s ease;
 }
 
-.news-sidebar-header svg {
-    color: #16a34a;
+.ig-cta-btn:hover {
+    background: #15803d;
+    transform: translateY(-1px);
+}
+
+.ig-cta-btn svg {
     width: 18px;
     height: 18px;
-}
-
-.news-popular-list {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
-
-.news-popular-item {
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
-    text-decoration: none;
-}
-
-.news-popular-num {
-    font-size: 1.1rem;
-    font-weight: 800;
-    color: #cbd5e1;
-    line-height: 1;
-    flex-shrink: 0;
-    min-width: 22px;
-}
-
-.news-popular-body {}
-
-.news-popular-title {
-    font-size: 0.84rem;
-    font-weight: 600;
-    color: #1e293b;
-    line-height: 1.4;
-    margin: 0 0 3px;
-    transition: color 0.15s ease;
-}
-
-.news-popular-item:hover .news-popular-title { color: #003d6a; }
-
-.news-popular-date {
-    font-size: 0.73rem;
-    color: #94a3b8;
-}
-
-/* ---- PAGINATION ---- */
-.news-pagination {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 6px;
-    margin-top: 36px;
-    grid-column: 1 / -1;
 }
 
 /* ---- EMPTY STATE ---- */
-.news-empty {
-    text-align: center;
-    padding: 48px;
-    color: #94a3b8;
+.ig-empty {
     grid-column: 1 / -1;
+    text-align: center;
+    padding: 64px 24px;
+    color: #94a3b8;
+}
+
+.ig-empty svg {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 14px;
+    opacity: 0.4;
 }
 
 /* ---- RESPONSIVE ---- */
-@media (max-width: 900px) {
-    .news-body { grid-template-columns: 1fr; }
-    .news-sidebar { position: static; }
+@media (max-width: 768px) {
+    .ig-grid { grid-template-columns: repeat(3, 1fr); }
+    .ig-profile-row { flex-direction: column; align-items: flex-start; }
 }
 
-@media (max-width: 600px) {
-    .news-wrapper { padding: 24px 16px 48px; }
-    .news-cards-grid { grid-template-columns: 1fr; }
-    .news-controls { flex-direction: column; align-items: flex-start; }
-    .news-search-wrap { width: 100%; }
+@media (max-width: 480px) {
+    .ig-grid { grid-template-columns: repeat(2, 1fr); gap: 4px; }
+    .news-wrapper { padding: 28px 16px 48px; }
 }
 </style>
 @endpush
@@ -476,171 +264,81 @@
 
     {{-- ===== PAGE HEADER ===== --}}
     <div class="news-page-header">
-        <h1>Berita &amp; Artikel</h1>
-        <p>Informasi terkini seputar pembangunan infrastruktur, tata ruang kota, dan kebijakan terbaru dari Diciptabintar Kota Bandung.</p>
+        <h1>Berita &amp; Update</h1>
+        <p>Dapatkan informasi terkini seputar pembangunan kota dan kebijakan terbaru.<br>
+           Kami membagikan seluruh update dan dokumentasi kegiatan melalui akun<br>
+           Instagram resmi kami <strong>@diciptabintar.bdg</strong>.</p>
     </div>
 
-    {{-- ===== FEATURED HERO ===== --}}
-    @if($featured)
-    <a href="{{ route('news.show', $featured->slug) }}" class="news-hero" style="text-decoration:none;">
-        @if($featured->thumbnail)
-            <img class="news-hero-img" src="{{ Storage::url($featured->thumbnail) }}" alt="{{ $featured->title }}">
-        @else
-            <img class="news-hero-img" src="{{ asset('images/Beranda.jpg') }}" alt="{{ $featured->title }}">
-        @endif
-        <div class="news-hero-overlay">
-            <div class="news-hero-meta">
-                <span class="news-hero-cat">{{ $featured->category ?? 'Berita' }}</span>
-                @if($featured->published_at)
-                    <span class="news-hero-date">{{ $featured->published_at->translatedFormat('d M Y') }}</span>
+    {{-- ===== INSTAGRAM PROFILE ROW ===== --}}
+    <div class="ig-profile-row">
+        <div class="ig-profile-left">
+            <div class="ig-avatar">
+                @if(file_exists(public_path('images/logo.png')))
+                    <img src="{{ asset('images/logo.png') }}" alt="Logo Diciptabintar">
+                @else
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="#003d6a" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" fill="#e8f0fb"/>
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v1h16v-1c0-2.66-5.33-4-8-4z" fill="#003d6a"/>
+                    </svg>
                 @endif
             </div>
-            <h2 class="news-hero-title">{{ $featured->title }}</h2>
-            <p class="news-hero-excerpt">{{ Str::limit($featured->excerpt, 140) }}</p>
-            <span class="news-hero-btn">
-                Baca Selengkapnya
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/>
-                </svg>
-            </span>
+            <div>
+                <div class="ig-handle">@diciptabintar.bdg</div>
+                <div class="ig-name">Dinas Ciptabintar</div>
+            </div>
         </div>
-    </a>
-    @endif
-
-    
-    {{-- ===== SEARCH & FILTER CARD (SCROLLABLE) ===== --}}
-    <div class="news-controls-card">
-        {{-- ===== SEARCH & FILTER CARD ===== --}}
-        <div class="news-search-wrap">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"/>
+        <a href="https://www.instagram.com/diciptabintar.bdg/" target="_blank" rel="noopener" class="ig-follow-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
             </svg>
-            <input type="text" id="news-search" class="news-search-input" placeholder="Cari berita...">
-        </div>
-
-        {{-- Filter Kategori (Bisa di-scroll horizontal) --}}
-        <div class="news-filters">
-            <button class="news-tab active" data-filter="semua">Semua</button>
-            <button class="news-tab" data-filter="tata-ruang">Tata Ruang</button>
-            <button class="news-tab" data-filter="bangunan">Bangunan</button>
-            <button class="news-tab" data-filter="regulasi">Regulasi</button>
-            <button class="news-tab" data-filter="konstruksi">Konstruksi</button>
-        </div>
-        
+            Follow us on Instagram
+        </a>
     </div>
-    {{-- ===== MAIN BODY: GRID + SIDEBAR ===== --}}
-    <div class="news-body">
 
-        {{-- NEWS CARDS GRID --}}
-        <div>
-            <div class="news-cards-grid" id="news-grid">
-
-                @forelse($articles as $article)
-                <div class="news-card"
-                     data-title="{{ strtolower($article->title) }}"
-                     data-cat="{{ strtolower($article->category ?? 'berita') }}">
-
-                    {{-- Thumbnail --}}
-                    @if($article->thumbnail)
-                        <img class="news-card-img"
-                             src="{{ Storage::url($article->thumbnail) }}"
-                             alt="{{ $article->title }}">
-                    @else
-                        <div class="news-card-img-placeholder">📰</div>
-                    @endif
-
-                    <div class="news-card-body">
-                        <div class="news-card-meta">
-                            <span class="news-card-cat">{{ strtoupper($article->category ?? 'BERITA') }}</span>
-                            @if($article->published_at)
-                                <span class="news-card-date">{{ $article->published_at->translatedFormat('d M Y') }}</span>
-                            @endif
-                        </div>
-                        <h3 class="news-card-title">{{ $article->title }}</h3>
-                        <p class="news-card-excerpt">{{ Str::limit($article->excerpt, 100) }}</p>
-                        <a href="{{ route('news.show', $article->slug) }}" class="news-card-link">
-                            Baca Selengkapnya ›
-                        </a>
-                    </div>
-                </div>
-                @empty
-                <div class="news-empty">
-                    <div style="font-size:2.5rem; margin-bottom:12px;">📰</div>
-                    <p>Belum ada berita yang dipublikasikan.</p>
-                </div>
-                @endforelse
-
+    {{-- ===== INSTAGRAM POST GRID ===== --}}
+    <div class="ig-grid">
+        @forelse($posts as $post)
+        @if($post->post_url)
+        <a href="{{ $post->post_url }}" target="_blank" rel="noopener" class="ig-post">
+        @else
+        <div class="ig-post">
+        @endif
+            <img src="{{ $post->image_url }}" alt="{{ Str::limit($post->caption, 60) ?? 'Instagram Post' }}" loading="lazy">
+            <div class="ig-post-overlay">
+                @if($post->caption)
+                    <div class="ig-post-overlay-title">{{ Str::limit($post->caption, 80) }}</div>
+                @endif
+                @if($post->post_url)
+                    <div class="ig-post-overlay-date">Lihat di Instagram →</div>
+                @endif
             </div>
-
-            {{-- PAGINATION --}}
-            @if($articles->hasPages())
-            <div class="news-pagination">
-                {{ $articles->appends(request()->query())->links() }}
-            </div>
-            @endif
+        @if($post->post_url)
+        </a>
+        @else
         </div>
+        @endif
+        @empty
+        <div class="ig-empty">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z"/>
+            </svg>
+            <p>Belum ada konten yang dipublikasikan.</p>
+        </div>
+        @endforelse
+    </div>
 
-        {{-- SIDEBAR ===== --}}
-        <aside class="news-sidebar">
-            <div class="news-sidebar-card">
-                <div class="news-sidebar-header">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z"/>
-                    </svg>
-                    Berita Populer
-                </div>
-
-                <div class="news-popular-list">
-                    @forelse($popular as $idx => $item)
-                    <a href="{{ route('news.show', $item->slug) }}" class="news-popular-item">
-                        <span class="news-popular-num">{{ str_pad($idx + 1, 2, '0', STR_PAD_LEFT) }}</span>
-                        <div class="news-popular-body">
-                            <p class="news-popular-title">{{ Str::limit($item->title, 60) }}</p>
-                            @if($item->published_at)
-                                <span class="news-popular-date">{{ $item->published_at->translatedFormat('d M Y') }}</span>
-                            @endif
-                        </div>
-                    </a>
-                    @empty
-                    <p style="font-size:0.82rem; color:#94a3b8; text-align:center;">Belum ada berita.</p>
-                    @endforelse
-                </div>
-            </div>
-        </aside>
-
+    {{-- ===== CTA FOOTER ===== --}}
+    <div class="ig-cta-footer">
+        <h3>Ingin melihat lebih banyak?</h3>
+        <p>Kami aktif membagikan aktivitas harian, progres proyek, dan pengumuman penting melalui Instagram Stories dan Posts setiap harinya.</p>
+        <a href="https://www.instagram.com/diciptabintar.bdg/" target="_blank" rel="noopener" class="ig-cta-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+            </svg>
+            Kunjungi Instagram Kami
+        </a>
     </div>
 
 </div>
-
-@push('scripts')
-<script>
-const newsTabs   = document.querySelectorAll('.news-tab');
-const newsCards  = document.querySelectorAll('.news-card');
-const newsSearch = document.getElementById('news-search');
-let activeFilter = 'semua';
-
-function applyNewsFilter() {
-    const q = newsSearch ? newsSearch.value.toLowerCase().trim() : '';
-
-    newsCards.forEach(card => {
-        const title  = card.dataset.title || '';
-        const cat    = card.dataset.cat   || '';
-        const matchF = activeFilter === 'semua' || cat.includes(activeFilter.replace('-', ' '));
-        const matchQ = !q || title.includes(q) || cat.includes(q);
-        card.style.display = (matchF && matchQ) ? '' : 'none';
-    });
-}
-
-newsTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        newsTabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        activeFilter = tab.dataset.filter;
-        applyNewsFilter();
-    });
-});
-
-if (newsSearch) newsSearch.addEventListener('input', applyNewsFilter);
-</script>
-@endpush
 @endsection

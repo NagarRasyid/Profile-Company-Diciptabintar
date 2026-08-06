@@ -17,7 +17,6 @@ class DatabaseSeeder extends Seeder
             PortfolioSeeder::class,
             TeamMemberSeeder::class,
             ContactMessageSeeder::class,
-            NewsArticleSeeder::class,
         ]);
     }
 }

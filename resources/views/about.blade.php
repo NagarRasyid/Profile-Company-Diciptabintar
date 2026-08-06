@@ -8,8 +8,46 @@
    ABOUT PAGE STYLES
 ============================================= */
 
+
 .about-wrapper {
     margin: 0 -32px;
+}
+
+/* ---- WOBBLE KEYFRAMES ---- */
+@keyframes wobble-stat {
+    0%   { transform: rotate(0deg) scale(1); }
+    20%  { transform: rotate(-4deg) scale(1.04); }
+    40%  { transform: rotate(4deg) scale(1.04); }
+    60%  { transform: rotate(-2deg) scale(1.02); }
+    80%  { transform: rotate(1deg); }
+    100% { transform: rotate(0deg) scale(1); }
+}
+
+@keyframes wobble-visi {
+    0%   { transform: rotate(0deg); }
+    20%  { transform: rotate(-2deg) translateY(-2px); }
+    40%  { transform: rotate(2deg) translateY(-2px); }
+    60%  { transform: rotate(-1deg) translateY(-1px); }
+    80%  { transform: rotate(1deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes wobble-misi {
+    0%   { transform: rotate(0deg); }
+    20%  { transform: rotate(-3deg) translateY(-2px); }
+    40%  { transform: rotate(3deg) translateY(-2px); }
+    60%  { transform: rotate(-1.5deg); }
+    80%  { transform: rotate(0.5deg); }
+    100% { transform: rotate(0deg); }
+}
+
+@keyframes wobble-card {
+    0%   { transform: rotate(0deg); }
+    15%  { transform: rotate(-2.5deg) translateY(-3px); }
+    35%  { transform: rotate(2.5deg) translateY(-3px); }
+    55%  { transform: rotate(-1deg) translateY(-1px); }
+    75%  { transform: rotate(0.5deg); }
+    100% { transform: rotate(0deg); }
 }
 
 
@@ -102,6 +140,12 @@
     text-align: center;
     border-radius: 8px;
     border-top: 4px solid transparent;
+    cursor: default;
+    transform-origin: center bottom;
+}
+
+.about-stat-item:hover {
+    animation: wobble-stat 0.5s ease forwards;
 }
 
 .about-stat-item.stat-green  { border-top-color: #16a34a; }
@@ -193,6 +237,30 @@
     border-radius: 14px;
     overflow: hidden;
     box-shadow: 0 12px 36px rgba(0, 0, 0, 0.10);
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    cursor: zoom-in;
+}
+
+.about-struktur-img::after {
+    content: '🔍 Klik untuk perbesar';
+    position: absolute;
+    bottom: 12px;
+    right: 14px;
+    background: rgba(0,0,0,0.55);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 999px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+}
+
+.about-struktur-img:hover::after {
+    opacity: 1;
 }
 
 .about-struktur-img img {
@@ -310,6 +378,10 @@
     z-index: 2;
 }
 
+.about-visi-box:hover {
+    animation: wobble-visi 0.5s ease forwards;
+}
+
 .about-misi-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -324,6 +396,11 @@
     flex-direction: column;
     gap: 16px;
     border-left: 4px solid transparent;
+    transform-origin: center bottom;
+}
+
+.about-misi-item:hover {
+    animation: wobble-misi 0.5s ease forwards;
 }
 
 .misi-1 { border-left-color: #16a34a; }
@@ -366,6 +443,11 @@
     border-radius: 12px;
     padding: 32px;
     border-top: 4px solid transparent;
+    transform-origin: center bottom;
+}
+
+.about-tugas-card:hover {
+    animation: wobble-card 0.55s ease forwards;
 }
 
 .tugas-pokok-card { border-top-color: #003d6a; }
@@ -498,6 +580,80 @@
     .about-stats-inner { grid-template-columns: 1fr; }
     .about-misi-grid { grid-template-columns: 1fr; }
     .about-wrapper { margin: 0 -18px; }
+}
+
+/* ---- LIGHTBOX ZOOM ---- */
+.lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox-toolbar {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    display: flex;
+    gap: 12px;
+    z-index: 10000;
+}
+
+.lightbox-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.lightbox-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.05);
+}
+
+.lightbox-img-container {
+    width: 90vw;
+    height: 85vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    cursor: grab;
+}
+
+.lightbox-img-container:active {
+    cursor: grabbing;
+}
+
+.lightbox-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+    transform-origin: center center;
+    user-select: none;
 }
 </style>
 @endpush
@@ -677,10 +833,131 @@
             <p>Bagan struktur organisasi Dinas Cipta Karya, Bina Konstruksi dan Tata Ruang Kota Bandung.</p>
         </div>
 
-        <div class="about-struktur-img">
-                <img src="{{ asset('images/Struktur-org.png') }}" alt="Struktur Organisasi Diciptabintar">
-            </div>
+        <div class="about-struktur-img" id="strukturImgWrap">
+            <img src="{{ asset('images/Struktur-org.png') }}" alt="Struktur Organisasi Diciptabintar" id="strukturImg">
+        </div>
     </section>
 
 </div>
+
+{{-- LIGHTBOX OVERLAY --}}
+<div class="lightbox-overlay" id="lightboxOverlay">
+    <div class="lightbox-toolbar">
+        <button class="lightbox-btn" id="btnZoomOut" title="Zoom Out (Scroll Down)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M20 12H4" /></svg>
+        </button>
+        <button class="lightbox-btn" id="btnZoomIn" title="Zoom In (Scroll Up)">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" /></svg>
+        </button>
+        <button class="lightbox-btn" id="btnCloseLightbox" title="Tutup (Esc)" style="margin-left: 12px; background: rgba(239, 68, 68, 0.2); border-color: rgba(239, 68, 68, 0.4);">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+        </button>
+    </div>
+    
+    <div class="lightbox-img-container" id="lightboxContainer">
+        <img src="{{ asset('images/Struktur-org.png') }}" alt="Struktur Zoom" class="lightbox-img" id="lightboxImg">
+    </div>
+</div>
+
 @endsection
+
+@push('scripts')
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const triggerWrap = document.getElementById('strukturImgWrap');
+        const overlay = document.getElementById('lightboxOverlay');
+        const container = document.getElementById('lightboxContainer');
+        const img = document.getElementById('lightboxImg');
+        const btnClose = document.getElementById('btnCloseLightbox');
+        const btnZoomIn = document.getElementById('btnZoomIn');
+        const btnZoomOut = document.getElementById('btnZoomOut');
+        
+        let scale = 1;
+        const scaleStep = 0.2;
+        const minScale = 0.5;
+        const maxScale = 5;
+
+        let isDragging = false;
+        let startX, startY;
+        let translateX = 0, translateY = 0;
+
+        function updateTransform() {
+            img.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+        }
+
+        function resetZoom() {
+            scale = 1;
+            translateX = 0;
+            translateY = 0;
+            updateTransform();
+        }
+
+        // Buka Lightbox
+        triggerWrap.addEventListener('click', () => {
+            overlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            resetZoom();
+        });
+
+        // Tutup Lightbox
+        function closeLightbox() {
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        btnClose.addEventListener('click', closeLightbox);
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay || e.target === container) closeLightbox();
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && overlay.classList.contains('active')) closeLightbox();
+        });
+
+        // Zoom dengan Scroll (Mouse Wheel)
+        container.addEventListener('wheel', (e) => {
+            e.preventDefault();
+            if (e.deltaY < 0) {
+                scale = Math.min(scale + scaleStep, maxScale); // Zoom In
+            } else {
+                scale = Math.max(scale - scaleStep, minScale); // Zoom Out
+            }
+            updateTransform();
+        }, { passive: false });
+
+        // Tombol Zoom In/Out
+        btnZoomIn.addEventListener('click', () => {
+            scale = Math.min(scale + scaleStep, maxScale);
+            updateTransform();
+        });
+        
+        btnZoomOut.addEventListener('click', () => {
+            scale = Math.max(scale - scaleStep, minScale);
+            updateTransform();
+        });
+
+        // Fitur Drag & Pan (Geser)
+        img.addEventListener('mousedown', (e) => {
+            if (scale > 1) {
+                isDragging = true;
+                startX = e.clientX - translateX;
+                startY = e.clientY - translateY;
+            }
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            translateX = e.clientX - startX;
+            translateY = e.clientY - startY;
+            updateTransform();
+        });
+
+        window.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+        
+        // Mencegah default drag image dari browser
+        img.addEventListener('dragstart', (e) => e.preventDefault());
+    });
+</script>
+@endpush

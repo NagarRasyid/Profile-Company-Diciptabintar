@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\ContactMessage;
-use App\Models\NewsArticle;
+use App\Models\InstagramPost;
 use App\Models\Portfolio;
 use App\Models\Service;
 use App\Models\TeamMember;
@@ -22,7 +22,7 @@ class DashboardController extends Controller
             'team_members'     => TeamMember::count(),
             'unread_messages'  => ContactMessage::unread()->count(),
             'total_messages'   => ContactMessage::count(),
-            'published_news'   => NewsArticle::published()->count(),
+            'instagram_posts'  => InstagramPost::where('is_active', true)->count(),
         ];
 
         $recentMessages = ContactMessage::unread()
