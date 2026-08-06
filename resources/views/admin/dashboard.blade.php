@@ -38,10 +38,10 @@
         </div>
 
         <div class="admin-stat-card">
-            <p class="admin-stat-label">Berita Published</p>
-            <h2 class="admin-stat-number" style="color: #0284c7;">{{ $stats['published_news'] ?? 0 }}</h2>
-            <a href="{{ route('admin.news.index') }}" class="admin-stat-link" style="color: #0284c7;">
-                Kelola berita &rarr;
+            <p class="admin-stat-label">Instagram Posts</p>
+            <h2 class="admin-stat-number" style="color: #0284c7;">{{ $stats['published_instagram'] ?? 0 }}</h2>
+            <a href="{{ route('admin.instagram.index') }}" class="admin-stat-link" style="color: #0284c7;">
+                Kelola Instagram Post &rarr;
             </a>
         </div>
 
@@ -90,9 +90,9 @@
             <div style="font-size: 1.2rem; font-weight: 700; margin-bottom: 4px;">+ Tambah Anggota</div>
             <div style="font-size: 0.8rem; color: rgba(255,255,255,0.7);">Lengkapi profil tim</div>
         </a>
-        <a href="{{ route('admin.news.create') }}" class="admin-card" style="text-decoration: none; text-align: center; padding: 20px; transition: transform 0.2s; background: #0284c7; color: white;">
-            <div style="font-size: 1.2rem; font-weight: 700; margin-bottom: 4px;">+ Tambah Berita</div>
-            <div style="font-size: 0.8rem; color: rgba(255,255,255,0.7);">Buat artikel baru</div>
+        <a href="{{ route('admin.instagram.create') }}" class="admin-card" style="text-decoration: none; text-align: center; padding: 20px; transition: transform 0.2s; background: #0284c7; color: white;">
+            <div style="font-size: 1.2rem; font-weight: 700; margin-bottom: 4px;">+ Tambah Instagram Post</div>
+            <div style="font-size: 0.8rem; color: rgba(255,255,255,0.7);">Buat konten instagram baru</div>
         </a>
     </div>
 
