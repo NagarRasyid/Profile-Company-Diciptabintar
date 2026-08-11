@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\InstagramPost;
 use App\Models\Service;
-use App\Models\TeamMember;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Http;
 
@@ -15,7 +14,6 @@ class AboutController extends Controller
      */
     public function index()
     {
-        $team = TeamMember::active()->ordered()->get();
 
         // Stats: ambil dari DB dan API
         $totalLayanan = Service::active()->count();
@@ -44,6 +42,6 @@ class AboutController extends Controller
             'berita'   => $totalBerita   ?: 0,
         ];
 
-        return view('about', compact('team', 'stats'));
+        return view('about', compact('stats'));
     }
 }

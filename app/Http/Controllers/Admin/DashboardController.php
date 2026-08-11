@@ -7,7 +7,6 @@ use App\Models\ContactMessage;
 use App\Models\InstagramPost;
 use App\Models\Portfolio;
 use App\Models\Service;
-use App\Models\TeamMember;
 
 class DashboardController extends Controller
 {
@@ -19,7 +18,6 @@ class DashboardController extends Controller
         $stats = [
             'services'         => Service::count(),
             'portfolios'       => Portfolio::count(),
-            'team_members'     => TeamMember::count(),
             'unread_messages'  => ContactMessage::unread()->count(),
             'total_messages'   => ContactMessage::count(),
             'instagram_posts'  => InstagramPost::where('is_active', true)->count(),

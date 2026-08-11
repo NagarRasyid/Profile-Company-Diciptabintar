@@ -120,14 +120,10 @@ class RegulasiController extends Controller
                     $kategori = 'SK Kadis';
                     $badge    = 'SK KEPALA DINAS';
                     $slug     = 'sk-kadis';
-                } elseif (stripos($isi, 'undang-undang') !== false || stripos($isi, 'undang - undang') !== false) {
+                } elseif (stripos($isi, 'undang-undang') !== false || stripos($isi, 'undang - undang') !== false || stripos($isi, 'peraturan pemerintah') !== false) {
                     $kategori = 'Undang-Undang';
                     $badge    = 'UNDANG-UNDANG';
                     $slug     = 'uu';
-                } elseif (stripos($isi, 'peraturan pemerintah') !== false || stripos($isi, 'peraturan presiden') !== false) {
-                    $kategori = 'Peraturan Pusat';
-                    $badge    = 'PERATURAN PUSAT';
-                    $slug     = 'pusat';
                 } elseif (stripos($isi, 'lkip') !== false || stripos($isi, 'laporan kinerja') !== false || stripos($isi, 'lakip') !== false) {
                     $kategori = 'LAKIP';
                     $badge    = 'LAKIP';
@@ -148,6 +144,8 @@ class RegulasiController extends Controller
 
                 // Ekstrak nomor regulasi jika ada
                 preg_match('/nomor[.\s]+([0-9]+)/i', $isi, $nomorMatch);
+                // preg_match('/no[.\s]+([0-9]+)/i', $isi, $nomorMatch);
+
                 $nomor = isset($nomorMatch[1]) ? ltrim($nomorMatch[1], '0') : null;
 
                 // Buat URL file lengkap

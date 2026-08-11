@@ -36,12 +36,6 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
     // Dashboard Utama
     Route::get('/', [Admin\DashboardController::class, 'index'])->name('dashboard');
 
-    // Manajemen Anggota Tim (Team Members)
-    Route::post('/team/{id}/restore', [Admin\TeamMemberController::class, 'restore'])->name('team.restore');
-    Route::resource('/team', Admin\TeamMemberController::class)
-        ->parameters(['team' => 'teamMember'])
-        ->except(['show']);
-
     // Manajemen Pesan Kontak (Contact Messages)
     Route::get('/contact', [Admin\ContactMessageController::class, 'index'])->name('contact.index');
     Route::get('/contact/{contactMessage}', [Admin\ContactMessageController::class, 'show'])->name('contact.show');

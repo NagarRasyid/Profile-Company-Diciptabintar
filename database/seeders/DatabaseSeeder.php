@@ -15,7 +15,6 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             ServiceSeeder::class,
             PortfolioSeeder::class,
-            TeamMemberSeeder::class,
             ContactMessageSeeder::class,
         ]);
     }
