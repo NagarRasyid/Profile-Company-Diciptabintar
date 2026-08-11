@@ -578,7 +578,7 @@
                         <span style="font-size: 16px;">Manajemen SDM</span>
                     </li>
                 </ul>   
-                <a href="#" class="bidang-detail-btn-3cols">Lihat Detail &rarr;</a>
+                <a href="{{ route('services.show', 'sekretariat') }}" class="bidang-detail-btn-3cols">Lihat Detail &rarr;</a>
             </div>
 
             {{-- Bidang Cipta Karya --}}
@@ -617,7 +617,7 @@
                         <span style="font-size: 16px;">Pendataan Bangunan</span>
                     </li>
                 </ul>
-                <a href="#" class="bidang-detail-btn-3cols">Lihat Detail &rarr;</a>
+                <a href="{{ route('services.show', 'cipta-karya') }}" class="bidang-detail-btn-3cols">Lihat Detail &rarr;</a>
             </div>
 
             {{-- Bidang Bina Konstruksi --}}
@@ -656,7 +656,7 @@
                         <span style="font-size: 16px;">Pengawasan dan Pemeliharaan</span>
                     </li>
                 </ul>
-                <a href="#" class="bidang-detail-btn-3cols">Lihat Detail &rarr;</a>
+                <a href="{{ route('services.show', 'bina-konstruksi') }}" class="bidang-detail-btn-3cols">Lihat Detail &rarr;</a>
             </div>
         </div>
 
@@ -698,7 +698,7 @@
                         <span style="font-size: 16px;">Layanan KRK &amp; KKPR</span>
                     </li>
                 </ul>
-                <a href="#" class="bidang-detail-btn-3cols">Lihat Detail &rarr;</a>
+                <a href="{{ route('services.show', 'tata-ruang') }}" class="bidang-detail-btn-3cols">Lihat Detail &rarr;</a>
             </div>
 
             {{-- Bidang Pengawasan dan Pengendalian --}}
@@ -737,7 +737,7 @@
                         <span style="font-size: 16px;">Dokumentasi &amp; Sengketa</span>
                     </li>
                 </ul>
-                <a href="#" class="bidang-detail-btn-3cols">Lihat Detail &rarr;</a>
+                <a href="{{ route('services.show', 'pengawasan') }}" class="bidang-detail-btn-3cols">Lihat Detail &rarr;</a>
             </div>
 
             {{-- UPTD Pengelolaan Pemakaman --}}
@@ -776,7 +776,7 @@
                         <span style="font-size: 16px;">Penertiban Pelanggaran</span>
                     </li>
                 </ul>
-                <a href="#" class="bidang-detail-btn-3cols">Lihat Detail &rarr;</a>
+                <a href="{{ route('services.show', 'uptd-pemakaman') }}" class="bidang-detail-btn-3cols">Lihat Detail &rarr;</a>
             </div>
         </div>
     </div>
