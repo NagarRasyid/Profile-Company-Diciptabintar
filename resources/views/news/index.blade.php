@@ -21,14 +21,14 @@
 }
 
 .news-page-header h1 {
-    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-size: clamp(2.6rem, 2.8vw, 3.2rem);
     font-weight: 800;
     color: #003d6a;
     margin: 0 0 10px;
 }
 
 .news-page-header p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #64748b;
     line-height: 1.65;
     margin: 0;

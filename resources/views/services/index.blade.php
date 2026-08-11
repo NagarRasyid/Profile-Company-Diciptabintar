@@ -21,17 +21,17 @@
 }
 
 .bidang-header h1 {
-    font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+    font-size: clamp(2.8rem, 3vw, 3.5rem);
     font-weight: 700;
     color: #003d6a;
     margin: 0 0 14px;
 }
 
 .bidang-header p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #52565e;
     line-height: 1.75;
-    max-width: 520px;
+    max-width: 750px;
     margin: 0 auto;
 }
 
@@ -54,7 +54,7 @@
 
 /* ---- BIDANG CARD ---- */
 .bidang-card {
-    background: #f9f9fd;
+    background: #ffffff;
     border: 1px solid #e5eaf2;
     border-radius: 12px;
     padding: 28px 24px;
@@ -126,17 +126,26 @@
 .bidang-card-head h3 {
     font-size: 1.15rem;
     font-weight: 700;
-    color: #0a1628;
+    color: #003d6a;
     margin: 0;
 }
 
 .bidang-card-desc {
-    font-size: 0.95rem;
+    font-size: 1.05rem;
     color: #52565e;
     line-height: 1.7;
     margin: 0 0 16px;
     flex: 1;
 }
+
+
+.bidang-card-desc-3cols {
+    font-size: 0.95rem;
+    color: #52565e;
+    line-height: 1.7;
+    margin: 0 0 14px;
+}
+
 
 .bidang-card-items {
     list-style: none;
@@ -155,15 +164,6 @@
     color: #334155;
 }
 
-.bidang-card-items li::before {
-    content: '';
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    border: 2px solid currentColor;
-    flex-shrink: 0;
-}
-
 .bidang-card-blue   .bidang-card-items li { color: #003d6a; }
 .bidang-card-green  .bidang-card-items li { color: #15803d; }
 .bidang-card-orange .bidang-card-items li { color: #c2410c; }
@@ -178,6 +178,7 @@
     font-size: 0.94rem;
     font-weight: 600;
     color: #003d6a;
+    background-color: #f9f9fd;
     border: 1.5px solid #003d6a;
     border-radius: 999px;
     padding: 8px 18px;
@@ -187,7 +188,30 @@
     margin-top: auto;
 }
 
+.bidang-detail-btn-3cols {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 0.94rem;
+    font-weight: 600;
+    color: #003d6a;
+    background-color: #f9f9fd;
+    border: 1.5px solid #003d6a;
+    border-radius: 999px;
+    padding: 8px 18px;
+    text-decoration: none;
+    transition: all 0.18s ease;
+    width: 100%;
+    margin-top: auto;
+}
+
 .bidang-detail-btn:hover {
+    background: #003d6a;
+    color: #f9f9fd;
+}
+
+.bidang-detail-btn-3cols:hover {
     background: #003d6a;
     color: #f9f9fd;
 }
@@ -284,15 +308,15 @@
 }
 
 .alur-header h2 {
-    font-size: clamp(1.5rem, 2.8vw, 2rem);
+    font-size: clamp(2.5rem, 2.8vw, 3rem);
     font-weight: 700;
     color: #003d6a;
     margin: 0 0 10px;
 }
 
 .alur-header p {
-    font-size: 1rem;
-    color: #64748b;
+    font-size: 1.1rem;
+    color: #52575e;
     margin: 0;
 }
 
@@ -352,7 +376,7 @@
 .alur-timeline-step h3 {
     font-size: 1.05rem;
     font-weight: 700;
-    color: #0a1628;
+    color: #003d6a;
     margin: 0 0 8px;
     line-height: 1.4;
 }
@@ -506,7 +530,7 @@
                 </div>
                 <div class="bidang-card-content">
                     <div class="bidang-card-head">
-                        <h3 style="font-size: 1.4rem;">Kepala Dinas</h3>
+                        <h3 style="font-size: 1.8rem;">Kepala Dinas</h3>
                     </div>
                     <p class="bidang-card-desc" style="margin-bottom: 16px;">
                         Memimpin, merumuskan kebijakan, mengkoordinasikan, membina, dan mengendalikan pelaksanaan tugas pokok dan fungsi Dinas Cipta Karya, Bina Konstruksi, dan Tata Ruang.
@@ -528,15 +552,33 @@
                     </div>
                     <h3>Sekretariat</h3>
                 </div>
-                <p class="bidang-card-desc">
+                <p class="bidang-card-desc-3cols">
                     Bertanggung jawab atas pelayanan administrasi umum, kepegawaian, keuangan, dan perencanaan untuk mendukung seluruh kegiatan operasional dinas.
                 </p>
-                <ul class="bidang-card-items">
-                    <li>Koordinasi Administrasi</li>
-                    <li>Pengelolaan Keuangan</li>
-                    <li>Manajemen SDM</li>
-                </ul>
-                <a href="#" class="bidang-detail-btn">Lihat Detail &rarr;</a>
+                <ul class="bidang-card-items" style="list-style-type: none; padding-left: 0;">
+                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
+                            <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-size: 16px;">Koordinasi Administrasi</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
+                            <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-size: 16px;">Pengelolaan Keuangan</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 8px;">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
+                            <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-size: 16px;">Manajemen SDM</span>
+                    </li>
+                </ul>   
+                <a href="#" class="bidang-detail-btn-3cols">Lihat Detail &rarr;</a>
             </div>
 
             {{-- Bidang Cipta Karya --}}
@@ -549,15 +591,33 @@
                     </div>
                     <h3>Bidang Cipta Karya</h3>
                 </div>
-                <p class="bidang-card-desc">
+                <p class="bidang-card-desc-3cols">
                     Mengelola perencanaan, pelaksanaan, dan pengawasan pembangunan serta pemeliharaan gedung-gedung pemerintahan dan fasilitas umum.
                 </p>
-                <ul class="bidang-card-items">
-                    <li>Penataan &amp; Arsitektur Kota</li>
-                    <li>Persetujuan &amp; Kelaikan (PBG SLF)</li>
-                    <li>Pendataan Bangunan</li>
+                <ul class="bidang-card-items" style="list-style-type: none; padding-left: 0;">
+                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
+                            <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-size: 16px;">Penataan &amp; Arsitektur Kota</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
+                            <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-size: 16px;">Persetujuan &amp; Kelaikan (PBG SLF)</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 8px;">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
+                            <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-size: 16px;">Pendataan Bangunan</span>
+                    </li>
                 </ul>
-                <a href="#" class="bidang-detail-btn">Lihat Detail &rarr;</a>
+                <a href="#" class="bidang-detail-btn-3cols">Lihat Detail &rarr;</a>
             </div>
 
             {{-- Bidang Bina Konstruksi --}}
@@ -570,15 +630,33 @@
                     </div>
                     <h3 style="line-height: 1.4;">Bidang Bina Konstruksi dan Bangunan Gedung Negara</h3>
                 </div>
-                <p class="bidang-card-desc">
+                <p class="bidang-card-desc-3cols">
                     Melakukan pembinaan, pemberdayaan, dan pengawasan terhadap penyedia jasa konstruksi serta menjamin standar mutu konstruksi.
                 </p>
-                <ul class="bidang-card-items">
-                    <li>Perencanaan Gedung Negara</li>
-                    <li>Pembinaan Jasa Konstruksi</li>
-                    <li>Pengawasan dan Pemeliharaan</li>
+                <ul class="bidang-card-items" style="list-style-type: none; padding-left: 0;">
+                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
+                            <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-size: 16px;">Perencanaan Gedung Negara</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
+                            <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-size: 16px;">Pembinaan Jasa Konstruksi</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 8px;">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
+                            <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-size: 16px;">Pengawasan dan Pemeliharaan</span>
+                    </li>
                 </ul>
-                <a href="#" class="bidang-detail-btn">Lihat Detail &rarr;</a>
+                <a href="#" class="bidang-detail-btn-3cols">Lihat Detail &rarr;</a>
             </div>
         </div>
 
@@ -594,15 +672,33 @@
                     </div>
                     <h3>Bidang Tata Ruang</h3>
                 </div>
-                <p class="bidang-card-desc">
+                <p class="bidang-card-desc-3cols">
                     Merumuskan kebijakan, merencanakan, dan mengendalikan pemanfaatan tata ruang wilayah kota agar sesuai dengan Rencana Tata Ruang Wilayah (RTRW).
                 </p>
-                <ul class="bidang-card-items">
-                    <li>Survei &amp; Pemetaan</li>
-                    <li>Perencanaan Tata Ruang</li>
-                    <li>Layanan KRK &amp; KKPR</li>
+                <ul class="bidang-card-items" style="list-style-type: none; padding-left: 0;">
+                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
+                            <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-size: 16px;">Survei & Pemetaan</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
+                            <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-size: 16px;">Perencanaan Tata Ruang</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 8px;">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
+                            <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-size: 16px;">Layanan KRK &amp; KKPR</span>
+                    </li>
                 </ul>
-                <a href="#" class="bidang-detail-btn">Lihat Detail &rarr;</a>
+                <a href="#" class="bidang-detail-btn-3cols">Lihat Detail &rarr;</a>
             </div>
 
             {{-- Bidang Pengawasan dan Pengendalian --}}
@@ -615,15 +711,33 @@
                     </div>
                     <h3 style="line-height: 1.4;">Bidang Pengawasan dan Pengendalian Pemanfaatan Ruang dan Bangunan Gedung</h3>
                 </div>
-                <p class="bidang-card-desc">
+                <p class="bidang-card-desc-3cols">
                     Melaksanakan pengawasan pemanfaatan ruang dan bangunan gedung, penertiban pelanggaran, serta penanganan pengaduan dan sengketa di wilayah kota.
                 </p>
-                <ul class="bidang-card-items">
-                    <li>Penertiban &amp; Sanksi</li>
-                    <li>Pengawasan Lapangan</li>
-                    <li>Dokumentasi &amp; Sengketa</li>
+                <ul class="bidang-card-items" style="list-style-type: none; padding-left: 0;">
+                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
+                            <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-size: 16px;">Penertiban &amp; Sanksi</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
+                            <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-size: 16px;">Pengawasan Lapangan</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 8px;">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
+                            <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-size: 16px;">Dokumentasi &amp; Sengketa</span>
+                    </li>
                 </ul>
-                <a href="#" class="bidang-detail-btn">Lihat Detail &rarr;</a>
+                <a href="#" class="bidang-detail-btn-3cols">Lihat Detail &rarr;</a>
             </div>
 
             {{-- UPTD Pengelolaan Pemakaman --}}
@@ -636,15 +750,33 @@
                     </div>
                     <h3 style="line-height: 1.4;">UPTD Pengelolaan Pemakaman</h3>
                 </div>
-                <p class="bidang-card-desc">
+                <p class="bidang-card-desc-3cols">
                     Unsur pelaksana teknis operasional dalam penataan, pengelolaan, pemeliharaan ketertiban, kebersihan, dan keindahan di kawasan pemakaman umum.
                 </p>
-                <ul class="bidang-card-items">
-                    <li>Pelayanan Operasional Pemakaman</li>
-                    <li>Pengendalian Bangunan Gedung</li>
-                    <li>Penertiban Pelanggaran</li>
+                <ul class="bidang-card-items" style="list-style-type: none; padding-left: 0;">
+                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
+                            <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-size: 16px;">Pelayanan Operasional Pemakaman</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
+                            <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-size: 16px;">Pengendalian Bangunan Gedung</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 8px;">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
+                            <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-size: 16px;">Penertiban Pelanggaran</span>
+                    </li>
                 </ul>
-                <a href="#" class="bidang-detail-btn">Lihat Detail &rarr;</a>
+                <a href="#" class="bidang-detail-btn-3cols">Lihat Detail &rarr;</a>
             </div>
         </div>
     </div>
@@ -665,7 +797,11 @@
                 
                 {{-- Step 1 --}}
                 <div class="alur-timeline-step alur-step-1">
-                    <div class="alur-timeline-icon">🗺️</div>
+                    <div class="alur-timeline-icon">
+                        <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M15 22.5L7.5 19.875L1.6875 22.125C1.27083 22.2917 0.885417 22.2448 0.53125 21.9844C0.177083 21.724 0 21.375 0 20.9375V3.4375C0 3.16667 0.078125 2.92708 0.234375 2.71875C0.390625 2.51042 0.604167 2.35417 0.875 2.25L7.5 0L15 2.625L20.8125 0.375C21.2292 0.208333 21.6146 0.255208 21.9688 0.515625C22.3229 0.776042 22.5 1.125 22.5 1.5625V19.0625C22.5 19.3333 22.4219 19.5729 22.2656 19.7812C22.1094 19.9896 21.8958 20.1458 21.625 20.25L15 22.5ZM13.75 19.4375V4.8125L8.75 3.0625V17.6875L13.75 19.4375ZM16.25 19.4375L20 18.1875V3.375L16.25 4.8125V19.4375ZM2.5 19.125L6.25 17.6875V3.0625L2.5 4.3125V19.125ZM16.25 4.8125V19.4375V4.8125ZM6.25 3.0625V17.6875V3.0625Z" fill="#003D6A"/>
+                        </svg>
+                    </div>
                     <h3>Perencanaan (Tata Ruang)</h3>
                     <p>Penetapan zona dan regulasi pemanfaatan ruang.</p>
                 </div>
@@ -679,7 +815,11 @@
 
                 {{-- Step 2 --}}
                 <div class="alur-timeline-step alur-step-2">
-                    <div class="alur-timeline-icon">🏗️</div>
+                    <div class="alur-timeline-icon">
+                        <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 23.75V6.25H7.5V3.75L11.25 0L15 3.75V11.25H22.5V23.75H0ZM2.5 21.25H5V18.75H2.5V21.25ZM2.5 16.25H5V13.75H2.5V16.25ZM2.5 11.25H5V8.75H2.5V11.25ZM10 21.25H12.5V18.75H10V21.25ZM10 16.25H12.5V13.75H10V16.25ZM10 11.25H12.5V8.75H10V11.25ZM10 6.25H12.5V3.75H10V6.25ZM17.5 21.25H20V18.75H17.5V21.25ZM17.5 16.25H20V13.75H17.5V16.25Z" fill="#426900"/>
+                        </svg>
+                    </div>
                     <h3>Desain &amp; Bangun (Cipta Karya)</h3>
                     <p>Perancangan arsitektur dan pelaksanaan pembangunan fisik.</p>
                 </div>
@@ -693,7 +833,11 @@
 
                 {{-- Step 3 --}}
                 <div class="alur-timeline-step alur-step-3">
-                    <div class="alur-timeline-icon">👷</div>
+                    <div class="alur-timeline-icon">
+                        <svg width="28" height="23" viewBox="0 0 28 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 22.5V19C0 18.3125 0.177083 17.6667 0.53125 17.0625C0.885417 16.4583 1.375 16 2 15.6875C3.0625 15.1458 4.26042 14.6875 5.59375 14.3125C6.92708 13.9375 8.39583 13.75 10 13.75C11.6042 13.75 13.0729 13.9375 14.4062 14.3125C15.7396 14.6875 16.9375 15.1458 18 15.6875C18.625 16 19.1146 16.4583 19.4688 17.0625C19.8229 17.6667 20 18.3125 20 19V22.5H0ZM2.5 20H17.5V19C17.5 18.7708 17.4427 18.5625 17.3281 18.375C17.2135 18.1875 17.0625 18.0417 16.875 17.9375C16.125 17.5625 15.1615 17.1875 13.9844 16.8125C12.8073 16.4375 11.4792 16.25 10 16.25C8.52083 16.25 7.19271 16.4375 6.01562 16.8125C4.83854 17.1875 3.875 17.5625 3.125 17.9375C2.9375 18.0417 2.78646 18.1875 2.67188 18.375C2.55729 18.5625 2.5 18.7708 2.5 19V20ZM10 12.5C8.625 12.5 7.44792 12.0104 6.46875 11.0312C5.48958 10.0521 5 8.875 5 7.5H4.6875C4.5 7.5 4.34896 7.44271 4.23438 7.32812C4.11979 7.21354 4.0625 7.0625 4.0625 6.875C4.0625 6.6875 4.11979 6.53646 4.23438 6.42188C4.34896 6.30729 4.5 6.25 4.6875 6.25H5C5 5.3125 5.22917 4.46875 5.6875 3.71875C6.14583 2.96875 6.75 2.375 7.5 1.9375V3.125C7.5 3.3125 7.55729 3.46354 7.67188 3.57812C7.78646 3.69271 7.9375 3.75 8.125 3.75C8.3125 3.75 8.46354 3.69271 8.57812 3.57812C8.69271 3.46354 8.75 3.3125 8.75 3.125V1.4375C8.9375 1.375 9.13542 1.32812 9.34375 1.29688C9.55208 1.26562 9.77083 1.25 10 1.25C10.2292 1.25 10.4479 1.26562 10.6562 1.29688C10.8646 1.32812 11.0625 1.375 11.25 1.4375V3.125C11.25 3.3125 11.3073 3.46354 11.4219 3.57812C11.5365 3.69271 11.6875 3.75 11.875 3.75C12.0625 3.75 12.2135 3.69271 12.3281 3.57812C12.4427 3.46354 12.5 3.3125 12.5 3.125V1.9375C13.25 2.375 13.8542 2.96875 14.3125 3.71875C14.7708 4.46875 15 5.3125 15 6.25H15.3125C15.5 6.25 15.651 6.30729 15.7656 6.42188C15.8802 6.53646 15.9375 6.6875 15.9375 6.875C15.9375 7.0625 15.8802 7.21354 15.7656 7.32812C15.651 7.44271 15.5 7.5 15.3125 7.5H15C15 8.875 14.5104 10.0521 13.5312 11.0312C12.5521 12.0104 11.375 12.5 10 12.5ZM10 10C10.6875 10 11.276 9.75521 11.7656 9.26562C12.2552 8.77604 12.5 8.1875 12.5 7.5H7.5C7.5 8.1875 7.74479 8.77604 8.23438 9.26562C8.72396 9.75521 9.3125 10 10 10ZM19.375 15L19.1875 14.0625C19.0625 14.0208 18.9427 13.974 18.8281 13.9219C18.7135 13.8698 18.6042 13.7917 18.5 13.6875L17.625 14L17 12.875L17.6875 12.25C17.6875 12.1875 17.6875 12.125 17.6875 12.0625C17.6875 12 17.6875 11.9375 17.6875 11.875C17.6875 11.8125 17.6875 11.75 17.6875 11.6875C17.6875 11.625 17.6875 11.5625 17.6875 11.5L17 10.875L17.625 9.75L18.5 10.0625C18.5833 9.97917 18.6875 9.90625 18.8125 9.84375C18.9375 9.78125 19.0625 9.72917 19.1875 9.6875L19.375 8.75H20.625L20.8125 9.6875C20.9375 9.72917 21.0625 9.78125 21.1875 9.84375C21.3125 9.90625 21.4167 9.97917 21.5 10.0625L22.375 9.75L23 10.875L22.3125 11.5C22.3125 11.5625 22.3125 11.625 22.3125 11.6875C22.3125 11.75 22.3125 11.8125 22.3125 11.875C22.3125 11.9375 22.3125 12 22.3125 12.0625C22.3125 12.125 22.3125 12.1875 22.3125 12.25L23 12.875L22.375 14L21.5 13.6875C21.3958 13.7917 21.2865 13.8698 21.1719 13.9219C21.0573 13.974 20.9375 14.0208 20.8125 14.0625L20.625 15H19.375ZM20 12.8125C20.25 12.8125 20.4688 12.7188 20.6562 12.5312C20.8438 12.3438 20.9375 12.125 20.9375 11.875C20.9375 11.625 20.8438 11.4062 20.6562 11.2188C20.4688 11.0312 20.25 10.9375 20 10.9375C19.75 10.9375 19.5312 11.0312 19.3438 11.2188C19.1562 11.4062 19.0625 11.625 19.0625 11.875C19.0625 12.125 19.1562 12.3438 19.3438 12.5312C19.5312 12.7188 19.75 12.8125 20 12.8125ZM22.25 8.75L22 7.4375C21.8125 7.375 21.6406 7.29688 21.4844 7.20312C21.3281 7.10938 21.1875 7 21.0625 6.875L19.75 7.3125L18.875 5.8125L19.9375 4.875C19.8958 4.77083 19.875 4.6875 19.875 4.625C19.875 4.5625 19.875 4.47917 19.875 4.375C19.875 4.27083 19.875 4.1875 19.875 4.125C19.875 4.0625 19.8958 3.97917 19.9375 3.875L18.875 2.9375L19.75 1.4375L21.0625 1.875C21.1875 1.75 21.3281 1.64062 21.4844 1.54688C21.6406 1.45312 21.8125 1.375 22 1.3125L22.25 0H24L24.25 1.3125C24.4375 1.375 24.6094 1.45312 24.7656 1.54688C24.9219 1.64062 25.0625 1.75 25.1875 1.875L26.5 1.4375L27.375 2.9375L26.3125 3.875C26.3542 3.97917 26.375 4.0625 26.375 4.125C26.375 4.1875 26.375 4.27083 26.375 4.375C26.375 4.47917 26.375 4.5625 26.375 4.625C26.375 4.6875 26.3542 4.77083 26.3125 4.875L27.375 5.8125L26.5 7.3125L25.1875 6.875C25.0625 7 24.9219 7.10938 24.7656 7.20312C24.6094 7.29688 24.4375 7.375 24.25 7.4375L24 8.75H22.25ZM23.125 5.9375C23.5625 5.9375 23.9323 5.78646 24.2344 5.48438C24.5365 5.18229 24.6875 4.8125 24.6875 4.375C24.6875 3.9375 24.5365 3.56771 24.2344 3.26562C23.9323 2.96354 23.5625 2.8125 23.125 2.8125C22.6875 2.8125 22.3177 2.96354 22.0156 3.26562C21.7135 3.56771 21.5625 3.9375 21.5625 4.375C21.5625 4.8125 21.7135 5.18229 22.0156 5.48438C22.3177 5.78646 22.6875 5.9375 23.125 5.9375Z" fill="#F18A60"/>
+                        </svg>
+                    </div>
                     <h3>Pengawasan (Bina Konstruksi)</h3>
                     <p>Kontrol kualitas material dan standar keselamatan kerja.</p>
                 </div>

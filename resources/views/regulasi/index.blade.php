@@ -43,18 +43,18 @@
 }
 
 .reg-header h1 {
-    font-size: clamp(1.6rem, 3vw, 2.5rem);
+    font-size: clamp(2.6rem, 2.9vw, 3.5rem);
     font-weight: 700;
     color: #003d6a;
     margin: 0 0 10px;
 }
 
 .reg-header p {
-    font-size: 1rem;
+    font-size: 1.1rem;
     color: #52565e;
     line-height: 1.7;
     margin: 0;
-    max-width: 620px;
+    max-width: 660px;
 }
 
 /* ---- SEARCH & FILTER CARD (NEW DESIGN) ---- */

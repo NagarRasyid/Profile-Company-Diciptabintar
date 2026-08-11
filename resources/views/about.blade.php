@@ -78,7 +78,7 @@
 }
 
 .about-hero-title {
-    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    font-size: clamp(2.5rem, 3.2vw, 3.3rem);
     font-weight: 700;
     color: #002745;
     line-height: 1.2;
@@ -683,7 +683,9 @@
             {{-- Layanan Publik --}}
             <div class="about-stat-item stat-green">
                 <div class="about-stat-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm-1 1.5L18.5 9H13V3.5zM18 20H6V4h5v6h7v10z"/><path d="M8 12h8v2H8zm0 4h8v2H8z"/></svg>
+                    <svg width="20" height="25" viewBox="0 0 20 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M5 20H15V17.5H5V20ZM5 15H15V12.5H5V15ZM2.5 25C1.8125 25 1.22396 24.7552 0.734375 24.2656C0.244792 23.776 0 23.1875 0 22.5V2.5C0 1.8125 0.244792 1.22396 0.734375 0.734375C1.22396 0.244792 1.8125 0 2.5 0H12.5L20 7.5V22.5C20 23.1875 19.7552 23.776 19.2656 24.2656C18.776 24.7552 18.1875 25 17.5 25H2.5ZM11.25 8.75H17.5L11.25 2.5V8.75Z" fill="#219653"/>
+                    </svg>
                 </div>
                 <div>
                     <div class="about-stat-number">{{ $stats['layanan'] }}</div>
@@ -694,7 +696,9 @@
             {{-- Bidang Teknis --}}
             <div class="about-stat-item stat-blue">
                 <div class="about-stat-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M19 2H9c-1.103 0-2 .897-2 2v5.586l-4.707 4.707A1 1 0 0 0 2 15v4a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V4c0-1.103-.897-2-2-2zM4 19v-3.586l3-3L10.586 16H4v3zm16 0h-4v-4c0-1.103-.897-2-2-2h-3V4h9v15z"/><path d="M11 6h2v2h-2zm4 0h2v2h-2zm-4 4h2v2h-2zm4 0h2v2h-2zm0 4h2v2h-2z"/></svg>
+                    <svg width="25" height="23" viewBox="0 0 25 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 22.5V0H12.5V5H25V22.5H0ZM2.5 20H5V17.5H2.5V20ZM2.5 15H5V12.5H2.5V15ZM2.5 10H5V7.5H2.5V10ZM2.5 5H5V2.5H2.5V5ZM7.5 20H10V17.5H7.5V20ZM7.5 15H10V12.5H7.5V15ZM7.5 10H10V7.5H7.5V10ZM7.5 5H10V2.5H7.5V5ZM12.5 20H22.5V7.5H12.5V10H15V12.5H12.5V15H15V17.5H12.5V20ZM17.5 12.5V10H20V12.5H17.5ZM17.5 17.5V15H20V17.5H17.5Z" fill="#003D6A"/>
+                    </svg>
                 </div>
                 <div>
                     <div class="about-stat-number">{{ $stats['bidang'] }}</div>
@@ -705,7 +709,9 @@
             {{-- Regulasi (dari API SIPETRUK, di-cache 1 jam) --}}
             <div class="about-stat-item stat-orange">
                 <div class="about-stat-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M21.2 5.8a2.83 2.83 0 0 0-4-4l-8 8a2.83 2.83 0 0 0 0 4l-1.5 1.5a1 1 0 0 0-.3.7v3h-3a1 1 0 0 0-.7.3L1.5 21.5a1 1 0 0 0 1.4 1.4l2.2-2.2v-3a1 1 0 0 0-1-1h-2L9.2 9.6l1.5-1.5a2.83 2.83 0 0 0 4 0l6.5-2.3zM10.4 11.2a.82.82 0 0 1-1.2 0l-1.2-1.2a.82.82 0 0 1 0-1.2l6-6a.82.82 0 0 1 1.2 0l1.2 1.2a.82.82 0 0 1 0 1.2z"/></svg>
+                    <svg width="23" height="24" viewBox="0 0 23 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 23.75V21.25H15V23.75H0ZM7.0625 17.6875L0 10.625L2.625 7.9375L9.75 15L7.0625 17.6875ZM15 9.75L7.9375 2.625L10.625 0L17.6875 7.0625L15 9.75ZM20.75 22.5L4.4375 6.1875L6.1875 4.4375L22.5 20.75L20.75 22.5Z" fill="#E87A35"/>
+                    </svg>
                 </div>
                 <div>
                     <div class="about-stat-number">{{ $stats['regulasi'] }}</div>
@@ -716,7 +722,9 @@
             {{-- Berita Dipublikasikan --}}
             <div class="about-stat-item stat-yellow">
                 <div class="about-stat-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 24 24"><path d="M20 3H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2zM4 19V5h16v14z"/><path d="M6 7h12v2H6zm0 4h12v2H6zm0 4h8v2H6z"/></svg>
+                    <svg width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2.5 22.5C1.8125 22.5 1.22396 22.2552 0.734375 21.7656C0.244792 21.276 0 20.6875 0 20V2.5C0 1.8125 0.244792 1.22396 0.734375 0.734375C1.22396 0.244792 1.8125 0 2.5 0H20C20.6875 0 21.276 0.244792 21.7656 0.734375C22.2552 1.22396 22.5 1.8125 22.5 2.5V20C22.5 20.6875 22.2552 21.276 21.7656 21.7656C21.276 22.2552 20.6875 22.5 20 22.5H2.5ZM5 17.5H13.75V15H5V17.5ZM5 12.5H17.5V10H5V12.5ZM5 7.5H17.5V5H5V7.5Z" fill="#F2C94C"/>
+                    </svg>
                 </div>
                 <div>
                     <div class="about-stat-number">{{ $stats['berita'] }}</div>
@@ -799,8 +807,8 @@
             {{-- Tugas Pokok --}}
             <div class="about-tugas-card tugas-pokok-card">
                 <div class="about-tugas-card-head">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    <svg width="18" height="20" viewBox="0 0 18 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 20C1.45 20 0.979167 19.8042 0.5875 19.4125C0.195833 19.0208 0 18.55 0 18V4C0 3.45 0.195833 2.97917 0.5875 2.5875C0.979167 2.19583 1.45 2 2 2H6.2C6.41667 1.4 6.77917 0.916667 7.2875 0.55C7.79583 0.183333 8.36667 0 9 0C9.63333 0 10.2042 0.183333 10.7125 0.55C11.2208 0.916667 11.5833 1.4 11.8 2H16C16.55 2 17.0208 2.19583 17.4125 2.5875C17.8042 2.97917 18 3.45 18 4V18C18 18.55 17.8042 19.0208 17.4125 19.4125C17.0208 19.8042 16.55 20 16 20H2ZM2 18H16V4H2V18ZM4 16H11V14H4V16ZM4 12H14V10H4V12ZM4 8H14V6H4V8ZM9 3.25C9.21667 3.25 9.39583 3.17917 9.5375 3.0375C9.67917 2.89583 9.75 2.71667 9.75 2.5C9.75 2.28333 9.67917 2.10417 9.5375 1.9625C9.39583 1.82083 9.21667 1.75 9 1.75C8.78333 1.75 8.60417 1.82083 8.4625 1.9625C8.32083 2.10417 8.25 2.28333 8.25 2.5C8.25 2.71667 8.32083 2.89583 8.4625 3.0375C8.60417 3.17917 8.78333 3.25 9 3.25ZM2 18V4V18Z" fill="#E87A35"/>
                     </svg>
                     <h3>Tugas Pokok</h3>
                 </div>
@@ -812,8 +820,8 @@
             {{-- Fungsi Utama --}}
             <div class="about-tugas-card fungsi-utama-card">
                 <div class="about-tugas-card-head">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                    <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M13 18V15H9V5H7V8H0V0H7V3H13V0H20V8H13V5H11V13H13V10H20V18H13ZM2 2V6V2ZM15 12V16V12ZM15 2V6V2ZM15 6H18V2H15V6ZM15 16H18V12H15V16ZM2 6H5V2H2V6Z" fill="#219653"/>
                     </svg>
                     <h3>Fungsi Utama</h3>
                 </div>
