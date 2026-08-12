@@ -361,8 +361,7 @@
             <button class="reg-tab" data-filter="Peraturan Daerah">Peraturan Daerah</button>
             <button class="reg-tab" data-filter="Peraturan Walikota">Peraturan Walikota</button>
             <button class="reg-tab" data-filter="Undang-Undang">Undang-Undang</button>
-            <button class="reg-tab" data-filter="Standar Pelayanan">Standar Pelayanan</button>
-            <button class="reg-tab" data-filter="SK Kadis">SK Kadis</button>
+            <button class="reg-tab" data-filter="Peraturan Presiden">Peraturan Presiden</button>
             <button class="reg-tab" data-filter="LAKIP">LAKIP</button>
             <button class="reg-tab" data-filter="Peraturan Lembaga">Peraturan Lembaga</button>
             <button class="reg-tab" data-filter="Dokumen">Dokumen Lainnya</button>
@@ -383,8 +382,7 @@
             @php
                 $badgeClass = match($item['slug'] ?? '') {
                     'perwal'  => 'reg-item-badge reg-item-badge-perwal',
-                    'standar' => 'reg-item-badge reg-item-badge-standar',
-                    'sk-kadis'=> 'reg-item-badge reg-item-badge-sk',
+                    'perpres' => 'reg-item-badge reg-item-badge-standar',
                     'uu'      => 'reg-item-badge reg-item-badge-perwal',
                     'lakip'   => 'reg-item-badge reg-item-badge-sk',
                     'perlem' => 'reg-item-badge reg-item-badge-sk',

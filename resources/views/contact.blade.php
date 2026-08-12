@@ -428,11 +428,26 @@
 <div class="contact-wrapper">
 
     {{-- Breadcrumb --}}
-    <div class="contact-breadcrumb">
-        <a href="{{ route('home') }}">Beranda</a>
-        <span>›</span>
-        <span>Hubungi Kami</span>
-    </div>
+<div class="contact-breadcrumb">
+    <!-- Pengkondisian halaman sebelumnya -->
+    @php
+        $prevUrl = url()->previous();
+        $currentUrl = url()->current();
+        $homeUrl = route('home');
+        $path = parse_url($prevUrl, PHP_URL_PATH);
+        $cleanPath = str_replace('-', ' ', trim($path, '/'));
+        $pageName = $cleanPath ? ucwords($cleanPath) : 'Beranda';
+
+        if ($prevUrl == $currentUrl || !str_contains($prevUrl, request()->getHost())) {
+            $prevUrl = $homeUrl;
+            $pageName = 'Beranda';
+        }
+    @endphp
+
+    <a href="{{ $prevUrl }}">{{ $pageName }}</a>
+    <span>›</span>
+    <span>Hubungi Kami</span>
+</div>
 
     <h1 class="contact-page-title">Hubungi Kami</h1>
     <p class="contact-page-desc">

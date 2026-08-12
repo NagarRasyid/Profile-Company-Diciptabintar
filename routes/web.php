@@ -13,15 +13,15 @@ use App\Http\Controllers\Auth\LoginController;
 
 Route::get("/", [HomeController::class, "index"])->name("home");
 
-Route::get('/about', [AboutController::class, 'index'])->name('about');
+Route::get('/profil', [AboutController::class, 'index'])->name('about');
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
-Route::get('/news', [InstagramPostController::class, 'index'])->name('news.index');
+Route::get('/berita', [InstagramPostController::class, 'index'])->name('news.index');
 
-Route::get('/services', [ServiceController::class, 'index'])->name('services.index');
-Route::get('/services/{slug}', [ServiceController::class, 'show'])->name('services.show');
+Route::get('/bidang', [ServiceController::class, 'index'])->name('services.index');
+Route::get('/bidang/{slug}', [ServiceController::class, 'show'])->name('services.show');
 
 Route::get('/portfolio', [PortfolioController::class, 'index'])->name('portfolio.index');
 Route::get('/portfolio/{slug}', [PortfolioController::class, 'show'])->name('portfolio.show');

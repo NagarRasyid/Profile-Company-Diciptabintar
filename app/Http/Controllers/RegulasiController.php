@@ -40,15 +40,6 @@ class RegulasiController extends Controller
             'file'       => null,
         ],
         [
-            'kategori'   => 'SK Kadis',
-            'slug'       => 'sk-kadis',
-            'badge'      => 'SK KEPALA DINAS',
-            'tahun'      => '2021',
-            'nomor'      => null,
-            'judul'      => 'Keputusan Kepala Dinas Tentang Pembentukan Tim Profesi Ahli (TPA) Bangunan Gedung',
-            'file'       => null,
-        ],
-        [
             'kategori'   => 'Peraturan Daerah',
             'slug'       => 'perda',
             'badge'      => 'PERATURAN DAERAH',
@@ -67,21 +58,12 @@ class RegulasiController extends Controller
             'file'       => null,
         ],
         [
-            'kategori'   => 'Standar Pelayanan',
-            'slug'       => 'standar',
-            'badge'      => 'STANDAR PELAYANAN',
-            'tahun'      => '2021',
-            'nomor'      => null,
-            'judul'      => 'Standar Pelayanan Pengawasan Bangunan Gedung di Lingkungan Pemerintah Kota Bandung',
-            'file'       => null,
-        ],
-        [
-            'kategori'   => 'SK Kadis',
-            'slug'       => 'sk-kadis',
-            'badge'      => 'SK KEPALA DINAS',
-            'tahun'      => '2023',
-            'nomor'      => null,
-            'judul'      => 'Surat Keputusan Kepala Dinas Tentang Penetapan Standar Harga Satuan Konstruksi Tahun 2023',
+            'kategori'   => 'Peraturan Presiden',
+            'slug'       => 'perpres',
+            'badge'      => 'PERATURAN PRESIDEN',
+            'tahun'      => '2022',
+            'nomor'      => '21',
+            'judul'      => 'Peraturan Presiden Republik Indonesia Nomor 21 Tahun 2021 Tentang Penyelenggaraan Sistem Pemerintahan Berbasis Elektronik',
             'file'       => null,
         ],
     ];
@@ -112,14 +94,10 @@ class RegulasiController extends Controller
                     $kategori = 'Peraturan Walikota';
                     $badge    = 'PERATURAN WALIKOTA';
                     $slug     = 'perwal';
-                } elseif (stripos($isi, 'standar pelayanan') !== false) {
-                    $kategori = 'Standar Pelayanan';
-                    $badge    = 'STANDAR PELAYANAN';
-                    $slug     = 'standar';
-                } elseif (stripos($isi, 'keputusan') !== false || stripos($isi, 'sk') !== false) {
-                    $kategori = 'SK Kadis';
-                    $badge    = 'SK KEPALA DINAS';
-                    $slug     = 'sk-kadis';
+                } elseif (stripos($isi, 'peraturan presiden') !== false) {
+                    $kategori = 'Peraturan Presiden';
+                    $badge    = 'PERATURAN PRESIDEN';
+                    $slug     = 'perpres';
                 } elseif (stripos($isi, 'undang-undang') !== false || stripos($isi, 'undang - undang') !== false || stripos($isi, 'peraturan pemerintah') !== false) {
                     $kategori = 'Undang-Undang';
                     $badge    = 'UNDANG-UNDANG';

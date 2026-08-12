@@ -410,7 +410,7 @@
             </p>
 
             <div class="hero-actions">
-                <a href="{{ route('layanan.index') }}" class="hero-btn-primary">
+                <a href="{{ route('about') }}" class="hero-btn-primary">
                     Profil Dinas &rarr;
                 </a>
             </div>
