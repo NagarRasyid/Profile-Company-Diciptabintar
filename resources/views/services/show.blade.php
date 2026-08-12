@@ -157,7 +157,7 @@
                 text-align: center;
             }
             .struktur-header {
-                max-width: 700px;
+                max-width: 800px;
                 margin: 0 auto 48px;
             }
             .struktur-header h3 {
@@ -178,6 +178,9 @@
                 grid-template-columns: repeat(2, 1fr);
                 gap: 32px;
                 text-align: left;
+            }
+            .struktur-grid:has(> :nth-child(3)) {
+                grid-template-columns: repeat(3, 1fr);
             }
             .struktur-card {
                 background: #ffffff;

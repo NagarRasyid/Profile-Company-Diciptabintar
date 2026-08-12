@@ -49,19 +49,19 @@ class ServiceController extends Controller
                 'hero_desc' => 'Memegang peranan krusial sebagai tulang punggung administratif, pengelolaan umum & kepegawaian, keuangan, serta pengoordinasian program Dinas.',
                 'hero_img' => 'images/about-office.jpg',
                 'tugas' => [
-                    ['color' => 'blue', 'title' => 'Koordinasi Administrasi', 'desc' => 'Melaksanakan urusan ketatausahaan, kepegawaian, tata laksana, dan hubungan masyarakat.'],
-                    ['color' => 'green', 'title' => 'Pengelolaan Keuangan', 'desc' => 'Mengelola keuangan dinas, verifikasi SPJ, dan penyusunan laporan keuangan.'],
-                    ['color' => 'orange', 'title' => 'Perencanaan & Evaluasi', 'desc' => 'Menyusun rencana program, anggaran, dan evaluasi kinerja dinas secara berkala.'],
+                    ['color' => 'blue', 'title' => 'Koordinasi Administrasi', 'desc' => 'Melaksanakan tata usaha, persuratan, kehumasan, kearsipan, dan kerumahtanggaan.'],
+                    ['color' => 'green', 'title' => 'Pengelolaan Keuangan', 'desc' => 'Menyusun anggaran pendapatan/belanja, penggajian ASN, dan laporan pertanggungjawaban.'],
+                    ['color' => 'orange', 'title' => 'Manajemen SDM', 'desc' => 'Mengelola administrasi kepegawaian, pengembangan karier, dan peningkatan kompetensi ASN.'],
                 ],
-                'struktur_desc' => 'Sekretariat membawahi beberapa sub bagian yang berfokus pada kelancaran operasional internal dinas.',
+                'struktur_desc' => 'Sekretariat menjalankan fungsinya melalui dua sub bagian utama yang bekerja sinergis untuk mendukung operasional dinas.',
                 'struktur' => [
                     [
                         'title' => 'Sub Bagian Umum & Kepegawaian',
-                        'items' => ['Pengelolaan surat menyurat dan arsip.', 'Administrasi kepegawaian dan pengembangan SDM.', 'Pemeliharaan aset dan kebersihan kantor.']
+                        'items' => ['Pengelolaan urusan surat menyurat dan tata kearsipan.', 'Pemeliharaan perlengkapan, aset, dan kerumahtanggaan dinas.', 'Fasilitasi administrasi kepegawaian dan keprotokolan.']
                     ],
                     [
                         'title' => 'Sub Bagian Keuangan & Program',
-                        'items' => ['Penyusunan RKA dan DPA dinas.', 'Verifikasi dan pelaporan pertanggungjawaban.', 'Evaluasi program dan penyusunan LAKIP.']
+                        'items' => ['Penyusunan Rencana Kerja Anggaran (RKA) serta Dokumen Pelaksanaan Anggaran (DPA) dinas.', 'Penatausahaan keuangan dan verifikasi dokumen pencairan.', 'Penyusunan laporan pertanggungjawaban keuangan dinas.']
                     ]
                 ]
             ],
@@ -91,19 +91,19 @@ class ServiceController extends Controller
                 'hero_desc' => 'Berperan strategis dalam pembinaan jasa konstruksi, perencanaan, serta pengawasan pembangunan Bangunan Gedung Nagara di Kota Bandung.',
                 'hero_img' => 'images/konstruksi1.jpg.jpeg',
                 'tugas' => [
-                    ['color' => 'blue', 'title' => 'Perencanaan Gedung Negara', 'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'],
-                    ['color' => 'green', 'title' => 'Pembinaan Jasa Konstruksi', 'desc' => 'Ut enim ad minim veniam, quis nostrud exercitation ullamco.'],
-                    ['color' => 'orange', 'title' => 'Pengawasan & Pemeliharaan', 'desc' => 'Duis aute irure dolor in reprehenderit in voluptate velit esse.'],
+                    ['color' => 'blue', 'title' => 'Perencanaan Gedung Negara', 'desc' => 'Memberikan bantuan teknis dan DED perencanaan pembangunan Bangunan Gedung Negara.'],
+                    ['color' => 'green', 'title' => 'Pembinaan Jasa Konstruksi', 'desc' => 'Penyelenggaraan pelatihan dan fasilitasi sertifikasi tenaga terampil konstruksi.'],
+                    ['color' => 'orange', 'title' => 'Pengawasan dan Pemeliharaan', 'desc' => 'Pengawasan fisik pembangunan serta pemeliharaan aset/gedung strategis daerah.'],
                 ],
-                'struktur_desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
+                'struktur_desc' => 'Bidang Bina Konstruksi dan Bangunan Gedung Negara menjalankan fungsinya melalui pembinaan jasa konstruksi dan pengawasan teknis yang bekerja sinergis untuk menjamin mutu infrastruktur pemerintah.',
                 'struktur' => [
                     [
-                        'title' => 'Substansi Bina Konstruksi',
-                        'items' => ['Lorem ipsum dolor sit amet.', 'Consectetur adipiscing elit.', 'Sed do eiusmod tempor incididunt.']
+                        'title' => 'Sub Bagian Tata Usaha',
+                        'items' => ['Pengelolaan Administrasi umum dan kepegawaian.', 'Penyusunan program dan pelaporan kegiatan.', 'Pengelolaan keuangan dan asetp bidang.']
                     ],
                     [
-                        'title' => 'Substansi Bangunan Gedung Negara',
-                        'items' => ['Ut enim ad minim veniam.', 'Quis nostrud exercitation ullamco.', 'Laboris nisi ut aliquip ex ea commodo.']
+                        'title' => 'Seksi Operasional',
+                        'items' => ['Koordinasi pelaksanaan teknis di lapangan.', 'Evaluasi kinerja dan mutu proyek konstruksi.', 'Penerapan standar operasional prosedur (SOP).']
                     ]
                 ]
             ],
@@ -112,19 +112,23 @@ class ServiceController extends Controller
                 'hero_desc' => 'Mengemban peran strategis dalam perencanaan, pengukuran dan pemetaan, serta pengembangan tata ruang wilayah Kota Bandung secara berkelanjutan.',
                 'hero_img' => 'images/about-office.jpg',
                 'tugas' => [
-                    ['color' => 'blue', 'title' => 'Survei & Pemetaan', 'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'],
-                    ['color' => 'green', 'title' => 'Perencanaan Tata Ruang', 'desc' => 'Ut enim ad minim veniam, quis nostrud exercitation ullamco.'],
-                    ['color' => 'orange', 'title' => 'Layanan KRK & KKPR', 'desc' => 'Duis aute irure dolor in reprehenderit in voluptate velit esse.'],
+                    ['color' => 'blue', 'title' => 'Survei & Pemetaan', 'desc' => 'Pengukuran spasial, pemetaan kota, dan evaluasi simpul jaringan informasi geospasial.'],
+                    ['color' => 'green', 'title' => 'Perencanaan Tata Ruang', 'desc' => 'Penyusunan dan sosialisasi Perwal RDTR, RTRW, serta sinkronisasi program pemanfaatan ruang (SPPR).'],
+                    ['color' => 'orange', 'title' => 'Layanan KRK & KKPR', 'desc' => 'Penerbitan Keterangan Rencana Kota (KRK) New dan Informasi Rencana Kota.'],
                 ],
-                'struktur_desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
+                'struktur_desc' => 'Bidang Tata Ruang menjalankan fungsinya melalui pemetaan spasial dan penyusunan regulasi yang bekerja sinergis untuk mewujudkan perencanaan ruang kota yang terstruktur dan berkelanjutan.',
                 'struktur' => [
                     [
-                        'title' => 'Substansi Perencanaan Ruang',
-                        'items' => ['Lorem ipsum dolor sit amet.', 'Consectetur adipiscing elit.', 'Sed do eiusmod tempor incididunt.']
+                        'title' => 'Seksi Perencanaan Ruang',
+                        'items' => ['Penyusunan REncana Tata Ruang Wilayah (RTRW).', 'Penyusunan Rencana Detail Tata Ruang(RDTR).', 'Sinkronisasi Program Pemanfaatan Ruang.']
                     ],
                     [
                         'title' => 'Substansi Pemanfaatan Ruang',
-                        'items' => ['Ut enim ad minim veniam.', 'Quis nostrud exercitation ullamco.', 'Laboris nisi ut aliquip ex ea commodo.']
+                        'items' => ['Proses penerbitan dokumen KRK.', 'Penyediaan Informasi Rencana Kota bagi masyarakat.', 'Koordinasi Kesesuaian Kegiatan Pemanfaatan Ruang (KKPR).']
+                    ],
+                    [
+                        'title' => 'Substansi Pemanfaatan Ruang',
+                        'items' => ['Survei kondisi tata ruang lapangan.', 'Pembuatan peta tematik perkotaan.', 'Pengelolaan data informasi geospasial.']
                     ]
                 ]
             ],
@@ -133,19 +137,19 @@ class ServiceController extends Controller
                 'hero_desc' => 'Melaksanakan pengawasan, pengendalian, dan penertiban terhadap pemanfaatan ruang serta penyelenggaraan bangunan gedung agar sesuai regulasi.',
                 'hero_img' => 'images/about-office.jpg',
                 'tugas' => [
-                    ['color' => 'blue', 'title' => 'Penertiban & Sanksi', 'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'],
-                    ['color' => 'green', 'title' => 'Pengawasan Lapangan', 'desc' => 'Ut enim ad minim veniam, quis nostrud exercitation ullamco.'],
-                    ['color' => 'orange', 'title' => 'Dokumentasi & Sengketa', 'desc' => 'Duis aute irure dolor in reprehenderit in voluptate velit esse.'],
+                    ['color' => 'blue', 'title' => 'Penertiban & Sanksi', 'desc' => 'Penanganan pelanggaran tata ruang melalui surat teguran, sanksi administratif, hingga penyegelan.'],
+                    ['color' => 'green', 'title' => 'Pengawasan Lapangan', 'desc' => 'Inspeksi dan monitoring rutin pelaksanaan tata ruang dan PBG oleh Penilik Bangunan.'],
+                    ['color' => 'orange', 'title' => 'Dokumentasi & Sengketa', 'desc' => 'Penanganan pengaduan masyarakat, fasilitasi PPNS, dan penyelesaian sengketa tata ruang.'],
                 ],
-                'struktur_desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
+                'struktur_desc' => 'Bidang Bina Konstruksi dan Bangunan Gedung Negara menjalankan fungsinya melalui pembinaan jasa konstruksi dan pengawasan teknis yang bekerja sinergis untuk menjamin mutu infrastruktur pemerintah.',
                 'struktur' => [
                     [
-                        'title' => 'Substansi Pengawasan',
-                        'items' => ['Lorem ipsum dolor sit amet.', 'Consectetur adipiscing elit.', 'Sed do eiusmod tempor incididunt.']
+                        'title' => 'Pengawasan',
+                        'items' => ['Monitoring pelaksanaan izin tata ruang.', 'Inspeksi kelayakan bangunan gedung.', 'Evaluasi pemanfaatan ruang kota.', 'Koordinasi dengan wilayah terkait pengawasan.']
                     ],
                     [
-                        'title' => 'Substansi Pengendalian',
-                        'items' => ['Ut enim ad minim veniam.', 'Quis nostrud exercitation ullamco.', 'Laboris nisi ut aliquip ex ea commodo.']
+                        'title' => 'Pengendalian',
+                        'items' => ['Penerbitan surat teguran pelanggaran.', 'Penindakan sanksi administratif.', 'Pelaksanaan penyegelan bangunan.', 'Fasilitasi penyelesaian sengketa.']
                     ]
                 ]
             ],
@@ -154,19 +158,19 @@ class ServiceController extends Controller
                 'hero_desc' => 'Menyelenggarakan pelayanan teknis operasional, penataan, kebersihan, dan pemeliharaan ruang terbuka hijau (RTH) publik pemakaman.',
                 'hero_img' => 'images/UPTD.jpg',
                 'tugas' => [
-                    ['color' => 'blue', 'title' => 'Operasional Pemakaman', 'desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'],
-                    ['color' => 'green', 'title' => 'Ketertiban & Keindahan', 'desc' => 'Ut enim ad minim veniam, quis nostrud exercitation ullamco.'],
-                    ['color' => 'orange', 'title' => 'Pelayanan Masyarakat', 'desc' => 'Duis aute irure dolor in reprehenderit in voluptate velit esse.'],
+                    ['color' => 'blue', 'title' => 'Pelayanan Pemakaman', 'desc' => 'Pengelolaan layanan TPU (Muslim & Non- Muslim), makam baru, dan makam tumpang.'],
+                    ['color' => 'green', 'title' => 'Pemeliharaan RTH Publik', 'desc' => 'Penataan lanskap, rumputisasi, dan perawatan kebersihan area pemakaman.'],
+                    ['color' => 'orange', 'title' => 'Digitalisasi Layanan', 'desc' => 'Optimalisasi sistem pelayanan pemakaman online (SIMPELMAN.BdgJuara).'],
                 ],
-                'struktur_desc' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
+                'struktur_desc' => 'UPTD Pengelolaan Pemakaman menjalankan fungsinya melalui pelayanan teknis dan pemeliharaan RTH yang bekerja sinergis untuk menyediakan sarana pemakaman yang tertib dan nyaman.',
                 'struktur' => [
                     [
                         'title' => 'Sub Bagian Tata Usaha UPTD',
-                        'items' => ['Lorem ipsum dolor sit amet.', 'Consectetur adipiscing elit.', 'Sed do eiusmod tempor incididunt.']
+                        'items' => ['Pengelolaan administrasi kepegawaian dan keuangan UPTD.', 'Penyusunan program kerja dan laporan evaluasi kinerja.', 'Pelayanan administrasi umum dan surat menyurat.']
                     ],
                     [
-                        'title' => 'Pelaksana Teknis Lapangan',
-                        'items' => ['Ut enim ad minim veniam.', 'Quis nostrud exercitation ullamco.', 'Laboris nisi ut aliquip ex ea commodo.']
+                        'title' => 'Pelayanan Teknis',
+                        'items' => ['Koordinasi pelayanan pemakaman di seluruh TPU kelolaan.', 'Monitoring pemeliharaan infrastruktur dan RTH di area makam.', 'Pengawasan kinerja petugas lapangan (PHL) pemakaman.']
                     ]
                 ]
             ],

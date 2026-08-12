@@ -14,29 +14,6 @@
     padding: 32px 1px 40px;
 }
 
-/* ---- BREADCRUMB ---- */
-.reg-breadcrumb {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    font-size: 0.8rem;
-    color: #64748b;
-    margin-bottom: 18px;
-}
-
-.reg-breadcrumb a {
-    color: #003d6a;
-    text-decoration: none;
-    font-weight: 500;
-}
-
-.reg-breadcrumb a:hover { text-decoration: underline; }
-
-.reg-breadcrumb-sep {
-    color: #94a3b8;
-    font-size: 0.75rem;
-}
-
 /* ---- PAGE HEADER ---- */
 .reg-header {
     margin-bottom: 28px;
@@ -121,12 +98,12 @@
 }
 
 .reg-tab {
-    padding: 6px 16px;
-    border-radius: 999px; /* Bentuk Pill */
+    padding: 4px 10px;
+    border-radius: 999px;
     border: 1px solid #cbd5e1;
     background: #ffffff;
     color: #475569;
-    font-size: 0.95rem;
+    font-size: 0.79rem;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.18s ease;
@@ -337,7 +314,9 @@
 
 .reg-page-btn.nav { font-size: 1rem; }
 .reg-page-ellipsis { color: #94a3b8; font-size: 0.85rem; padding: 0 2px; }
-
+.reg-page-btn.nav[disabled] {
+    display: none;
+}
 /* ---- EMPTY STATE ---- */
 #reg-empty {
     text-align: center;
@@ -358,14 +337,6 @@
 
 @section('content')
 <div class="regulasi-wrapper">
-
-    {{-- BREADCRUMB --}}
-    <nav class="reg-breadcrumb" aria-label="breadcrumb">
-        <a href="{{ route('home') }}">Beranda</a>
-        <span class="reg-breadcrumb-sep">›</span>
-        <span>Regulasi</span>
-    </nav>
-
     {{-- HEADER --}}
     <div class="reg-header">
         <h1>Regulasi &amp; Dasar Hukum</h1>
