@@ -12,7 +12,7 @@ class InstagramPostController extends Controller
 {
     public function index()
     {
-        $posts = InstagramPost::orderBy('sort_order')->latest()->paginate(20);
+        $posts = InstagramPost::orderByDesc('is_pinned')->latest()->paginate(20);
         return view('admin.instagram.index', compact('posts'));
     }
 
@@ -24,11 +24,11 @@ class InstagramPostController extends Controller
     public function store(Request $request): RedirectResponse
     {
         $validated = $request->validate([
-            'image'      => ['required', 'image', 'mimes:jpg,jpeg,png,webp', 'max:5120'],
-            'caption'    => ['nullable', 'string', 'max:2200'],
-            'post_url'   => ['nullable', 'url', 'max:500'],
-            'is_active'  => ['boolean'],
-            'sort_order' => ['integer', 'min:0', 'max:9999'],
+            'image'     => ['required', 'image', 'mimes:jpg,jpeg,png,webp', 'max:5120'],
+            'caption'   => ['nullable', 'string', 'max:2200'],
+            'post_url'  => ['nullable', 'url', 'max:500'],
+            'is_active' => ['boolean'],
+            'is_pinned' => ['boolean'],
         ], [
             'image.required' => 'Gambar wajib diunggah.',
             'image.image'    => 'File harus berupa gambar.',
@@ -36,14 +36,24 @@ class InstagramPostController extends Controller
             'post_url.url'   => 'Link Instagram harus berupa URL yang valid.',
         ]);
 
+        // Validasi: maksimal 3 postingan yang di-pin
+        if ($request->boolean('is_pinned')) {
+            $pinnedCount = InstagramPost::where('is_pinned', true)->count();
+            if ($pinnedCount >= 3) {
+                return back()
+                    ->withInput()
+                    ->withErrors(['is_pinned' => 'Maksimal hanya 3 postingan yang dapat di-pin. Lepas pin salah satu postingan terlebih dahulu.']);
+            }
+        }
+
         $path = $request->file('image')->store('instagram', 'public');
 
         InstagramPost::create([
-            'image'      => $path,
-            'caption'    => $validated['caption'] ?? null,
-            'post_url'   => $validated['post_url'] ?? null,
-            'is_active'  => $request->boolean('is_active', true),
-            'sort_order' => $validated['sort_order'] ?? 0,
+            'image'     => $path,
+            'caption'   => $validated['caption'] ?? null,
+            'post_url'  => $validated['post_url'] ?? null,
+            'is_active' => $request->boolean('is_active', true),
+            'is_pinned' => $request->boolean('is_pinned', false),
         ]);
 
         return redirect()->route('admin.instagram.index')
@@ -58,18 +68,31 @@ class InstagramPostController extends Controller
     public function update(Request $request, InstagramPost $instagram): RedirectResponse
     {
         $validated = $request->validate([
-            'image'      => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp', 'max:5120'],
-            'caption'    => ['nullable', 'string', 'max:2200'],
-            'post_url'   => ['nullable', 'url', 'max:500'],
-            'is_active'  => ['boolean'],
-            'sort_order' => ['integer', 'min:0', 'max:9999'],
+            'image'     => ['nullable', 'image', 'mimes:jpg,jpeg,png,webp', 'max:5120'],
+            'caption'   => ['nullable', 'string', 'max:2200'],
+            'post_url'  => ['nullable', 'url', 'max:500'],
+            'is_active' => ['boolean'],
+            'is_pinned' => ['boolean'],
         ]);
 
+        // Validasi: maksimal 3 postingan yang di-pin
+        // Hitung pin yang ada, kecualikan postingan yang sedang diedit
+        if ($request->boolean('is_pinned') && !$instagram->is_pinned) {
+            $pinnedCount = InstagramPost::where('is_pinned', true)
+                ->where('id', '!=', $instagram->id)
+                ->count();
+            if ($pinnedCount >= 3) {
+                return back()
+                    ->withInput()
+                    ->withErrors(['is_pinned' => 'Maksimal hanya 3 postingan yang dapat di-pin. Lepas pin salah satu postingan terlebih dahulu.']);
+            }
+        }
+
         $data = [
-            'caption'    => $validated['caption'] ?? null,
-            'post_url'   => $validated['post_url'] ?? null,
-            'is_active'  => $request->boolean('is_active'),
-            'sort_order' => $validated['sort_order'] ?? 0,
+            'caption'   => $validated['caption'] ?? null,
+            'post_url'  => $validated['post_url'] ?? null,
+            'is_active' => $request->boolean('is_active'),
+            'is_pinned' => $request->boolean('is_pinned'),
         ];
 
         if ($request->hasFile('image')) {
@@ -94,7 +117,7 @@ class InstagramPostController extends Controller
     }
 
     /**
-     * Toggle aktif/nonaktif via AJAX atau redirect.
+     * Toggle aktif/nonaktif via redirect.
      */
     public function toggleActive(InstagramPost $instagram): RedirectResponse
     {

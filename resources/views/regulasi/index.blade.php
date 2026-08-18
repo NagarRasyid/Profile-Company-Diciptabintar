@@ -358,12 +358,12 @@
         <div class="reg-filters">
             <span class="reg-filters-label">Kategori:</span>
             <button class="reg-tab active" data-filter="semua">Semua</button>
-            <button class="reg-tab" data-filter="Peraturan Daerah">Peraturan Daerah</button>
-            <button class="reg-tab" data-filter="Peraturan Walikota">Peraturan Walikota</button>
             <button class="reg-tab" data-filter="Undang-Undang">Undang-Undang</button>
             <button class="reg-tab" data-filter="Peraturan Presiden">Peraturan Presiden</button>
-            <button class="reg-tab" data-filter="LAKIP">LAKIP</button>
+            <button class="reg-tab" data-filter="Peraturan Daerah">Peraturan Daerah</button>
+            <button class="reg-tab" data-filter="Peraturan Walikota">Peraturan Walikota</button>
             <button class="reg-tab" data-filter="Peraturan Lembaga">Peraturan Lembaga</button>
+            <button class="reg-tab" data-filter="LAKIP">LAKIP</button>
             <button class="reg-tab" data-filter="Dokumen">Dokumen Lainnya</button>
         </div>
     </div>
@@ -548,7 +548,7 @@ function renderPagination(total, page) {
 
 /** Bangun array nomor halaman dengan ellipsis */
 function buildPageRange(cur, total) {
-    if (total <= 7) return Array.from({ length: total }, (_, i) => i + 1);
+    if (total <= 5) return Array.from({ length: total }, (_, i) => i + 1);
     const pages = [];
     pages.push(1);
     if (cur > 3) pages.push('...');

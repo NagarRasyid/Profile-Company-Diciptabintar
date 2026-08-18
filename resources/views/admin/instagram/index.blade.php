@@ -45,9 +45,8 @@
         {{-- Info & Actions --}}
         <div style="padding: 10px 12px 12px;">
             @if($post->caption)
-            <p style="font-size: 0.78rem; color: #475569; line-height: 1.45; margin: 0 0 8px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">{{ $post->caption }}</p>
+            <p style="font-size: 0.78rem; color: #475569; line-height: 1.45; margin: 0 0 12px; overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">{{ $post->caption }}</p>
             @endif
-            <p style="font-size: 0.7rem; color: #94a3b8; margin: 0 0 10px;">Urutan: {{ $post->sort_order }}</p>
 
             <div style="display: flex; gap: 6px; flex-wrap: wrap;">
                 {{-- Toggle Active --}}

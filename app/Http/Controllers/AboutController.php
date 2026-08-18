@@ -18,6 +18,7 @@ class AboutController extends Controller
         // Stats: ambil dari DB dan API
         $totalLayanan = Service::active()->count();
         $totalBerita  = InstagramPost::where('is_active', true)->count();
+        $totalBidang  = 7;
 
         // Total regulasi — cache 1 jam agar tidak hit API setiap request
         $totalRegulasi = Cache::remember('regulasi_total', 3600, function () {
@@ -36,9 +37,9 @@ class AboutController extends Controller
         });
 
         $stats = [
-            'layanan'  => $totalLayanan  ?: 5,   // fallback jika DB kosong
-            'bidang'   => 5,                       // statis (tidak berubah)
-            'regulasi' => $totalRegulasi,
+            'layanan'  => $totalLayanan  ?: 5,
+            'bidang'   => $totalBidang   ?: 0,
+            'regulasi' => $totalRegulasi ?: 0,
             'berita'   => $totalBerita   ?: 0,
         ];
 

@@ -17,23 +17,27 @@ class InstagramPost extends Model
         'caption',
         'post_url',
         'is_active',
-        'sort_order',
+        'is_pinned',
     ];
 
     protected function casts(): array
     {
         return [
-            'is_active'  => 'boolean',
-            'sort_order' => 'integer',
+            'is_active' => 'boolean',
+            'is_pinned' => 'boolean',
         ];
     }
 
     /**
-     * Scope: hanya post yang aktif, diurutkan berdasarkan sort_order ASC, lalu created_at DESC.
+     * Scope: hanya post yang aktif.
+     * Diurutkan: is_pinned DESC (yang dipin di atas), lalu created_at DESC (terbaru).
      */
     public function scopeActive($query)
     {
-        return $query->where('is_active', true)->orderBy('sort_order')->latest();
+        return $query
+            ->where('is_active', true)
+            ->orderByDesc('is_pinned')
+            ->latest();
     }
 
     /**

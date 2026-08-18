@@ -184,6 +184,7 @@ select {
     justify-content: center;
     gap: 2px;
     flex-wrap: nowrap;
+    margin-right: 80px;
 }
 
 .site-nav-link {

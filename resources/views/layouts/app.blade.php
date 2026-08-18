@@ -152,22 +152,8 @@
                     </a>
                 </nav>
 
-                {{-- RIGHT SIDE: ICONS + CTA BUTTON --}}
+                {{-- RIGHT SIDE: Button --}}
                 <div class="site-header-actions">
-                    {{-- Aksesibilitas --}}
-                    <button class="site-icon-btn" title="Mode Lansia" aria-label="Aksesibilitas">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-universal-access" viewBox="0 0 16 16">
-                            <path d="M9.5 1.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0M6 5.5l-4.535-.442A.531.531 0 0 1 1.531 4H14.47a.531.531 0 0 1 .066 1.058L10 5.5V9l.452 6.42a.535.535 0 0 1-1.053.174L8.243 9.97c-.064-.252-.422-.252-.486 0l-1.156 5.624a.535.535 0 0 1-1.053-.174L6 9z"/>
-                        </svg>
-                    </button>
-
-                    {{-- Search --}}
-                    <button class="site-icon-btn" title="Cari" aria-label="Cari" id="search-toggle">
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
-                        </svg>
-                    </button>
-
                     {{-- Hubungi Kami --}}
                     <a href="{{ route('contact') }}" class="site-btn-cta">
                         Hubungi Kami

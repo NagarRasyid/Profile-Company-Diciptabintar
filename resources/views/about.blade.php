@@ -97,7 +97,7 @@
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 20px 50px rgba(0, 61, 106, 0.15);
-    aspect-ratio: 16/10;
+    aspect-ratio: 16/9;
     width: 600px;
     height: auto;
     border: 4px solid #ffffff; 
@@ -671,7 +671,7 @@
                 </p>
             </div>
             <div class="about-hero-img">
-                <img src="{{ asset('images/about-hero.png') }}" alt="Gedung Diciptabintar">
+                <img src="{{ asset('images/about-hero.jpg') }}" alt="Gedung Diciptabintar">
             </div>
         </div>
     </section>

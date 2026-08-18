@@ -60,9 +60,14 @@
 
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
                 <div class="admin-form-group">
-                    <label class="admin-label">Urutan Tampil</label>
-                    <input type="number" name="sort_order" class="admin-input" value="{{ old('sort_order', 0) }}" min="0" max="9999">
-                    <p class="admin-input-hint">0 = paling atas.</p>
+                    <label class="admin-label">Pin Postingan</label>
+                    <label style="display: flex; align-items: center; gap: 10px; padding: 10px 12px; border: 1.5px solid #e2e8f0; border-radius: 8px; cursor: pointer; background: #f8fafc; transition: border-color 0.15s;" onmouseover="this.style.borderColor='#003d6a'" onmouseout="this.style.borderColor='#e2e8f0'">
+                        <input type="hidden" name="is_pinned" value="0">
+                        <input type="checkbox" name="is_pinned" value="1" id="isPinned" style="width: 16px; height: 16px; accent-color: #003d6a; cursor: pointer;" {{ old('is_pinned') ? 'checked' : '' }}>
+                        <span style="font-size: 0.875rem; color: #334155; font-weight: 500;">Pin Postingan Ini</span>
+                    </label>
+                    <p class="admin-input-hint">Maks. 3 postingan yang dipin.</p>
+                    @error('is_pinned') <p class="admin-input-hint" style="color: #ef4444;">{{ $message }}</p> @enderror
                 </div>
 
                 <div class="admin-form-group">
