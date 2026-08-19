@@ -155,7 +155,7 @@
     border-radius: 10px;
     padding: 18px 20px;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     gap: 16px;
     margin-bottom: 10px;
     transition: box-shadow 0.18s ease;
@@ -222,7 +222,7 @@
 }
 
 .reg-item-title {
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 600;
     color: #1e293b;
     line-height: 1.45;

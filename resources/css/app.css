@@ -102,9 +102,7 @@ select {
 ========================================================= */
 
 .public-body {
-    background:
-        radial-gradient(circle at top left, rgba(37, 99, 235, 0.10), transparent 30%),
-        linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+    background: #eef1f2;
 }
 
 .site-shell {
@@ -260,15 +258,15 @@ select {
     text-decoration: none;
     font-weight: 600;
     font-size: 0.88rem;
-    transition: background 0.18s ease, transform 0.15s ease;
+    transition: background 0.38s ease, transform 0.38s ease;
     white-space: nowrap;
     box-shadow: 0 4px 14px rgba(26, 26, 46, 0.22);
 }
 
 .site-btn-cta:hover {
-    background: #c2c7d0;
+    background: #afb3bb;
     color: #09436e;
-    transform: translateY(-1px);
+    transform: translateY(-0.5px);
 }
 
 .admin-brand strong {
@@ -289,6 +287,7 @@ select {
     margin: 0 auto;
     padding: 32px;
     min-height: 520px;
+    background-color: #eef1f2;
 }
 
 /* Halaman home, about, bidang & layanan: wrapper keluar dari batas site-main */

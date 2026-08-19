@@ -95,13 +95,14 @@
     text-decoration: none;
     font-size: 0.88rem;
     font-weight: 600;
-    transition: background 0.18s ease, transform 0.15s ease;
+    transition: background 0.38s ease, transform 0.38s ease;
     white-space: nowrap;
 }
 
 .ig-follow-btn:hover {
-    background: #003d6a;
-    transform: translateY(-1px);
+    background: #c2c7d0;
+    color: #003d6a;
+    transform: translateY(-0.5px);
 }
 
 .ig-follow-btn svg {
@@ -212,7 +213,7 @@
     align-items: center;
     gap: 8px;
     padding: 12px 28px;
-    background: #16a34a;
+    background: #426901;
     color: #ffffff;
     border-radius: 10px;
     text-decoration: none;
@@ -222,7 +223,7 @@
 }
 
 .ig-cta-btn:hover {
-    background: #15803d;
+    background: #263C00;
     transform: translateY(-1px);
 }
 

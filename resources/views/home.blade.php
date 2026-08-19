@@ -88,7 +88,7 @@
     flex-wrap: wrap;
 }
 
-.hero-btn-primary {
+.hero-btn {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -99,34 +99,14 @@
     text-decoration: none;
     font-weight: 600;
     font-size: 1rem;
-    transition: background 0.16s ease, transform 0.15s ease;
+    transition: background 0.38s ease, transform 0.38s ease;
     box-shadow: 0 6px 18px rgba(0, 61, 106, 0.25);
 }
 
-.hero-btn-primary:hover {
+.hero-btn:hover {
     background: #f9f9fd;
     color: #09436e;
-    transform: translateY(-1px);
-}
-
-.hero-btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 11px 22px;
-    background: transparent;
-    color: #003d6a;
-    border: 1.5px solid #003d6a;
-    border-radius: 999px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: all 0.18s ease;
-}
-
-.hero-btn-secondary:hover {
-    background: #003d6a;
-    color: #f9f9fd;
+    transform: translateY(-0.5px);
 }
 
 .hero-image-wrap {
@@ -410,7 +390,7 @@
             </p>
 
             <div class="hero-actions">
-                <a href="{{ route('about') }}" class="hero-btn-primary">
+                <a href="{{ route('about') }}" class="hero-btn">
                     Profil Dinas &rarr;
                 </a>
             </div>

@@ -74,7 +74,7 @@ class ServiceController extends Controller
                 'tugas' => [
                     ['color' => 'blue',   'icon' => 'building-office-2', 'title' => 'Penataan & Arsitektur Kota',         'desc' => 'Menyelenggarakan penataan bangunan dan lingkungannya agar estetis dan fungsional.'],
                     ['color' => 'green',  'icon' => 'clipboard-check',   'title' => 'Persetujuan & Kelaikan (PBG & SLF)', 'desc' => 'Mengoordinasikan penerbitan PBG, SLF, dan fasilitasi Tim Profesi Ahli (TPA).'],
-                    ['color' => 'orange', 'icon' => 'magnifying-glass',  'title' => 'Pendataan Bangunan',                 'desc' => 'Melaksanakan pemutakhiran data bangunan gedung dan RTH Privat secara berkala.'],
+                    ['color' => 'orange', 'icon' => 'circle',  'title' => 'Pendataan Bangunan',                 'desc' => 'Melaksanakan pemutakhiran data bangunan gedung dan RTH Privat secara berkala.'],
                 ],
                 'struktur_desc' => 'Bidang Cipta Karya menjalankan fungsinya melalui pilar penataan, perizinan, dan kelaikan bangunan yang bekerja sinergis untuk mewujudkan tata bangunan kota yang aman dan tertib.',
                 'struktur' => [
@@ -130,12 +130,12 @@ class ServiceController extends Controller
                         'items' => ['Penyusunan REncana Tata Ruang Wilayah (RTRW).', 'Penyusunan Rencana Detail Tata Ruang(RDTR).', 'Sinkronisasi Program Pemanfaatan Ruang.']
                     ],
                     [
-                        'icon' => 'document-check',
+                        'icon' => 'checknote',
                         'title' => 'Substansi Pemanfaatan Ruang',
                         'items' => ['Proses penerbitan dokumen KRK.', 'Penyediaan Informasi Rencana Kota bagi masyarakat.', 'Koordinasi Kesesuaian Kegiatan Pemanfaatan Ruang (KKPR).']
                     ],
                     [
-                        'icon' => 'document-check',
+                        'icon' => 'compas',
                         'title' => 'Substansi Pemanfaatan Ruang',
                         'items' => ['Survei kondisi tata ruang lapangan.', 'Pembuatan peta tematik perkotaan.', 'Pengelolaan data informasi geospasial.']
                     ]
@@ -153,12 +153,12 @@ class ServiceController extends Controller
                 'struktur_desc' => 'Bidang Bina Konstruksi dan Bangunan Gedung Negara menjalankan fungsinya melalui pembinaan jasa konstruksi dan pengawasan teknis yang bekerja sinergis untuk menjamin mutu infrastruktur pemerintah.',
                 'struktur' => [
                     [
-                        'icon' => 'building-office-2',
+                        'icon' => 'eye',
                         'title' => 'Pengawasan',
                         'items' => ['Monitoring pelaksanaan izin tata ruang.', 'Inspeksi kelayakan bangunan gedung.', 'Evaluasi pemanfaatan ruang kota.', 'Koordinasi dengan wilayah terkait pengawasan.']
                     ],
                     [
-                        'icon' => 'document-check',
+                        'icon' => 'hammer',
                         'title' => 'Pengendalian',
                         'items' => ['Penerbitan surat teguran pelanggaran.', 'Penindakan sanksi administratif.', 'Pelaksanaan penyegelan bangunan.', 'Fasilitasi penyelesaian sengketa.']
                     ]
@@ -169,17 +169,19 @@ class ServiceController extends Controller
                 'hero_desc' => 'Menyelenggarakan pelayanan teknis operasional, penataan, kebersihan, dan pemeliharaan ruang terbuka hijau (RTH) publik pemakaman.',
                 'hero_img' => 'images/UPTD.jpg',
                 'tugas' => [
-                    ['color' => 'blue',   'icon' => 'heart',      'title' => 'Pelayanan Pemakaman',    'desc' => 'Pengelolaan layanan TPU (Muslim & Non- Muslim), makam baru, dan makam tumpang.'],
+                    ['color' => 'blue',   'icon' => 'note',      'title' => 'Pelayanan Pemakaman',    'desc' => 'Pengelolaan layanan TPU (Muslim & Non- Muslim), makam baru, dan makam tumpang.'],
                     ['color' => 'green',  'icon' => 'leaf',       'title' => 'Pemeliharaan RTH Publik','desc' => 'Penataan lanskap, rumputisasi, dan perawatan kebersihan area pemakaman.'],
                     ['color' => 'orange', 'icon' => 'device-phone-mobile', 'title' => 'Digitalisasi Layanan',   'desc' => 'Optimalisasi sistem pelayanan pemakaman online (SIMPELMAN.BdgJuara).'],
                 ],
                 'struktur_desc' => 'UPTD Pengelolaan Pemakaman menjalankan fungsinya melalui pelayanan teknis dan pemeliharaan RTH yang bekerja sinergis untuk menyediakan sarana pemakaman yang tertib dan nyaman.',
                 'struktur' => [
                     [
+                        'icon' => 'protect',
                         'title' => 'Sub Bagian Tata Usaha UPTD',
                         'items' => ['Pengelolaan administrasi kepegawaian dan keuangan UPTD.', 'Penyusunan program kerja dan laporan evaluasi kinerja.', 'Pelayanan administrasi umum dan surat menyurat.']
                     ],
                     [
+                        'icon' => 'note',
                         'title' => 'Pelayanan Teknis',
                         'items' => ['Koordinasi pelayanan pemakaman di seluruh TPU kelolaan.', 'Monitoring pemeliharaan infrastruktur dan RTH di area makam.', 'Pengawasan kinerja petugas lapangan (PHL) pemakaman.']
                     ]

@@ -54,6 +54,6 @@ class ContactController extends Controller
 
         return redirect()
             ->route('contact')
-            ->with('success', 'Pengaduan Anda telah berhasil dikirim. Kami akan segera menindaklanjutinya.');
+            ->with('success', 'Pengaduan Anda telah berhasil dikirim. Kami akan memproses pengaduan anda segera.');
     }
 }

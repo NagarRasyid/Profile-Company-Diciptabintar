@@ -11,7 +11,7 @@
 .contact-wrapper {
     max-width: 1280px;
     margin: 0 auto;
-    padding: 36px 48px 72px;
+    padding: 36px 0px 72px;
 }
 
 /* ---- PAGE HEADER ---- */
@@ -35,7 +35,7 @@
 .contact-page-title {
     font-size: clamp(1.8rem, 3vw, 2.4rem);
     font-weight: 800;
-    color: #0a1628;
+    color: #003d6a;
     margin: 0 0 10px;
 }
 
@@ -50,7 +50,7 @@
 /* ---- MAIN LAYOUT ---- */
 .contact-layout {
     display: grid;
-    grid-template-columns: 340px 1fr;
+    grid-template-columns: 400px 1fr;
     gap: 32px;
     align-items: start;
 }
@@ -122,24 +122,9 @@
 
 .contact-map-wrap iframe {
     width: 100%;
-    height: 220px;
+    height: 300px;
     display: block;
     border: 0;
-}
-
-.contact-map-label {
-    position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(255,255,255,0.92);
-    border: 1px solid #e5eaf2;
-    border-radius: 999px;
-    padding: 3px 14px;
-    font-size: 0.73rem;
-    font-weight: 600;
-    color: #334155;
-    white-space: nowrap;
 }
 
 .contact-map-open {
@@ -163,7 +148,7 @@
 .contact-form-panel {
     background: #ffffff;
     border-radius: 16px;
-    padding: 36px 40px;
+    padding: 28px 40px;
     box-shadow: 0 2px 16px rgba(0,0,0,0.04);
     border-top: 4px solid transparent;
     display: flex;
@@ -389,7 +374,7 @@
     align-items: center;
     gap: 8px;
     padding: 13px 28px;
-    background: #002747;
+    background: #003d6a;
     color: #ffffff;
     border: none;
     border-radius: 10px;
@@ -400,7 +385,7 @@
 }
 
 .contact-submit-btn:hover {
-    background: #003d6a;
+    background: #002747;
     transform: translateY(-1px);
 }
 
@@ -511,7 +496,7 @@
                     </div>
                     <div class="contact-info-text">
                         <strong>Telepon / WhatsApp</strong>
-                        <span>(022) 7217451</span>
+                        <span>(022) 7217451 <br>  082240791234</span>
                     </div>
                 </div>
 
@@ -519,21 +504,7 @@
 
             {{-- Google Maps Embed --}}
             <div class="contact-map-wrap">
-                <span class="contact-map-label">PETA KACAPIRING, BANDUNG</span>
-                <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.717074817068!2d107.63480041524324!3d-6.921627594976283!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e8b0a0456bbb%3A0x38aee38e8de34b6a!2sDinas%20Cipta%20Karya%2C%20Bina%20Konstruksi%20dan%20Tata%20Ruang%20Kota%20Bandung!5e0!3m2!1sid!2sid!4v1691000000000!5m2!1sid!2sid"
-                    allowfullscreen=""
-                    loading="lazy"
-                    referrerpolicy="no-referrer-when-downgrade"
-                    title="Lokasi Diciptabintar Kota Bandung">
-                </iframe>
-                <a href="https://maps.google.com/?q=Dinas+Cipta+Karya+Bina+Konstruksi+dan+Tata+Ruang+Kota+Bandung"
-                   target="_blank" rel="noopener" class="contact-map-open">
-                    Buka di Peta
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
-                    </svg>
-                </a>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d832.6530099779928!2d107.63351291591535!3d-6.915986680271573!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e7cfdd53e233%3A0x24799b0b4b52b943!2sDinas%20Cipta%20Karya%2C%20Bina%20Konstruksi%20dan%20Tata%20Ruang%20Kota%20Bandung!5e0!3m2!1sen!2sid!4v1787104146958!5m2!1sen!2sid" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
             </div>
         </div>
 
