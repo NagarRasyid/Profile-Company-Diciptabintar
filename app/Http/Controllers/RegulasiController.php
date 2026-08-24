@@ -77,15 +77,11 @@ class RegulasiController extends Controller
         if ($response->successful()) {
             $json = $response->json();
 
-            // API mengembalikan {draw, recordsTotal, recordsFiltered, data: [...]}
-            // Kita ambil key 'data', jika tidak ada fallback ke array kosong
             $rawData = $json['data'] ?? (is_array($json) ? $json : []);
 
-            // Petakan field API ke field yang digunakan blade template
             $regulasi = collect($rawData)->map(function ($item) use ($baseFileUrl) {
                 $isi = $item['isi'] ?? '';
 
-                // Tentukan badge & kategori berdasarkan isi judul secara sederhana
                 if (stripos($isi, 'peraturan daerah') !== false || stripos($isi, 'perda') !== false) {
                     $kategori = 'Peraturan Daerah';
                     $badge    = 'PERATURAN DAERAH';
@@ -116,17 +112,14 @@ class RegulasiController extends Controller
                     $slug     = 'dokumen';
                 }
 
-                // Ekstrak tahun dari isi judul (4 digit angka)
                 preg_match('/\b(20\d{2}|19\d{2})\b/', $isi, $tahunMatch);
                 $tahun = $tahunMatch[1] ?? null;
 
-                // Ekstrak nomor regulasi jika ada
                 preg_match('/nomor[.\s]+([0-9]+)/i', $isi, $nomorMatch);
                 // preg_match('/no[.\s]+([0-9]+)/i', $isi, $nomorMatch);
 
                 $nomor = isset($nomorMatch[1]) ? ltrim($nomorMatch[1], '0') : null;
 
-                // Buat URL file lengkap
                 $berkasRaw = $item['berkas'] ?? null;
                 $fileUrl   = $berkasRaw ? $baseFileUrl . $berkasRaw : null;
 

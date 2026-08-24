@@ -344,7 +344,7 @@
     </div>
 
     {{-- CARD SEARCH & FILTER TABS --}}
-    <div class="reg-search-filter-card">
+    <div class="reg-search-filter-card" >
         {{-- SEARCH --}}
         <div class="reg-search-wrap">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
@@ -355,7 +355,7 @@
         </div>
 
         {{-- FILTER TABS --}}
-        <div class="reg-filters">
+        <div class="reg-filters" id="reg-filters">
             <span class="reg-filters-label">Kategori:</span>
             <button class="reg-tab active" data-filter="semua">Semua</button>
             <button class="reg-tab" data-filter="Undang-Undang">Undang-Undang</button>
@@ -540,7 +540,7 @@ function renderPagination(total, page) {
                 currentPage = p;
                 renderPage(getFiltered(), currentPage);
                 // Scroll ke atas daftar
-                document.getElementById('reg-list').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                document.getElementById('reg-filters').scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
     });

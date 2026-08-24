@@ -59,7 +59,7 @@
                 color: #003d6a;
             }
             .bidang-hero-title {
-                font-size: clamp(2.4rem, 3vw, 3.2rem);
+                font-size: clamp(2rem, 3vw, 2.6rem);
                 font-weight: 700;
                 margin: 0 0 20px;
                 line-height: 1.2;
@@ -78,8 +78,9 @@
                 box-shadow: 0 24px 60px rgba(0, 61, 106, 0.18);
             }
             .bidang-hero-wrap img {
-                width: 472px;
-                height: 400px;
+                width: 100%;
+                height: auto;
+                max-width: 600px;
                 border-radius: 16px;
                 object-fit: cover;
                 box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);

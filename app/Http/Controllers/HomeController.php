@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Portfolio;
 use App\Models\Service;
 
 class HomeController extends Controller
@@ -12,9 +11,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $services   = Service::active()->ordered()->take(6)->get();
-        $portfolios = Portfolio::active()->featured()->ordered()->take(6)->get();
+        $services = Service::active()->ordered()->take(6)->get();
 
-        return view('home', compact('services', 'portfolios'));
+        return view('home', compact('services'));
     }
 }

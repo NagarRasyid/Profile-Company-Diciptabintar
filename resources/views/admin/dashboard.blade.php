@@ -22,15 +22,6 @@
         </div>
 
         <div class="admin-stat-card">
-            <p class="admin-stat-label">Portofolio</p>
-            <h2 class="admin-stat-number" style="color: #16a34a;">{{ $stats['portfolios'] ?? 0 }}</h2>
-            <a href="{{ route('admin.portfolios.index') }}" class="admin-stat-link" style="color: #16a34a;">
-                Kelola portofolio &rarr;
-            </a>
-        </div>
-
-
-        <div class="admin-stat-card">
             <p class="admin-stat-label">Instagram Posts</p>
             <h2 class="admin-stat-number" style="color: #0284c7;">{{ $stats['published_instagram'] ?? 0 }}</h2>
             <a href="{{ route('admin.instagram.index') }}" class="admin-stat-link" style="color: #0284c7;">
@@ -55,7 +46,7 @@
         </div>
     </div>
 
-    @if(($stats['services'] ?? 0) == 0 || ($stats['portfolios'] ?? 0) == 0 || ($stats['published_instagram'] ?? 0) == 0)
+    @if(($stats['services'] ?? 0) == 0 || ($stats['published_instagram'] ?? 0) == 0)
         <div class="admin-alert admin-alert-warning">
             <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="flex-shrink:0">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
@@ -63,7 +54,7 @@
             <div>
                 <strong>Perhatian:</strong>
                 Beberapa konten utama masih kosong atau belum dipublikasikan.
-                Lengkapi layanan, portofolio, dan postingan instagram agar halaman publik terlihat lebih lengkap.
+                Lengkapi layanan dan postingan instagram agar halaman publik terlihat lebih lengkap.
             </div>
         </div>
     @endif
@@ -75,11 +66,6 @@
             <div style="font-size: 1.2rem; font-weight: 700; margin-bottom: 4px;">+ Tambah Layanan</div>
             <div style="font-size: 0.8rem; color: rgba(255,255,255,0.7);">Buat data layanan baru</div>
         </a>
-        <a href="{{ route('admin.portfolios.create') }}" class="admin-card" style="text-decoration: none; text-align: center; padding: 20px; transition: transform 0.2s; background: #16a34a; color: white;">
-            <div style="font-size: 1.2rem; font-weight: 700; margin-bottom: 4px;">+ Tambah Portofolio</div>
-            <div style="font-size: 0.8rem; color: rgba(255,255,255,0.7);">Buat data proyek baru</div>
-        </a>
-
         <a href="{{ route('admin.instagram.create') }}" class="admin-card" style="text-decoration: none; text-align: center; padding: 20px; transition: transform 0.2s; background: #0284c7; color: white;">
             <div style="font-size: 1.2rem; font-weight: 700; margin-bottom: 4px;">+ Tambah Instagram Post</div>
             <div style="font-size: 0.8rem; color: rgba(255,255,255,0.7);">Buat konten instagram baru</div>

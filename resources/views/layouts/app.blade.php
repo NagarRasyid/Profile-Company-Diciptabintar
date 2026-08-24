@@ -37,15 +37,7 @@
                        class="admin-nav-link {{ request()->routeIs('admin.services.*') ? 'active' : '' }}">
                         <span>🛠️</span>
                         Layanan
-                    </a>
-
-                    <a href="{{ route('admin.portfolios.index') }}"
-                       class="admin-nav-link {{ request()->routeIs('admin.portfolios.*') ? 'active' : '' }}">
-                        <span>🏗️</span>
-                        Portofolio
-                    </a>
-
-                    <a href="{{ route('admin.team.index') }}"
+                    </a><a href="{{ route('admin.team.index') }}"
                        class="admin-nav-link {{ request()->routeIs('admin.team.*') ? 'active' : '' }}">
                         <span>👥</span>
                         Tim

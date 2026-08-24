@@ -47,7 +47,7 @@ class ServiceController extends Controller
             'sekretariat' => [
                 'title' => 'Sekretariat',
                 'hero_desc' => 'Memegang peranan krusial sebagai tulang punggung administratif, pengelolaan umum & kepegawaian, keuangan, serta pengoordinasian program Dinas.',
-                'hero_img' => 'images/about-office.jpg',
+                'hero_img' => 'images/sekretariat.jpeg',
                 'tugas' => [
                     ['color' => 'blue',   'icon' => 'document-text',  'title' => 'Koordinasi Administrasi',  'desc' => 'Melaksanakan tata usaha, persuratan, kehumasan, kearsipan, dan kerumahtanggaan.'],
                     ['color' => 'green',  'icon' => 'banknotes',      'title' => 'Pengelolaan Keuangan',     'desc' => 'Menyusun anggaran pendapatan/belanja, penggajian ASN, dan laporan pertanggungjawaban.'],
@@ -93,7 +93,7 @@ class ServiceController extends Controller
             'bina-konstruksi' => [
                 'title' => 'Bidang Bina Konstruksi dan Bangunan Gedung Negara',
                 'hero_desc' => 'Berperan strategis dalam pembinaan jasa konstruksi, perencanaan, serta pengawasan pembangunan Bangunan Gedung Nagara di Kota Bandung.',
-                'hero_img' => 'images/konstruksi1.jpg.jpeg',
+                'hero_img' => 'images/bina-konstruksi.jpeg',
                 'tugas' => [
                     ['color' => 'blue',   'icon' => 'building-office',  'title' => 'Perencanaan Gedung Negara',  'desc' => 'Memberikan bantuan teknis dan DED perencanaan pembangunan Bangunan Gedung Negara.'],
                     ['color' => 'green',  'icon' => 'academic-cap',     'title' => 'Pembinaan Jasa Konstruksi', 'desc' => 'Penyelenggaraan pelatihan dan fasilitasi sertifikasi tenaga terampil konstruksi.'],
@@ -116,7 +116,7 @@ class ServiceController extends Controller
             'tata-ruang' => [
                 'title' => 'Bidang Tata Ruang',
                 'hero_desc' => 'Mengemban peran strategis dalam perencanaan, pengukuran dan pemetaan, serta pengembangan tata ruang wilayah Kota Bandung secara berkelanjutan.',
-                'hero_img' => 'images/about-office.jpg',
+                'hero_img' => 'images/tata-ruang.jpeg',
                 'tugas' => [
                     ['color' => 'blue',   'icon' => 'map',             'title' => 'Survei & Pemetaan',      'desc' => 'Pengukuran spasial, pemetaan kota, dan evaluasi simpul jaringan informasi geospasial.'],
                     ['color' => 'green',  'icon' => 'squares-2x2',    'title' => 'Perencanaan Tata Ruang', 'desc' => 'Penyusunan dan sosialisasi Perwal RDTR, RTRW, serta sinkronisasi program pemanfaatan ruang (SPPR).'],
@@ -144,7 +144,7 @@ class ServiceController extends Controller
             'pengawasan' => [
                 'title' => 'Bidang Pengawasan dan Pengendalian Pemanfaatan Ruang dan Bangunan Gedung',
                 'hero_desc' => 'Melaksanakan pengawasan, pengendalian, dan penertiban terhadap pemanfaatan ruang serta penyelenggaraan bangunan gedung agar sesuai regulasi.',
-                'hero_img' => 'images/about-office.jpg',
+                'hero_img' => 'images/wasdal.jpeg',
                 'tugas' => [
                     ['color' => 'blue',   'icon' => 'megaphone',       'title' => 'Penertiban & Sanksi',    'desc' => 'Penanganan pelanggaran tata ruang melalui surat teguran, sanksi administratif, hingga penyegelan.'],
                     ['color' => 'green',  'icon' => 'shield-check',    'title' => 'Pengawasan Lapangan',   'desc' => 'Inspeksi dan monitoring rutin pelaksanaan tata ruang dan PBG oleh Penilik Bangunan.'],
