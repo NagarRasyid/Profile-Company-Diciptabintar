@@ -16,7 +16,7 @@
         <div class="admin-stat-card">
             <p class="admin-stat-label">Layanan</p>
             <h2 class="admin-stat-number" style="color: #003d6a;">{{ $stats['services'] ?? 0 }}</h2>
-            <a href="{{ route('admin.services.index') }}" class="admin-stat-link" style="color: #003d6a;">
+            <a href="{{ route('admin.layanan.index') }}" class="admin-stat-link" style="color: #003d6a;">
                 Kelola layanan &rarr;
             </a>
         </div>
@@ -46,7 +46,7 @@
         </div>
     </div>
 
-    @if(($stats['services'] ?? 0) == 0 || ($stats['published_instagram'] ?? 0) == 0)
+    @if(($stats['published_instagram'] ?? 0) == 0)
         <div class="admin-alert admin-alert-warning">
             <svg width="18" height="18" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" style="flex-shrink:0">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
@@ -54,7 +54,7 @@
             <div>
                 <strong>Perhatian:</strong>
                 Beberapa konten utama masih kosong atau belum dipublikasikan.
-                Lengkapi layanan dan postingan instagram agar halaman publik terlihat lebih lengkap.
+                Lengkapi postingan instagram agar halaman publik terlihat lebih lengkap.
             </div>
         </div>
     @endif
@@ -62,7 +62,7 @@
     {{-- SHORTCUT CARDS --}}
     <h2 style="font-size: 1.1rem; color: #0a1628; margin-bottom: 16px;">Shortcut Kelola Konten</h2>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 32px;">
-        <a href="{{ route('admin.services.create') }}" class="admin-card" style="text-decoration: none; text-align: center; padding: 20px; transition: transform 0.2s; background: #003d6a; color: white;">
+        <a href="{{ route('admin.layanan.create') }}" class="admin-card" style="text-decoration: none; text-align: center; padding: 20px; transition: transform 0.2s; background: #003d6a; color: white;">
             <div style="font-size: 1.2rem; font-weight: 700; margin-bottom: 4px;">+ Tambah Layanan</div>
             <div style="font-size: 0.8rem; color: rgba(255,255,255,0.7);">Buat data layanan baru</div>
         </a>
@@ -123,3 +123,4 @@
         </div>
     </div>
 @endsection
+

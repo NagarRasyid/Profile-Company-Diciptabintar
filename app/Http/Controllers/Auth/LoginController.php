@@ -11,7 +11,7 @@ use Illuminate\Validation\ValidationException;
 class LoginController extends Controller
 {
     /**
-     * Display the login view.
+     * Menampilkan halaman login
      */
     public function showLoginForm()
     {
@@ -24,7 +24,7 @@ class LoginController extends Controller
     }
 
     /**
-     * Handle an incoming authentication request.
+     * Memproses login
      */
     public function login(Request $request): RedirectResponse
     {
@@ -47,7 +47,7 @@ class LoginController extends Controller
     }
 
     /**
-     * Destroy an authenticated session.
+     * Logout admin
      */
     public function logout(Request $request): RedirectResponse
     {

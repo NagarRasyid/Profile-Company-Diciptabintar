@@ -46,7 +46,7 @@
 /* ---- SEARCH ---- */
 .reg-search-wrap {
     position: relative;
-    margin-bottom: 16px; /* Jarak antara search dan filter */
+    margin-bottom: 16px; 
 }
 
 .reg-search-wrap svg {

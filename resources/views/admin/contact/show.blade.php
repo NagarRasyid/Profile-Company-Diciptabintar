@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
-@section('title', 'Detail Pesan Kontak')
-@section('page-title', 'Detail Pesan Kontak')
+@section('title', 'Dashboard')
+@section('page-title', 'Dashboard')
 
 @section('content')
     <div class="admin-page-header">
@@ -80,7 +80,7 @@
 
         <div style="display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 40px;">
             <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-                <a href="mailto:{{ $contactMessage->email }}?subject=Re: {{ rawurlencode($contactMessage->subject ?: 'Pesan Kontak') }}" class="admin-btn admin-btn-primary">
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to={{ $contactMessage->email }}&su=Re:%20{{ rawurlencode($contactMessage->subject ?: 'Pesan Kontak') }}" target="_blank" class="admin-btn admin-btn-primary">
                     <svg width="16" height="16" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
                     </svg>

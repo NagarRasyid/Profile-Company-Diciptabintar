@@ -298,7 +298,7 @@
 /* ---- ALUR KOORDINASI ---- */
 .alur-section-wrapper {
     background: #f4f5f8;
-    padding: 64px 40px; /* Padding sisi diperkecil agar ruang lebih lebar */
+    padding: 64px 40px; 
     border-top: 1px solid #e5eaf2;
 }
 
@@ -325,7 +325,7 @@
     border: 1px solid #e2e8f0;
     border-radius: 12px;
     padding: 56px 40px;
-    max-width: 1400px; /* Lebar hampir memenuhi layar */
+    max-width: 1400px; 
     width: 100%;
     margin: 0 auto;
     box-shadow: 0 4px 20px rgba(0,0,0,0.02);
@@ -334,8 +334,8 @@
 .alur-timeline {
     display: flex;
     justify-content: space-between;
-    align-items: flex-start; /* Agar elemen sejajar di atas */
-    max-width: 1200px; /* Lebar area timeline menyebar proporsional */
+    align-items: flex-start;
+    max-width: 1200px; 
     width: 100%;
     margin: 0 auto;
 }
@@ -420,7 +420,7 @@
     .alur-arrow {
         height: auto;
         padding: 16px 0;
-        transform: rotate(90deg); /* Putar panah ke bawah untuk tampilan mobile */
+        transform: rotate(90deg); 
     }
     .alur-arrow svg { width: 32px; }
 }
@@ -533,15 +533,16 @@
                         <h3 style="font-size: 1.8rem;">Kepala Dinas</h3>
                     </div>
                     <p class="bidang-card-desc" style="margin-bottom: 16px;">
-                        Memimpin, merumuskan kebijakan, mengkoordinasikan, membina, dan mengendalikan pelaksanaan tugas pokok dan fungsi Dinas Cipta Karya, Bina Konstruksi, dan Tata Ruang.
+                        Kepala Dinas mempunyai tugas membantu Wali Kota dalam menyelenggarakan Urusan Pemerintahan yang menjadi kewenangan Daerah di bidang pekerjaan umum dan penataan ruang sektor cipta karya, bina konstruksi, tata ruang dan pemakaman.
                     </p>
-                    <a href="#" class="bidang-detail-btn">Lihat Detail &rarr;</a>
+                    <a href="{{ route('bidang.show', 'kepala-dinas') }}" class="bidang-detail-btn">Lihat Detail &rarr;</a>
                 </div>
             </div>
         </div>
 
         {{-- Row 2: 3 Bidang --}}
         <div class="bidang-grid-3cols">
+
             {{-- Sekretariat --}}
             <div class="bidang-card bidang-card-navy">
                 <div class="bidang-card-head">
@@ -553,9 +554,37 @@
                     <h3>Sekretariat</h3>
                 </div>
                 <p class="bidang-card-desc-3cols">
-                    Bertanggung jawab atas pelayanan administrasi umum, kepegawaian, keuangan, dan perencanaan untuk mendukung seluruh kegiatan operasional dinas.
+                    Sekretaris Dinas mempunyai tugas melaksanakan sebagian tugas Kepala Dinas lingkup kesekretariatan yang meliputi pengelolaan umum dan kepegawaian, pengelolaan keuangan, pengoordinasian penyusunan program, data dan informasi serta pengoordinasian tugas-tugas bidang dan UPTD.
                 </p>
                 <ul class="bidang-card-items" style="list-style-type: none; padding-left: 0;">
+                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
+                            <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-size: 16px;">Koordinasi Penyusunan</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
+                            <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-size: 16px;">Koordinasi Perumusan Kebijakan</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
+                            <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-size: 16px;">Koordinasi Pelaksanaan Kebijakan</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
+                            <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-size: 16px;">Koordinasi Evaluasi & Pelaporan</span>
+                    </li>
                     <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
@@ -568,17 +597,10 @@
                             <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
                             <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <span style="font-size: 16px;">Pengelolaan Keuangan</span>
-                    </li>
-                    <li style="display: flex; align-items: center; gap: 8px;">
-                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
-                            <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        <span style="font-size: 16px;">Manajemen SDM</span>
+                        <span style="font-size: 16px;">Fungsi Lainnya</span>
                     </li>
                 </ul>   
-                <a href="{{ route('services.show', 'sekretariat') }}" class="bidang-detail-btn-3cols">Lihat Detail &rarr;</a>
+                <a href="{{ route('bidang.show', 'sekretariat') }}" class="bidang-detail-btn-3cols">Lihat Detail &rarr;</a>
             </div>
 
             {{-- Bidang Cipta Karya --}}
@@ -592,7 +614,7 @@
                     <h3>Bidang Cipta Karya</h3>
                 </div>
                 <p class="bidang-card-desc-3cols">
-                    Mengelola perencanaan, pelaksanaan, dan pengawasan pembangunan serta pemeliharaan gedung-gedung pemerintahan dan fasilitas umum.
+                    Kepala Bidang Cipta Karya mempunyai tugas melaksanakan sebagian tugas Kepala Dinas lingkup cipta karya meliputi penataan Bangunan Gedung dan arsitektur kota, teknik Bangunan Gedung, kelaikan Bangunan Gedung.
                 </p>
                 <ul class="bidang-card-items" style="list-style-type: none; padding-left: 0;">
                     <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
@@ -600,24 +622,38 @@
                             <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
                             <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <span style="font-size: 16px;">Penataan &amp; Arsitektur Kota</span>
+                        <span style="font-size: 16px;">Koordinasi Perumusan Kebijakan</span>
                     </li>
                     <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
                             <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <span style="font-size: 16px;">Persetujuan &amp; Kelaikan (PBG SLF)</span>
+                        <span style="font-size: 16px;">Koordinasi Pelaksanaan Kebijakan</span>
                     </li>
-                    <li style="display: flex; align-items: center; gap: 8px;">
+                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
                             <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <span style="font-size: 16px;">Pendataan Bangunan</span>
+                        <span style="font-size: 16px;">Koordinasi Evaluasi dan Pelaporan</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
+                            <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-size: 16px;">Koordinasi Administrasi</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
+                            <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-size: 16px;">Fungsi Lainnya</span>
                     </li>
                 </ul>
-                <a href="{{ route('services.show', 'cipta-karya') }}" class="bidang-detail-btn-3cols">Lihat Detail &rarr;</a>
+                <a href="{{ route('bidang.show', 'cipta-karya') }}" class="bidang-detail-btn-3cols">Lihat Detail &rarr;</a>
             </div>
 
             {{-- Bidang Bina Konstruksi --}}
@@ -631,7 +667,7 @@
                     <h3 style="line-height: 1.4;">Bidang Bina Konstruksi dan Bangunan Gedung Negara</h3>
                 </div>
                 <p class="bidang-card-desc-3cols">
-                    Melakukan pembinaan, pemberdayaan, dan pengawasan terhadap penyedia jasa konstruksi serta menjamin standar mutu konstruksi.
+                    Kepala Bidang Bina Konstruksi dan Bangunan Gedung Negara mempunyai tugas melaksanakan sebagian tugas Kepala Dinas lingkup bina konstruksi dan Bangunan Gedung negara meliputi bina konstruksi, perencanaan Bangunan Gedung negara, serta pengawasan pembangunan Bangunan Gedung negara.
                 </p>
                 <ul class="bidang-card-items" style="list-style-type: none; padding-left: 0;">
                     <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
@@ -639,29 +675,44 @@
                             <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
                             <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <span style="font-size: 16px;">Perencanaan Gedung Negara</span>
+                        <span style="font-size: 16px;">Koordinasi Perumusan Kebijakan</span>
                     </li>
                     <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
                             <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <span style="font-size: 16px;">Pembinaan Jasa Konstruksi</span>
+                        <span style="font-size: 16px;">Koordinasi Pelaksanaan Kebijakan</span>
                     </li>
-                    <li style="display: flex; align-items: center; gap: 8px;">
+                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
                             <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <span style="font-size: 16px;">Pengawasan dan Pemeliharaan</span>
+                        <span style="font-size: 16px;">Koordinasi Evaluasi dan Pelaporan</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
+                            <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-size: 16px;">Koordinasi Administrasi</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
+                            <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-size: 16px;">Fungsi Lainnya</span>
                     </li>
                 </ul>
-                <a href="{{ route('services.show', 'bina-konstruksi') }}" class="bidang-detail-btn-3cols">Lihat Detail &rarr;</a>
+                <a href="{{ route('bidang.show', 'bina-konstruksi') }}" class="bidang-detail-btn-3cols">Lihat Detail &rarr;</a>
             </div>
         </div>
 
         {{-- Row 3: 3 Bidang --}}
         <div class="bidang-grid-3cols">
+
             {{-- Bidang Tata Ruang --}}
             <div class="bidang-card bidang-card-blue">
                 <div class="bidang-card-head">
@@ -673,7 +724,7 @@
                     <h3>Bidang Tata Ruang</h3>
                 </div>
                 <p class="bidang-card-desc-3cols">
-                    Merumuskan kebijakan, merencanakan, dan mengendalikan pemanfaatan tata ruang wilayah kota agar sesuai dengan Rencana Tata Ruang Wilayah (RTRW).
+                    Kepala Bidang Tata Ruang mempunyai tugas melaksanakan sebagian tugas Kepala Dinas lingkup tata ruang meliputi survei, pengukuran dan pemetaan, perencanaan dan pengembangan tata ruang dan perencanaan prasarana kota.
                 </p>
                 <ul class="bidang-card-items" style="list-style-type: none; padding-left: 0;">
                     <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
@@ -681,24 +732,38 @@
                             <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
                             <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <span style="font-size: 16px;">Survei & Pemetaan</span>
+                        <span style="font-size: 16px;">Koordinasi Perumusan Kebijakan</span>
                     </li>
                     <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
                             <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <span style="font-size: 16px;">Perencanaan Tata Ruang</span>
+                        <span style="font-size: 16px;">Koordinasi Pelaksanaan Kebijakan</span>
                     </li>
-                    <li style="display: flex; align-items: center; gap: 8px;">
+                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
                             <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <span style="font-size: 16px;">Layanan KRK &amp; KKPR</span>
+                        <span style="font-size: 16px;">Koordinasi Evaluasi dan Pelaporan</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
+                            <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-size: 16px;">Koordinasi Administrasi</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
+                            <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-size: 16px;">Fungsi Lainnya</span>
                     </li>
                 </ul>
-                <a href="{{ route('services.show', 'tata-ruang') }}" class="bidang-detail-btn-3cols">Lihat Detail &rarr;</a>
+                <a href="{{ route('bidang.show', 'tata-ruang') }}" class="bidang-detail-btn-3cols">Lihat Detail &rarr;</a>
             </div>
 
             {{-- Bidang Pengawasan dan Pengendalian --}}
@@ -712,7 +777,7 @@
                     <h3 style="line-height: 1.4;">Bidang Pengawasan dan Pengendalian Pemanfaatan Ruang dan Bangunan Gedung</h3>
                 </div>
                 <p class="bidang-card-desc-3cols">
-                    Melaksanakan pengawasan pemanfaatan ruang dan bangunan gedung, penertiban pelanggaran, serta penanganan pengaduan dan sengketa di wilayah kota.
+                    Kepala Bidang Pengawasan dan Pengendalian Pemanfaatan Ruang dan Bangunan Gedung mempunyai tugas melaksanakan sebagian tugas Kepala Dinas lingkup pengawasan dan pengendalian pemanfaatan ruang dan Bangunan Gedung meliputi pengawasan pemanfaatan ruang dan Bangunan Gedung, penertiban pelanggaran pemanfaatan ruang dan Bangunan Gedung, serta dokumentasi, penanganan pengaduan dan sengketa.
                 </p>
                 <ul class="bidang-card-items" style="list-style-type: none; padding-left: 0;">
                     <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
@@ -720,24 +785,38 @@
                             <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
                             <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <span style="font-size: 16px;">Penertiban &amp; Sanksi</span>
+                        <span style="font-size: 16px;">Koordinasi perumusan kebijakan</span>
                     </li>
                     <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
                             <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <span style="font-size: 16px;">Pengawasan Lapangan</span>
+                        <span style="font-size: 16px;">Koordinasi pelaksanaan kebijakan</span>
                     </li>
-                    <li style="display: flex; align-items: center; gap: 8px;">
+                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
                             <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <span style="font-size: 16px;">Dokumentasi &amp; Sengketa</span>
+                        <span style="font-size: 16px;">Koordinasi evaluasi dan pelaporan</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
+                            <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-size: 16px;">Koordinasi administrasi</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
+                            <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-size: 16px;">Fungsi lainnya</span>
                     </li>
                 </ul>
-                <a href="{{ route('services.show', 'pengawasan') }}" class="bidang-detail-btn-3cols">Lihat Detail &rarr;</a>
+                <a href="{{ route('bidang.show', 'pengawasan') }}" class="bidang-detail-btn-3cols">Lihat Detail &rarr;</a>
             </div>
 
             {{-- UPTD Pengelolaan Pemakaman --}}
@@ -759,24 +838,31 @@
                             <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
                             <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <span style="font-size: 16px;">Pelayanan Operasional Pemakaman</span>
+                        <span style="font-size: 16px;">Penyusunan Rencana & Teknis</span>
                     </li>
                     <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
                             <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <span style="font-size: 16px;">Pengendalian Bangunan Gedung</span>
+                        <span style="font-size: 16px;">Pemeliharaan RTH</span>
+                    </li>
+                    <li style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
+                            <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span style="font-size: 16px;">Ketatausahaan</span>
                     </li>
                     <li style="display: flex; align-items: center; gap: 8px;">
                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <circle cx="12" cy="12" r="10" stroke="#487522" stroke-width="1.5"/>
                             <path d="M7 12L10.5 15.5L17 9" stroke="#487522" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <span style="font-size: 16px;">Penertiban Pelanggaran</span>
+                        <span style="font-size: 16px;">Penertiban & Pengawasan</span>
                     </li>
                 </ul>
-                <a href="{{ route('services.show', 'uptd-pemakaman') }}" class="bidang-detail-btn-3cols">Lihat Detail &rarr;</a>
+                <a href="{{ route('bidang.show', 'uptd-pemakaman') }}" class="bidang-detail-btn-3cols">Lihat Detail &rarr;</a>
             </div>
         </div>
     </div>
@@ -849,3 +935,5 @@
 
 </div>
 @endsection
+
+

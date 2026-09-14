@@ -122,7 +122,6 @@
     padding: 40px 80px;
 }
 
-/* Inner container membatasi lebar agar sejajar dengan hero di 1920px */
 .about-stats-inner {
     max-width: 1400px;
     margin: 0 auto;
@@ -385,7 +384,7 @@
 .about-misi-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 15px;
 }
 
 .about-misi-item {
@@ -397,6 +396,12 @@
     gap: 16px;
     border-left: 4px solid transparent;
     transform-origin: center bottom;
+}
+
+.about-misi-item:last-child {
+    grid-column: 1 / -1;
+    width: calc(50% - 7.5px); 
+    margin: 0 auto;
 }
 
 .about-misi-item:hover {
@@ -467,8 +472,8 @@
     height: 20px;
 }
 
-.tugas-pokok-card .about-tugas-card-head svg { color: #f97316; } /* Orange Icon */
-.fungsi-utama-card .about-tugas-card-head svg { color: #16a34a; } /* Green Icon */
+.tugas-pokok-card .about-tugas-card-head svg { color: #f97316; }
+.fungsi-utama-card .about-tugas-card-head svg { color: #16a34a; }
 
 .about-tugas-card h3 {
     font-size: 1.15rem;
@@ -750,10 +755,10 @@
                     <h2>Tentang Dinas</h2>
                 </div>
                 <p class="about-section-text">
-                    Dinas Cipta Karya, Bina Konstruksi dan Tata Ruang Kota Bandung dibentuk berdasarkan Peraturan Daerah Kota Bandung untuk menyelenggarakan urusan pemerintahan daerah di bidang penataan ruang, bangunan gedung, perumahan, kawasan permukiman, dan jasa konstruksi.
+                    Dinas Cipta Karya, Bina Konstruksi dan Tata Ruang Kota Bandung dibentuk untuk melaksanakan ketentuan Peraturan Daerah Kota Bandung Nomor 08 Tahun 2016 tentang Pembentukan dan Susunan Perangkat Daerah Kota Bandung sebagaimana telah diubah dengan Peraturan Daerah Kota Bandung Nomor 3 Tahun 2021.
                 </p>
                 <p class="about-section-text">
-                    Komitmen kami adalah mewujudkan infrastruktur perkotaan yang berkualitas, tertib ijin, dan berwawasan lingkungan guna mendukung Kota Bandung yang unggul, nyaman, sejahtera, dan agamis.
+                    Dinas merupakan unsur pelaksana Urusan Pemerintahan yang menyelenggarakan urusan pemerintahan bidang pekerjaan umum dan penataan ruang sektor cipta karya, bina konstruksi, tata ruang dan pemakaman, yang berkedudukan di bawah dan bertanggung jawab kepada Wali Kota melalui Sekretaris Daerah.
                 </p>
             </div>
         </div>
@@ -762,16 +767,16 @@
     {{-- ===== VISI & MISI ===== --}}
     <section class="about-section about-section-vismis">
         <div class="about-vismis-header">
-            <h2>Visi &amp; Misi</h2>
+            <h2>Tujuan &amp; Sasaran</h2>
             <p>Arah kebijakan dan tujuan strategis pembangunan infrastruktur dan penataan ruang Kota Bandung.</p>
         </div>
 
         <div class="about-vismis-grid">
             {{-- VISI --}}
             <div class="about-visi-box">
-                <h3>Visi</h3>
+                <h3>Tujuan</h3>
                 <blockquote>
-                    "Mewujudkan infrastruktur dan penataan ruang Kota Bandung yang berkualitas, berkeadilan, dan berkelanjutan."
+                    "Meningkatnya Kelayakhunian Kota Aspek Tata Ruang."
                 </blockquote>
             </div>
 
@@ -779,19 +784,15 @@
             <div class="about-misi-grid">
                 <div class="about-misi-item misi-1">
                     <div class="about-misi-num">1</div>
-                    <p>Meningkatkan kualitas perencanaan dan penataan ruang kota yang terintegrasi dan responsif.</p>
+                    <p>Meningkatnya Perencanaan Bangunan Gedung yang Memenuhi Standar Teknis Bangunan.</p>
                 </div>
                 <div class="about-misi-item misi-2">
                     <div class="about-misi-num">2</div>
-                    <p>Menyediakan infrastruktur bangunan gedung dan sarana prasarana kota yang handal.</p>
+                    <p>Meningkatnya Kualisat Penataan Ruang.</p>
                 </div>
                 <div class="about-misi-item misi-3">
                     <div class="about-misi-num">3</div>
-                    <p>Mewujudkan pembinaan jasa konstruksi yang profesional dan berdaya saing.</p>
-                </div>
-                <div class="about-misi-item misi-4">
-                    <div class="about-misi-num">4</div>
-                    <p>Meningkatkan tata kelola pemerintahan yang baik, bersih, dan akuntabel.</p>
+                    <p>Mengingkatnya Kualitas Pelayanan Urusan Penataan Ruang.</p>
                 </div>
             </div>
         </div>

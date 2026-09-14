@@ -1,6 +1,6 @@
 <?php
-
 namespace App\Http\Controllers;
+use App\Models\Service;
 
 class LayananPublikController extends Controller
 {
@@ -9,6 +9,7 @@ class LayananPublikController extends Controller
      */
     public function index()
     {
-        return view('layanan.index');
+        $services = Service::active()->ordered()->get();
+        return view('layanan.index', compact('services'));
     }
 }

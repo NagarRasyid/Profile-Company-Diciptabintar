@@ -5,12 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Admin - Diciptabintar</title>
     
-    <!-- Google Fonts: Inter -->
+    <!-- Google Fonts: Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
@@ -29,7 +28,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
         body {
@@ -63,17 +62,6 @@
             box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
             position: relative;
             overflow: hidden;
-        }
-
-        .login-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -50%;
-            width: 200%;
-            height: 2px;
-            background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
-            animation: borderGlow 4s linear infinite;
         }
 
         .logo-area {
@@ -161,31 +149,6 @@
             font-size: 0.875rem;
         }
 
-        .remember-me {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-            user-select: none;
-            color: var(--text-muted);
-        }
-
-        .remember-me input {
-            cursor: pointer;
-            accent-color: var(--primary-color);
-        }
-
-        .forgot-password {
-            color: var(--primary-color);
-            text-decoration: none;
-            font-weight: 500;
-            transition: opacity 0.2s;
-        }
-
-        .forgot-password:hover {
-            opacity: 0.8;
-        }
-
         .btn-submit {
             width: 100%;
             padding: 14px;
@@ -200,18 +163,10 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
         }
 
         .btn-submit:hover {
             background: linear-gradient(135deg, #2563eb, #1d4ed8);
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(37, 99, 235, 0.3);
-        }
-
-        .btn-submit:active {
-            transform: translateY(0);
         }
 
         .error-alert {
@@ -225,23 +180,6 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            animation: shake 0.4s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes borderGlow {
-            0% { left: -100%; }
-            100% { left: 100%; }
-        }
-
-        @keyframes shake {
-            0%, 100% { transform: translateX(0); }
-            25% { transform: translateX(-4px); }
-            75% { transform: translateX(4px); }
         }
     </style>
 </head>
@@ -252,7 +190,7 @@
             
             <div class="logo-area">
                 <div class="logo-icon">
-                    <i class="fa-solid fa-compass-drafting"></i>
+                    <img src="/images/logo.png" alt="Logo" style="max-width: 40px; height: auto; ">
                 </div>
                 <h2>Diciptabintar</h2>
                 <p>Dashboard Panel Admin</p>
@@ -271,7 +209,7 @@
                 <div class="form-group">
                     <label class="form-label" for="email">Email</label>
                     <div class="input-wrapper">
-                        <input class="form-control" type="email" id="email" name="email" value="{{ old('email') }}" placeholder="admin@diciptabintar.com" required autofocus>
+                        <input class="form-control" type="email" id="email" name="email" value="{{ old('email') }}" placeholder="Masukan Email" required autofocus>
                         <i class="fa-solid fa-envelope input-icon"></i>
                     </div>
                 </div>
@@ -282,13 +220,6 @@
                         <input class="form-control" type="password" id="password" name="password" placeholder="••••••••" required>
                         <i class="fa-solid fa-lock input-icon"></i>
                     </div>
-                </div>
-
-                <div class="options-row">
-                    <label class="remember-me">
-                        <input type="checkbox" name="remember" id="remember">
-                        <span>Ingat saya</span>
-                    </label>
                 </div>
 
                 <button class="btn-submit" type="submit">

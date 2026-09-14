@@ -103,7 +103,7 @@
             .bidang-section-underline {
                 width: 54px;
                 height: 4px;
-                background-color: #487522; /* Green from the design */
+                background-color: #487522; 
                 border-radius: 2px;
             }
 
@@ -256,7 +256,7 @@
             {{-- HERO SECTION --}}
             <div class="bidang-hero">
                 <div class="bidang-hero-content">
-                    <a href="{{ route('services.index') }}" class="bidang-breadcrumb">
+                    <a href="{{ route('bidang.index') }}" class="bidang-breadcrumb">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M15 18l-6-6 6-6"/>
                         </svg>
@@ -272,6 +272,7 @@
                 </div>
             </div>
 
+            <!-- Data detail bidang berada di Bidangcontroller -->
             {{-- TUGAS POKOK & FUNGSI --}}
             <div class="bidang-section-title-wrapper">
                 <h2 class="bidang-section-title">Tugas Pokok & Fungsi</h2>
@@ -388,10 +389,11 @@
             </div>
 
             {{-- STRUKTUR SUB BAGIAN --}}
+            @if(!empty($service->struktur))
             <div class="struktur-section">
                 <div class="struktur-header">
                     <h3>Struktur Sub Bagian & Fokus Kerja</h3>
-                    <p>{{ $service->struktur_desc }}</p>
+                    <p>{{ $service->struktur_desc ?? '' }}</p>
                 </div>
                 
                 <div class="struktur-grid">
@@ -456,6 +458,12 @@
                                             <path d="M2.66667 24C1.93333 24 1.30556 23.765 0.783333 23.295C0.261111 22.825 0 22.26 0 21.6V4.8C0 4.14 0.261111 3.575 0.783333 3.105C1.30556 2.635 1.93333 2.4 2.66667 2.4H8.26667C8.55556 1.68 9.03889 1.1 9.71667 0.66C10.3944 0.22 11.1556 0 12 0C12.8444 0 13.6056 0.22 14.2833 0.66C14.9611 1.1 15.4444 1.68 15.7333 2.4H21.3333C22.0667 2.4 22.6944 2.635 23.2167 3.105C23.7389 3.575 24 4.14 24 4.8V21.6C24 22.26 23.7389 22.825 23.2167 23.295C22.6944 23.765 22.0667 24 21.3333 24H2.66667ZM2.66667 21.6H21.3333V4.8H2.66667V21.6ZM5.33333 19.2H14.6667V16.8H5.33333V19.2ZM5.33333 14.4H18.6667V12H5.33333V14.4ZM5.33333 9.6H18.6667V7.2H5.33333V9.6ZM12 3.9C12.2889 3.9 12.5278 3.815 12.7167 3.645C12.9056 3.475 13 3.26 13 3C13 2.74 12.9056 2.525 12.7167 2.355C12.5278 2.185 12.2889 2.1 12 2.1C11.7111 2.1 11.4722 2.185 11.2833 2.355C11.0944 2.525 11 2.74 11 3C11 3.26 11.0944 3.475 11.2833 3.645C11.4722 3.815 11.7111 3.9 12 3.9Z" fill="white"/>
                                         </svg>
                                         @break
+                                        @case('information-circle')
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-clipboard-data-fill" viewBox="0 0 16 16">
+                                                <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5z"/>
+                                                <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5zM10 8a1 1 0 1 1 2 0v5a1 1 0 1 1-2 0zm-6 4a1 1 0 1 1 2 0v1a1 1 0 1 1-2 0zm4-3a1 1 0 0 1 1 1v3a1 1 0 1 1-2 0v-3a1 1 0 0 1 1-1"/>
+                                            </svg>
+                                        @break
                                     @endswitch
                                 </div>
                                 <h4 class="struktur-card-title">{{ $struktur['title'] }}</h4>
@@ -474,10 +482,11 @@
                     @endforeach
                 </div>
             </div>
+            @endif
     @else
         <!-- Old Content -->
         <div style="padding: 40px 80px;">
-            <a href="{{ route('services.index') }}" style="display: inline-block; margin-bottom: 20px; text-decoration: none; color: #003d6a; font-weight: 600;">&larr; Kembali ke Daftar Layanan</a>
+            <a href="{{ route('bidang.index') }}" style="display: inline-block; margin-bottom: 20px; text-decoration: none; color: #003d6a; font-weight: 600;">&larr; Kembali ke Daftar Layanan</a>
             
             <div style="margin-top: 10px; background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); border: 1px solid #e5eaf2;">
                 <h1 style="color: #003d6a; font-size: 2.2rem; margin-bottom: 14px;">{{ $service->title }}</h1>
@@ -500,3 +509,4 @@
         </div>
     @endif
 @endsection
+

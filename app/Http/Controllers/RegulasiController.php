@@ -68,6 +68,9 @@ class RegulasiController extends Controller
         ],
     ];
 
+    /**
+     * Menampilkan regulasi & dokumen hukum.
+     */
     public function index() {
         $urlAPI      = "https://diciptabintar.bandung.go.id/api/master/master_regulasi/frontend";
         $baseFileUrl = "https://diciptabintar.bandung.go.id/";
@@ -82,6 +85,7 @@ class RegulasiController extends Controller
             $regulasi = collect($rawData)->map(function ($item) use ($baseFileUrl) {
                 $isi = $item['isi'] ?? '';
 
+                // Kategori regulasi & dokumen hukum
                 if (stripos($isi, 'peraturan daerah') !== false || stripos($isi, 'perda') !== false) {
                     $kategori = 'Peraturan Daerah';
                     $badge    = 'PERATURAN DAERAH';
@@ -144,6 +148,9 @@ class RegulasiController extends Controller
         }
     }
 
+    /**
+     * Mengunduh regulasi & dokumen hukum.
+     */
     public function download(Request $request)
     {
         $url = $request->query('file');

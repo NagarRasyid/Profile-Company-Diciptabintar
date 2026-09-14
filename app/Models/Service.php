@@ -12,6 +12,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
     'slug',
     'description',
     'icon',
+    'color',
+    'jumlah_permohonan',
     'image',
     'is_active',
     'order',
@@ -20,30 +22,20 @@ class Service extends Model
 {
     use HasFactory, SoftDeletes;
 
-    /**
-     * Atribut layanan yang harus di cast.
-     *
-     * @return array<string, string>
-     */
     protected function casts(): array
     {
         return [
-            'is_active' => 'boolean',
-            'order'     => 'integer',
+            'is_active'         => 'boolean',
+            'order'             => 'integer',
+            'jumlah_permohonan' => 'integer',
         ];
     }
 
-    /**
-     * Layanan yang aktif.
-     */
     public function scopeActive($query)
     {
         return $query->where('is_active', true);
     }
 
-    /**
-     * Urutan layanan.
-     */
     public function scopeOrdered($query)
     {
         return $query->orderBy('order', 'asc');

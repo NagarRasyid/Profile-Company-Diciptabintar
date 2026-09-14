@@ -4,8 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\InstagramPostController;
-use App\Http\Controllers\ServiceController;
+use App\Http\Controllers\BeritaController;
+use App\Http\Controllers\BidangController;
 
 use App\Http\Controllers\RegulasiController;
 use App\Http\Controllers\Admin as Admin;
@@ -18,13 +18,14 @@ Route::get('/profil', [AboutController::class, 'index'])->name('about');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
 
-Route::get('/berita', [InstagramPostController::class, 'index'])->name('news.index');
+Route::get('/berita', [BeritaController::class, 'index'])->name('berita.index');
 
-Route::get('/bidang', [ServiceController::class, 'index'])->name('services.index');
-Route::get('/bidang/{slug}', [ServiceController::class, 'show'])->name('services.show');
+Route::get('/bidang', [BidangController::class, 'index'])->name('bidang.index');
+Route::get('/bidang/{slug}', [BidangController::class, 'show'])->name('bidang.show');
 
 
 Route::get('/layanan-publik', [\App\Http\Controllers\LayananPublikController::class, 'index'])->name('layanan.index');
+Route::resource('/layanan', Admin\LayananPublikController::class)->parameters(['layanan' => 'service'])->except(['show']);
 
 Route::get('/regulasi', [\App\Http\Controllers\RegulasiController::class, 'index'])->name('regulasi.index');
 Route::get('/regulasi/download', [\App\Http\Controllers\RegulasiController::class, 'download'])->name('regulasi.download');
@@ -34,7 +35,7 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
     // Dashboard Utama
     Route::get('/', [Admin\DashboardController::class, 'index'])->name('dashboard');
 
-    // Manajemen Pesan Kontak (Contact Messages)
+    // Manajemen Pesan
     Route::get('/contact', [Admin\ContactMessageController::class, 'index'])->name('contact.index');
     Route::get('/contact/{contactMessage}', [Admin\ContactMessageController::class, 'show'])->name('contact.show');
     Route::post('/contact/{contactMessage}/read', [Admin\ContactMessageController::class, 'markAsRead'])->name('contact.markAsRead');
@@ -45,8 +46,8 @@ Route::prefix('admin')->name('admin.')->middleware(['auth'])->group(function () 
     Route::resource('/instagram', Admin\InstagramPostController::class)->except(['show']);
 
     // Manajemen Layanan (Services)
-    Route::post('/services/{id}/restore', [Admin\ServiceController::class, 'restore'])->name('services.restore');
-    Route::resource('/services', Admin\ServiceController::class)->except(['show']);
+    Route::post('/layanan/{id}/restore', [Admin\LayananPublikController::class, 'restore'])->name('layanan.restore');
+    Route::resource('/layanan', Admin\LayananPublikController::class)->parameters(['layanan' => 'service'])->except(['show']);
 
 });
 
@@ -57,3 +58,5 @@ Route::middleware('guest')->group(function () {
 });
 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout')->middleware('auth');
+
+

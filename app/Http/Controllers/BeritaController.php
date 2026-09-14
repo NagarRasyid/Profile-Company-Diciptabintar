@@ -4,15 +4,15 @@ namespace App\Http\Controllers;
 
 use App\Models\InstagramPost;
 
-class InstagramPostController extends Controller
+class BeritaController extends Controller
 {
     /**
-     * Halaman publik Berita & Update — menampilkan grid Instagram posts.
+     * Menampilkan postingan Instagram.
      */
     public function index()
     {
         $posts = InstagramPost::active()->paginate(12);
 
-        return view('news.index', compact('posts'));
+        return view('berita.index', compact('posts'));
     }
 }

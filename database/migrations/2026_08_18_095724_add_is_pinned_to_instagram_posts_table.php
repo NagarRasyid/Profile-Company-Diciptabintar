@@ -9,7 +9,6 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('instagram_posts', function (Blueprint $table) {
-            // Hapus kolom sort_order lama, ganti dengan is_pinned
             $table->dropColumn('sort_order');
             $table->boolean('is_pinned')->default(false)->after('is_active');
         });

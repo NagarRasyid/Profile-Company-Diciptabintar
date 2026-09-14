@@ -14,8 +14,6 @@ class AboutController extends Controller
      */
     public function index()
     {
-
-        // Stats: ambil dari DB dan API
         $totalLayanan = Service::active()->count();
         $totalBerita  = InstagramPost::where('is_active', true)->count();
         $totalBidang  = 7;
@@ -31,9 +29,8 @@ class AboutController extends Controller
                     return $json['recordsTotal'] ?? count($json['data'] ?? []);
                 }
             } catch (\Throwable $e) {
-                // Jika API down, gunakan nilai fallback
             }
-            return 111; // fallback
+            return 111;
         });
 
         $stats = [

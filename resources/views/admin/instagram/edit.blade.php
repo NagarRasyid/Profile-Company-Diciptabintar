@@ -1,6 +1,6 @@
 @extends('layouts.admin')
 
-@section('title', 'Edit Postingan Instagram')
+@section('title', 'Dashboard')
 
 @section('content')
 <div class="admin-page-header">

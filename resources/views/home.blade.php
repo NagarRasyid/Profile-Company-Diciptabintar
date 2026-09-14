@@ -424,7 +424,7 @@
                 <h3>Regulasi</h3>
                 <p>Dokumen hukum dan kebijakan tata ruang kota.</p>
             </a>
-            <a href="{{ route('services.index') }}" class="qa-card">
+            <a href="{{ route('bidang.index') }}" class="qa-card">
                 <div class="qa-icon qa-icon-orange">
                     <svg width="20" height="18" viewBox="0 0 20 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M0 18V0H10V4H20V18H0ZM2 16H4V14H2V16ZM2 12H4V10H2V12ZM2 8H4V6H2V8ZM2 4H4V2H2V4ZM6 16H8V14H6V16ZM6 12H8V10H6V12ZM6 8H8V6H6V8ZM6 4H8V2H6V4ZM10 16H18V6H10V8H12V10H10V12H12V14H10V16ZM14 10V8H16V10H14ZM14 14V12H16V14H14Z" fill="#370E00"/>
@@ -433,7 +433,7 @@
                 <h3>Informasi Bidang</h3>
                 <p>Struktur dan tugas pokok fungsi tiap bidang.</p>
             </a>
-            <a href="{{ route('news.index') }}" class="qa-card">
+            <a href="{{ route('berita.index') }}" class="qa-card">
                 <div class="qa-icon qa-icon-pink">
                     <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M2 18C1.45 18 0.979167 17.8042 0.5875 17.4125C0.195833 17.0208 0 16.55 0 16V2C0 1.45 0.195833 0.979167 0.5875 0.5875C0.979167 0.195833 1.45 0 2 0H16C16.55 0 17.0208 0.195833 17.4125 0.5875C17.8042 0.979167 18 1.45 18 2V16C18 16.55 17.8042 17.0208 17.4125 17.4125C17.0208 17.8042 16.55 18 16 18H2ZM4 14H11V12H4V14ZM4 10H14V8H4V10ZM4 6H14V4H4V6Z" fill="#93000A"/>

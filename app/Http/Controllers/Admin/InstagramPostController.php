@@ -10,17 +10,26 @@ use Illuminate\Support\Facades\Storage;
 
 class InstagramPostController extends Controller
 {
+    /**
+     * Menampilkan daftar postingan Instagram.
+     */
     public function index()
     {
         $posts = InstagramPost::orderByDesc('is_pinned')->latest()->paginate(20);
         return view('admin.instagram.index', compact('posts'));
     }
 
+    /**
+     * Menampilkan form tambah postingan Instagram.
+     */
     public function create()
     {
         return view('admin.instagram.create');
     }
 
+    /**
+     * Menyimpan postingan Instagram baru.
+     */
     public function store(Request $request): RedirectResponse
     {
         $validated = $request->validate([
@@ -60,11 +69,17 @@ class InstagramPostController extends Controller
             ->with('success', 'Postingan Instagram berhasil ditambahkan.');
     }
 
+    /**
+     * Menampilkan form edit postingan Instagram.
+     */
     public function edit(InstagramPost $instagram)
     {
         return view('admin.instagram.edit', compact('instagram'));
     }
 
+    /**
+     * Memperbarui postingan Instagram.
+     */
     public function update(Request $request, InstagramPost $instagram): RedirectResponse
     {
         $validated = $request->validate([
@@ -75,8 +90,6 @@ class InstagramPostController extends Controller
             'is_pinned' => ['boolean'],
         ]);
 
-        // Validasi: maksimal 3 postingan yang di-pin
-        // Hitung pin yang ada, kecualikan postingan yang sedang diedit
         if ($request->boolean('is_pinned') && !$instagram->is_pinned) {
             $pinnedCount = InstagramPost::where('is_pinned', true)
                 ->where('id', '!=', $instagram->id)
@@ -107,6 +120,9 @@ class InstagramPostController extends Controller
             ->with('success', 'Postingan berhasil diperbarui.');
     }
 
+    /**
+     * Menghapus postingan Instagram.
+     */
     public function destroy(InstagramPost $instagram): RedirectResponse
     {
         Storage::disk('public')->delete($instagram->image);
@@ -117,7 +133,7 @@ class InstagramPostController extends Controller
     }
 
     /**
-     * Toggle aktif/nonaktif via redirect.
+     * Toggle aktif/nonaktif postingan.
      */
     public function toggleActive(InstagramPost $instagram): RedirectResponse
     {

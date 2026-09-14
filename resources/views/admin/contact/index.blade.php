@@ -1,18 +1,13 @@
 @extends('layouts.admin')
 
-@section('title', 'Pesan Kontak')
-@section('page-title', 'Pesan Kontak')
+@section('title', 'Dashboard')
+@section('page-title', 'Dashboard')
 
 @section('content')
     <div class="admin-page-header">
         <div>
             <h1 class="admin-page-title">Kelola Pesan Kontak</h1>
             <p class="admin-page-subtitle">Total pesan belum dibaca: <strong style="color: #dc2626;">{{ $unreadCount }}</strong></p>
-        </div>
-        <div>
-            <a href="{{ route('admin.dashboard') }}" class="admin-btn admin-btn-secondary">
-                &larr; Kembali ke Dashboard
-            </a>
         </div>
     </div>
 

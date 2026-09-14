@@ -521,14 +521,8 @@ select {
     transition: 0.2s ease;
 }
 
-.admin-nav-link:hover,
-.admin-nav-link.active,
-.admin-logout:hover {
-    color: #ffffff;
-    background: rgba(255, 255, 255, 0.09);
-}
-
 .admin-nav-link.active {
+    color: #ffffff;
     background: linear-gradient(135deg, var(--primary), #0ea5e9);
     box-shadow: 0 14px 30px rgba(37, 99, 235, 0.26);
 }
@@ -722,10 +716,6 @@ select {
     padding: 14px;
     border-bottom: 1px solid #eef2f7;
     vertical-align: top;
-}
-
-.admin-table tbody tr:hover {
-    background: #f8fafc;
 }
 
 .admin-table tbody tr.row-danger {
